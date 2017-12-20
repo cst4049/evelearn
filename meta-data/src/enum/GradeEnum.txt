@@ -1,0 +1,21 @@
+{
+  "name": "GradeEnum",
+  "title": "年级枚举",
+  "literal": [
+    {
+      "name": "高一",
+      "title": "高一",
+      "code": 1
+    },
+    {
+      "name": "高二",
+      "title": "高二",
+      "code": 2
+    },
+    {
+      "name": "高三",
+      "title": "高三",
+      "code": 3
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+
+#ep
+students:
+  url: schools/<regex("[\w]+"):school>/classes/<regex("[\w]+"):class>/students
+
+  type: dict
+  schema:
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    class:
+      type: objectid
+      data_relation:
+        resource: classes
+        field: _id
+        embeddable: True
+
+    userStatus:
+      type: string
+      default: active
+
+    code:
+      type: number
+
+    codeDtype:
+      type: string
+      unique: True
+    name:
+      type: string
+
+    sex:
+      type: string
+      default: unspecified

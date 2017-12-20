@@ -1,0 +1,22 @@
+#!/bin/bash
+
+__DIR__=$(cd "$(dirname "$0")"; pwd)
+
+
+math_section_first=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"section","name":"1.集合"}' | jq -r '._items[0]._id')
+
+
+new_id=$(sed 's/^section.*/section: '"${math_section_first}"'/'  ${__DIR__}/question-POST.yaml | yaml2json - \
+  | http -b POST ${SUT_B}/quesbanks/core/questions token==$TOKEN |tee| jq -r '._id')
+
+
+#TODO: patch出错了
+
+http -v PUT ${SUT_B}/quesbanks/core/questions/${new_id} token==$TOKEN \
+<< EOF
+{
+  "sourceTime": "2018"
+}
+EOF
+
+http -v GET ${SUT_B}/quesbanks/core/questions/${new_id} token==$TOKEN

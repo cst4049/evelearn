@@ -1,0 +1,5 @@
+resources:
+  signal:
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Signals/schema'

@@ -1,0 +1,22 @@
+
+definitions:
+  Grades:
+    type: dict
+    schema:
+      kind:
+        type: string
+        default: seniorMiddle
+      birth:
+        type: datetime
+        unique: True
+        coerce: align_to_day
+
+
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True
+
+

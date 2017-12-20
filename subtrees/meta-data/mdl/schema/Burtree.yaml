@@ -1,0 +1,21 @@
+definitions:
+  Butree:
+    naem: Burtree
+    titile: 官僚树
+    type: dict
+    schema:
+      name:
+        type: string
+        unique: true
+      edition:
+        type: string
+        required: true
+      description:
+        type: string
+        nullable: true
+      title:
+        type: string
+      root:
+        type: dict
+        schema:
+          $ref: 'https://rawstonedu.com/schema#/definitions/BurtreeNode/schema'

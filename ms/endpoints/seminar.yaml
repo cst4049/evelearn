@@ -1,0 +1,7 @@
+resources:
+  seminars:
+    url: schools/<regex("[\w]+"):school>/seminar-spans/<regex("[\w]+"):seminarSpans>/seminars
+    versioning: False
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Seminars/schema'

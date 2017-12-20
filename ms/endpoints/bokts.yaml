@@ -1,0 +1,6 @@
+
+resources:
+  bokts:
+    url: bok-trees
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Bokt/schema'

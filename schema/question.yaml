@@ -1,0 +1,486 @@
+
+#Class
+QuestionPoCheck:
+  type: dict
+  schema: &QuestionPoCheck
+
+    #- 审查状态  ref by name 指向 enum
+    statusTypeOfCheck:
+      type: string
+      default: open
+
+    #- 首次审查时间
+    #- Done timeOfLastCheck => checkedAtFirstly
+    checkedTypeAtFirstly:
+      type: datetime
+
+    #- 最后审查时间
+    checkedTypeAtLastly:
+      type: datetime
+
+    #- 审核者
+    #- Done checkedBy => checkedByFirstly todo 根据token解析出用户ID
+    checkedTypeByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+      #- 审查状态  ref by name 指向 enum
+    statusTagOfCheck:
+      type: string
+      default: open
+
+    #- 首次审查时间
+    #- Done timeOfLastCheck => checkedAtFirstly
+    checkedTagAtFirstly:
+      type: datetime
+
+    #- 最后审查时间
+    checkedTagAtLastly:
+      type: datetime
+
+    #- 审核者
+    #- Done checkedBy => checkedByFirstly todo 根据token解析出用户ID
+    checkedTagByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+    #- 是否已审查，是一个lambda表达式 todo 是否已经审查
+    #- https://stackoverflow.com/questions/38479904/add-a-calculated-field-to-eve-schema
+    isChecked:
+      type: boolean
+      readonly: true
+
+    state:
+      type: number
+
+
+
+#Class
+QuestionPoTag:
+  type: dict
+  schema: &QuestionPoTag
+
+    # Done delete
+#    tag:
+#      type: string
+
+    # 首次打标时间
+    #- Done： tagedTime => taggedAtFirstly
+    taggedAtFirstly:
+      type: datetime
+
+    #- 末次打标时间
+    taggedAtLastly:
+      type: datetime
+
+    #- 首次达标者
+    #- Done tagedBy => taggedByFirstly todo 根据token解析出用户ID
+    taggedByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+
+#Class
+QuestionPoSource:
+  type: dict
+  schema: &QuestionPoSource
+
+    #- 题目来源类型，值是enum   范围是 mm/SourceKind/literals/name
+    # TODO 根据enum 展开
+    koSource:
+      type: string
+
+    #- 题目时间，值是enum，不许要展开，但会根据enum做验证
+    sourceTime:
+      type: string
+
+    # 题目来源地点
+    # TODO 根据enum 展开
+    sourceLoca:
+      type: string
+
+    # DONE: 去掉， 使用sourceLoca.title获得 前端需要相应的修改
+    sourceLocaTitle:
+      type: string
+
+    sourceDirectionKind:
+      type: string
+      nullable: True
+
+
+#Class
+QuestionPoStructure: #todo
+  type: dict
+  schema: &QuestionPoStructure
+
+    #- 英语题目挂载到册
+    #- vloume和section是互斥的
+    #- TODO move to QuestionPoDiscipline
+    #- TODO: volume =>  botnCat
+    volume:
+      type: objectid
+#    chapter:  # 章
+#      type: string
+
+    #- 非英语节的id
+    #- TODO move to QuestionPoDiscipline
+    #- TODO: section =>  botnCat
+    #- volume 和section 都改为botnCat后，需要在POST Question的做约束检测：英语的可以挂在volumen上，非英语的只能挂在section上。
+    section:
+      type: objectid
+      nullable: True
+
+    bot_path: # 推导属性 推导出来的
+      type: list
+      schema:
+        type: string
+
+    #- 子题个数
+    sonCount:  ##  改为sonCount
+      type: number
+
+    #- 子题列表，可能前段会把子题的属性放到父题中，而没有用这个属性。
+    son:
+      type: list
+      schema:
+        anyof_type:
+          type: [objectid,list]
+
+
+    #- 儿子的属性：
+    #- 如果是放到son列表中，那么一定是先按对象，然后按字段，组织数据，这个是行模式。
+    #- 如果是放在fieldOfSon中，那么一定是先按字段，然后是对象，这个是列模式（向量模式）。
+    #- DONE sonOfAttr => fieldOfSon
+    # fieldOfSon 和son 是互斥。 TODO： 使用son，弃用fieldOfSon
+    fieldOfSon:
+      type: dict
+      schema:
+        contOfKey:
+          type: list
+          schema:
+#            anyof_type: # 支持多选,单选
+#              type: [string,list]
+            type: string
+        blankCount:
+          type: list
+          nullable: True
+          schema:
+            type: number
+        contOfScantron:
+          type: list
+          schema:
+            type: string
+
+
+    #- TODO dadquestion 是一个推导属性
+    dadquestion:
+      type: objectid
+      readonly: true
+
+    # Done 该属性作为存储属性
+    dad:
+      type: objectid
+
+#Class
+QuestionPoContent:
+  type: dict
+  schema: &QuestionPoContent
+
+    # 题目内容
+    contOfQuery:
+      type: string
+
+    # 题目解析
+    contOfAnalysis:
+      type: string
+
+    # 辅助作答区域
+    contOfScantron:
+      type: string
+
+    # 答案
+    contOfKey:
+      schema:
+        # Done 多选 ["A","B"] 改为 "AB" 这种方式，无需list
+       #anyof_type: # 支持多选,单选
+       #type: [string,list]
+        type: string
+
+    # 录题人（首次）
+    # TODO: enteredBy =>typewritedByFirstly
+    typewritedByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+    # 首次录题时间
+    typewritedAtFirstly:
+      type: datetime
+      default_setter: utcnow
+
+    # 末次录题时间
+    typewritedAtLastly:
+      type: datetime
+
+
+#Class
+QuestionPoDiscipline:
+  type: dict
+  schema: &QuestionPoDiscipline
+
+    # 科目类型：TODO enum的literal带入
+    koDiscipline:
+      type: string
+      # TODO 自定义一个对属性的定义字段“enum”
+
+    # 问询形式，暂不使用
+    queryFormat:
+      type: string
+
+    # 作答形式： TODO enum 的literal带入
+    responseFormat:
+      type: string
+
+
+    # 复合形式： TODO enum 的literal带入
+    comboFormat:
+      type: string
+      # TODO 自定义一个对属性的定义字段“dominant”来表示什么时候这个字段必须有值，什么时候必须无值。
+
+
+    # 知识分类， TODO 返回的时候会展开
+    boknCat:
+      type: list
+      coerce: distbok # 去除重复的bokid
+      schema:
+        type: boknpid  # bokn 下的point objid
+        data_relation:
+          resource: bokns
+          field: _id
+          embeddable: True
+
+#    botn:
+#      type: string
+
+    # 难度
+    # TODO enum 展开
+    difficulty:
+      type: string
+
+    # 题材类型
+    koMaterial:
+      type: string
+
+    # 题材长度
+    materialLength:
+      type: string
+
+    materialLengthDeg:
+      type: string
+
+    objectiveOfCombo:
+      type: string
+
+    objectiveOfCognitiveKnowledge:
+      type: string
+
+    objectiveOfCognitiveProcess:
+      type: string
+
+#Class
+QuestionFoSelect:
+  type: dict
+  schema: &QuestionFoSelect
+
+    # 选项个数
+    optionCount:
+      type: number
+      nullable: True
+
+    # 选项叙述类型
+    optionOrdinal:
+      type: string
+      allowed:
+        - '1'
+        - 'a'
+        - 'A'
+
+    # 选项多选型
+    optionMultiplicity:
+      type: string
+      allowed:
+        - '1' # 表示单选题
+        - '1+' # 表示至少选一个
+        - '2+' # 表示选2个以上
+
+
+#Class
+QuestionFoFillin:
+  type: dict
+  schema: &QuestionFoFillin
+
+    # 空白个数
+    blankCount:
+      type: number
+      nullable: True
+
+    # 空白长度
+    blankLengths:
+      type: number
+
+
+#Class
+QuestionFoWriteout:
+  type: dict
+  schema: &QuestionFoWriteout
+
+    # 做答区尺寸
+    size:
+      type: dict
+      schema:
+        width:
+          type: number
+        height:
+          type: number
+
+#Class
+QuestionFoEnglish:
+  type: dict
+  schema: &QuestionFoEnglish
+
+    comboFormat:
+      type: string
+
+    responseFormat:
+      type: string
+
+#    botn:
+#      type: string
+#Class
+QuestionFoEnglishSimpleSelection:
+  type: dict
+  schema: &QuestionFoEnglishSimpleSelection
+
+    objectiveOfCombo:
+      type: string
+
+    responseFormat:
+      type: string
+
+#Class
+QuestionFoEnglishReadingComprehension:
+  type: dict
+  schema: &QuestionFoEnglishReadingComprehension
+    responseFormat:
+      type: string
+    objectiveOfCombo:
+      type: string
+    difficulty:
+      type: string
+#Class
+QuestionFoEnglishMatching:
+  type: dict
+  schema: &QuestionFoEnglishMatching
+    responseFormat:
+      type: string
+#Class
+QuestionFoEnglishCloze: &unit_info #通用信息
+  type: dict
+  schema: &QuestionFoEnglishCloze
+    responseFormat:
+      type: string
+    objectiveOfCombo:
+      type: string
+    difficulty:
+      type: string
+    koMaterial:
+      type: string
+    materialLengthDeg:
+      type: string
+#Class
+QuestionFoEnglishReadWriteTask:
+  <<: *unit_info
+#Class
+QuestionFoEnglishFillWordInText:
+  <<: *unit_info
+#Class
+QuestionFoEnglishFillWordInSentence:
+  <<: *unit_info
+#Class
+QuestionFoEnglishTextCorrection:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceCorrection:
+  <<: *unit_info
+#Class
+QuestionFoEnglishPatternTransformation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishPhraseTranslation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceTranslation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceCompletion:
+  <<: *unit_info
+
+
+#EP:题目
+questions:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions
+
+  type: dict
+  schema: &questions
+    <<: *QuestionPoCheck
+    <<: *QuestionPoTag
+    <<: *QuestionPoSource
+    <<: *QuestionPoStructure
+    <<: *QuestionPoContent
+    <<: *QuestionPoDiscipline
+    <<: *QuestionFoSelect
+    <<: *QuestionFoFillin
+    <<: *QuestionFoWriteout
+    <<: *QuestionFoEnglish
+    <<: *QuestionFoEnglishSimpleSelection
+    <<: *QuestionFoEnglishReadingComprehension
+    <<: *QuestionFoEnglishMatching
+    quesBank:
+      type: string
+      data_relation:
+        resource: quesbanks
+        field: name
+        embeddable: True
+
+
+
+## 题目的带属性集
+question_e1part:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/e1-part-of-questions
+  datasource:
+    source: questions
+
+## 题目的带属性集
+question_e2part:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/e2-part-of-questions
+  resource_methods: []
+  item_methods: ["PATCH"]
+  datasource:
+    source: questions

@@ -1,0 +1,6 @@
+测试部分:
+  1. curl命令测试(test)
+  2. postman的测试(*.json)
+  3. 远程taurus,使用supervisor启动hook,需要注意路径问题
+  3. 远程taurus,使用supervisor启动hook,需要注意路径问题
+  4. branch test

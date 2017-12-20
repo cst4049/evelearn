@@ -1,0 +1,26 @@
+{
+  "name": "EnglishReadWriteTaskMaterialLengthDeg",
+  "title": "英语信息读写任务长度等级",
+  "literal": [
+    {
+      "name": "short",
+      "title": "330-",
+      "code": 1
+    },
+    {
+      "name": "middle",
+      "title": "330～410",
+      "code": 2
+    },
+    {
+      "name": "middellong",
+      "title": "410～480",
+      "code": 3
+    },
+    {
+      "name": "long",
+      "title": "480+",
+      "code": 4
+    }
+  ]
+}

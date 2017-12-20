@@ -1,0 +1,9 @@
+{
+	"info": {
+		"name": "TS3-Init",
+		"_postman_id": "cf5b1f7d-e3fa-94f4-328a-0d98aca43c4d",
+		"description": "初始化系统，建立元模型（例如，导入枚举定义），建立必要的数据（例如，测试用户，题库，样题），以便系统可以直接被人工测试。",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": []
+}

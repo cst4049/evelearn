@@ -1,0 +1,7 @@
+
+resources:
+  botns:
+    url: bot-nodes
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Botn/schema'

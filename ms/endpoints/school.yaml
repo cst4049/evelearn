@@ -1,0 +1,7 @@
+resources:
+  schools:
+    url: schools
+    versioning: False
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Schools/schema'

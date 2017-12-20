@@ -1,0 +1,42 @@
+
+#EP: propertySet of question-basic-tags
+jsonWebToken:
+  type: dict
+  schema:
+    header:
+      type: dict
+      schema:
+        typ:
+          type: string
+          defalut: JWT
+        alg:
+          type: string
+          defalut: HS256
+
+    payload:
+      type: dict
+      schema:
+
+        # 即 _id
+        uid:
+          type: string
+
+        timestamp:
+          type: number
+
+        role:
+          type: string
+
+        exp:
+          type: number
+
+        # 即 name
+        userNmae:
+          type: string
+
+        iss:
+          type: string
+          defalut: rawstonedu
+
+    signature:
+      type: string

@@ -1,0 +1,16 @@
+{
+  "name": "FlrEnum",
+  "title": "官僚树内层次枚举",
+  "literal": [
+    {
+      "name": "inner",
+      "title": "内层",
+      "code": 1
+    },
+    {
+      "name": "outer",
+      "title": "外层",
+      "code": 2
+    }
+  ]
+}

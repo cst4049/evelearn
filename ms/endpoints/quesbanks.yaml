@@ -1,0 +1,13 @@
+resources:
+  quesbanks:
+    url: quesbanks
+    #  additional_lookup:
+    #    url: regex("[\w]+")
+    #    field: name
+    id_field: name
+    item_lookup_field: name # 覆盖objid
+    item_url: 'regex("[a-zA-Z_][a-zA-Z0-9_-]*")'  # 重写默认的查找路由，默认是objectid
+    soft_delete: false # 软删除关闭,否则会查找到以前已经删除的条目
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Quesbanks/schema'

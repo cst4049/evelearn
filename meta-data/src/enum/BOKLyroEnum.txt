@@ -1,0 +1,39 @@
+{
+  "name": "BOKLyroEnum",
+  "title": "知识体外层次枚举",
+  
+  "literal": [
+    
+    {
+      "name": "body",
+      "title": "知识体" ,
+      
+      "code":1
+    },
+    
+    {
+      "name": "discipline",
+      "title": "科目" ,
+      
+      "code":2
+    },
+    {
+      "name": "area",
+      "title": "知识区",
+      
+      "code":3
+    },
+    {
+      "name": "topic",
+      "title": "知识主题",
+      
+      "code":4
+    },
+    {
+      "name": "point",
+      "title": "知识点",
+      
+      "code":5
+    }
+  ]
+}

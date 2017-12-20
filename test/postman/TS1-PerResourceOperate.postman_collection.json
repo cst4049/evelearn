@@ -1,0 +1,5255 @@
+{
+	"info": {
+		"name": "TS1-PerResourceOperate",
+		"_postman_id": "4f1d79f4-3a02-8217-56a6-ee025976722d",
+		"description": "按资源操作组织",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "题库Quesbank",
+			"description": "",
+			"item": [
+				{
+					"name": "题库-C1-1：新建core题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"name\"] = responseBody.has(\"name\")",
+									"if (tests[\"name\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    bankname = responseData.name;",
+									"    pm.globals.set(\"qbname\", bankname);",
+									"}",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"core\",\n  \"title\": \"资源题库\",\n  \"description\": \"题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-R1-1：获取core题库",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/{{qbname}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"{{qbname}}"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-D1-1：删除core题库",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/{{qbname}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"{{qbname}}"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-R*：读取所有题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-D*：删除所有题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "题目Question",
+			"description": "",
+			"item": [
+				{
+					"name": "题目-C1-#：core题库中新建一个英语题目(完形填空，词汇）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"english\",\n  \"volume\":\"高一\",\n  \"comboFormat\": \"完型填空\",\n  \"tag\": \"词汇\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1#：core题库中新建一个英语题目(完型填空,330-,叙述类型)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"english\",\n  \"volume\": \"高一\",\n  \"comboFormat\": \"完型填空\",\n  \"koMaterial\": \"叙事类\",\n  \"materialLength\":\"330-\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个英语题目(单选题，语法)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"english\",\n  \"volume\": \"高一\",\n  \"comboFormat\": \"单项选择\",\n  \"objectiveOfCombo\": \"语法\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个数学题目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"math\",\n  \"volume\": \"必修一\",\n  \"chapter\": \"第一章 数列\",\n  \"botn\": \"第一节 等差数列\",\n  \"difficulty\": \"难\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个数学题目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\": \"math\",\n  \"volume\":\"必修一\",\n  \"chapter\": \"第一章 角度\",\n  \"botn\": \"第一节 光的反射\"\n\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个物理题目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-0：查询core资源库里的所有题目",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R1-1：取core资源库里特定题目（首）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{first-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "92c7844f-30d4-4cc5-bae3-b75b28439e54",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "题目-R1-1：取core资源库里特定题目（尾）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "02f639df-f523-419f-99e5-938e904b4dfe",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "5bf13861-4137-46f0-8e78-eca4c6147627",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "d1741ed5-b507-4f71-bf67-988b0817ec05",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "4ce0106f-8860-41c2-b0b2-9723e01a043d",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "18353b88-4bf4-4496-89ba-dbfeb7d8e43e",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "5f653abd-9b29-4d8b-beba-fd00c5793888",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "db20460e-b678-44fe-9a90-356f3ded2758",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "7dc21dfa-e47c-438b-8d35-28be2cba0e99",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "3a324b1d-2fe4-465e-a0a7-f6f60e8fa893",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "e0108757-e209-4271-bf2c-f2b4a5d301f5",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "28979ab8-b789-4ad2-a5df-9a2fcd2dee37",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "4e0c3e63-30d7-4a1b-bac4-84705fea0510",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "题目-R*-#：core题库某bot节点的所有题目(含已打标审核过)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/?where={\"cat-botn\":\"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"cat-botn\":\"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-1：core题库某bot节点的所有题目（限定为section）",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/?where={\"cat-section\":\"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"cat-section\":\"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库英语完形填空下的题目(默认排除审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"english\",\"comboFormat\":\"完型填空\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"english\",\"comboFormat\":\"完型填空\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库英语完形填空下的题目(含审核通过)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"english\",\"comboFormat\":\"完型填空\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"english\",\"comboFormat\":\"完型填空\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(默认排除审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/?where={\"discipline\":\"math\",\"cat-section\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"cat-section\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(含审核通过)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"math\",\"botn\":\"第一章 牛顿力学\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"botn\":\"第一章 牛顿力学\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(打了标但未审的以及审核否决的)TODO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$eq\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$eq\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：获取审核通过的题目",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"botn\":\"第一章 牛顿力学\",\"statusOfCheck\":\"pass\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"botn\":\"第一章 牛顿力学\",\"statusOfCheck\":\"pass\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-D1-1：删除core资源库里的最后一个题目",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"",
+									"",
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "def3da39-49a5-439c-9479-fdbb009b37a7",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "ffebfad1-0349-4a22-b947-1328bade3cae",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "adaa2a65-5f18-49e4-87be-4ce33283bec3",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "4ff4e489-1888-4612-af14-0c9df0a9ab1d",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "题目-D*-1：删除core资源库里的所有题目",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "00e5fa0f-1568-4696-807a-4d57e7564ef5",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "题目-T1-#：触发题目的审核-拒绝",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"reason\":\"sssss\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}/deny",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}",
+								"deny"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-T1-#：触发题目的审核-通过",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}/pass",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}",
+								"pass"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-T1-#：触发题目的审核-重置",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}/reset",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}",
+								"reset"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-T1-#：批量题目审核-通过(尾1，尾2）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"r1st-id\");",
+									"pm.globals.unset(\"r2nd-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"r1st-id\", jsonData._items[count-1]._id);",
+									"    pm.globals.set(\"r2nd-id\", jsonData._items[count-2]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{r1st-id}},{{r2nd-id}}/batch-pass",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{r1st-id}},{{r2nd-id}}",
+								"batch-pass"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-T1-#：批量题目审核-重置(尾1，尾2）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"r1st-id\");",
+									"pm.globals.unset(\"r2nd-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"r1st-id\", jsonData._items[count-1]._id);",
+									"    pm.globals.set(\"r2nd-id\", jsonData._items[count-2]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{r1st-id}},{{r2nd-id}}/reset",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{r1st-id}},{{r2nd-id}}",
+								"reset"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "枚举Enum",
+			"description": "",
+			"item": [
+				{
+					"name": "枚举-D*：删除所有枚举",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "所有枚举总览",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：科目类型QuestionDisciplineKind",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionDisciplineKind\",\n  \"title\": \"题目科目类型\",\n  \"literal\": [\n    {\n      \"name\": \"chinese\",\n      \"title\": \"语文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"english\",\n      \"title\": \"英语\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"math\",\n      \"title\": \"数学\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"physics\",\n      \"title\": \"物理\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"chemistry\",\n      \"title\": \"化学\",\n      \"code\": 5\n    },\n    {\n      \"name\": \"biology\",\n      \"title\": \"生物\",\n      \"code\": 6\n    },\n    {\n      \"name\": \"politics\",\n      \"title\": \"政治\",\n      \"code\": 7\n    },\n    {\n      \"name\": \"history\",\n      \"title\": \"历史\",\n      \"code\": 8\n    },\n    {\n      \"name\": \"geography\",\n      \"title\": \"地理\",\n      \"code\": 9\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-R1-1：科目类型QuestionDisciplineKind",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionDisciplineKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionDisciplineKind"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  试卷科目类型ExampaperDisciplineKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ExampaperDisciplineKind\",\n  \"title\": \"试卷科目类型\",\n  \"literal\": [\n  {\n      \"name\": \"chinese\",\n      \"title\": \"语文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"english\",\n      \"title\": \"英语\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"math\",\n      \"title\": \"数学\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"physics\",\n      \"title\": \"物理\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"chemistry\",\n      \"title\": \"化学\",\n      \"code\": 5\n    },\n    {\n      \"name\": \"biology\",\n      \"title\": \"生物\",\n      \"code\": 6\n    },\n    {\n      \"name\": \"politics\",\n      \"title\": \"政治\",\n      \"code\": 7\n    },\n    {\n      \"name\": \"history\",\n      \"title\": \"历史\",\n      \"code\": 8\n    },\n    {\n      \"name\": \"geography\",\n      \"title\": \"地理\",\n      \"code\": 9\n    },   {\n      \"name\": \"mathforscience\",\n      \"title\": \"理科数学\",\n      \n      \"code\":10\n    },\n    {\n      \"name\": \"mathforliberalarts\",\n      \"title\": \"文科数学\",\n       \n      \"code\":11\n\n    },\n    \n    {\n      \"name\": \"synforscience\",\n      \"title\": \"理综\",\n      \"code\":12\n    },\n    \n    {\n      \"name\": \"synforliberalarts\",\n      \"title\": \"文综\",\n      \"code\":13\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  试卷科目类型ExampaperDisciplineKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ExampaperDisciplineKind\",\n  \"title\": \"试卷科目类型\",\n  \"literal\": [\n    {\n      \"name\": \"chinese\",\n      \"title\": \"语文\"\n    },\n    {\n      \"name\": \"english_exam\",\n      \"title\": \"英语\"\n    },\n    {\n      \"name\": \"math_exam\",\n      \"title\": \"数学\"\n    },\n    {\n      \"name\": \"mathforscience\",\n      \"title\": \"理科数学\"\n    },\n    {\n      \"name\": \"mathforliberalarts\",\n      \"title\": \"文科数学\"\n    },\n    {\n      \"name\": \"physics_exam\",\n      \"title\": \"物理\"\n    },\n    {\n      \"name\": \"chemistry_exam\",\n      \"title\": \"化学\"\n    },\n    {\n      \"name\": \"biology_exam\",\n      \"title\": \"生物\"\n    },\n    {\n      \"name\": \"synforscience\",\n      \"title\": \"理综\"\n    },\n    {\n      \"name\": \"politics_exam\",\n      \"title\": \"政治\"\n    },\n    {\n      \"name\": \"history_exam\",\n      \"title\": \"历史\"\n    },\n    {\n      \"name\": \"geography_exam\",\n      \"title\": \"地理\"\n    },\n    {\n      \"name\": \"synforliberalarts\",\n      \"title\": \"文综\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/ExampaperDisciplineKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"ExampaperDisciplineKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-2：英语题目复合形式 EnglishQuestionComboFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishQuestionComboFormatKind\",\n  \"title\": \"英语题型复合类型\",\n  \"literal\": [\n    {\n      \"name\": \"simpleselection\",\n      \"title\": \"单项选择\",\n      \"code\": 1,\n      \"responseFormat\": \"select\"\n    },\n    {\n      \"name\": \"readingcomprehension\",\n      \"title\": \"阅读理解\",\n      \"code\": 2,\n      \"responseFormat\": \"select\"\n    },\n    {\n      \"name\": \"matching\",\n      \"title\": \"信息匹配\",\n      \"code\": 3,\n      \"responseFormat\": \"select\"\n    },\n    {\n      \"name\": \"readwritetask\",\n      \"title\": \"读写任务\",\n      \"code\": 4,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"fillwordinsentence\",\n      \"title\": \"单句填空\",\n      \"code\": 5,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"fillwordintext\",\n      \"title\": \"短文填空\",\n      \"code\": 6,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"textcorrection\",\n      \"title\": \"短文改错\",\n      \"code\": 7,\n      \"responseFormat\": \"writeout\"\n    },\n    {\n      \"name\": \"sentencecorrection\",\n      \"title\": \"单句改错\",\n      \"code\": 8,\n      \"responseFormat\": \"writeout\"\n    },\n    {\n      \"name\": \"phrasetranslation\",\n      \"title\": \"翻译短语\",\n      \"code\": 9,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"patterntransformation\",\n      \"title\": \"句型转换\",\n      \"code\": 10,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"sentencecompletion\",\n      \"title\": \"完成句子\",\n      \"code\": 11,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"sentencetranslation\",\n      \"title\": \"翻译句子\",\n      \"code\": 12,\n      \"responseFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"cloze\",\n      \"title\": \"完形填空\",\n      \"code\": 13,\n      \"responseFormat\": \"select\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-R1-2：英语题目复合形式 EnglishQuestionComboFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/EnglishQuestionComboFormatKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"EnglishQuestionComboFormatKind"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：官僚树内层次枚举Lyrienum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"LyriEnum\",\n  \"title\": \"官僚树外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"super\",\n      \"title\": \"超\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"just\",\n      \"title\": \"恰\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"sub\",\n      \"title\": \"亚\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"infra\",\n      \"title\": \"次\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：官僚树内层次枚举Lyrienum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"LyriEnum\",\n  \"title\": \"官僚树外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"super\",\n      \"title\": \"超\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"just\",\n      \"title\": \"恰\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"sub\",\n      \"title\": \"亚\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"infra\",\n      \"title\": \"次\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/LyriEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"LyriEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 教材体外层次枚举BotLyroEnum",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BotLyroEnum\",\n  \"title\": \"教材体外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"body\",\n      \"title\": \"教材体\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"discipline\",\n      \"title\": \"科目\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"volume\",\n      \"title\": \"教材册\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"chapter\",\n      \"title\": \"教材章\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"section\",\n      \"title\": \"教材节\",\n      \"code\": 5\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 教材体外层次枚举BotLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BotLyroenum\",\n  \"title\": \"教材体外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"chapter\",\n      \"title\": \"教材章\"\n    },\n    {\n      \"name\": \"volume\",\n      \"title\": \"教材册\"\n    },\n    {\n      \"name\": \"discipline\",\n      \"title\": \"教材域/科目\"\n    },\n    {\n      \"name\": \"body\",\n      \"title\": \"教材体\"\n    },\n    {\n      \"name\": \"section\",\n      \"title\": \"教材节\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/BotLyroEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"BotLyroEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 知识体外层次枚举BOKLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BOKLyroEnum\",\n  \"title\": \"知识体外层次枚举\",\n  \n  \"literal\": [\n    \n    {\n      \"name\": \"body\",\n      \"title\": \"知识体\" ,\n      \n      \"code\":1\n    },\n    \n    {\n      \"name\": \"discipline\",\n      \"title\": \"科目\" ,\n      \n      \"code\":2\n    },\n    {\n      \"name\": \"area\",\n      \"title\": \"知识区\",\n      \n      \"code\":3\n    },\n    {\n      \"name\": \"topic\",\n      \"title\": \"知识主题\",\n      \n      \"code\":4\n    },\n    {\n      \"name\": \"point\",\n      \"title\": \"知识点\",\n      \n      \"code\":5\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 知识体外层次枚举BOKLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BOKLyroEnum\",\n  \"title\": \"知识体外层次枚举\",\n  \n  \"literal\": [\n    {\n      \"name\": \"discipline\",\n      \"title\": \"知识域/科目\"\n    },\n    {\n      \"name\": \"area\",\n      \"title\": \"知识区\"\n    },\n    {\n      \"name\": \"topic\",\n      \"title\": \"知识主题\"\n    },\n    {\n      \"name\": \"point\",\n      \"title\": \"知识点\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/BOKLyroEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"BOKLyroEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 官僚树透视层次FlrEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"FlrEnum\",\n  \"title\": \"官僚树内层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"inner\",\n      \"title\": \"内层\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"outer\",\n      \"title\": \"外层\",\n      \"code\": 2\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 官僚树透视层次FlrEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"flrenum\",\n  \"title\": \"官僚树内层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"inner\",\n      \"title\": \"内层\"\n    },\n    {\n      \"name\": \"outer\",\n      \"title\": \"外层\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/FlrEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"FlrEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 问询形式QuestionQueryFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionQueryFormatKind\",\n  \"title\": \"问询形式\",\n  \"literal\": [\n    {\n      \"name\": \"read\",\n      \"title\": \"读文字\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"watch\",\n      \"title\": \"看视频\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"listen\",\n      \"title\": \"听音频\",\n      \"code\": 3\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 问询形式QuestionQueryFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionQueryFormatKind\",\n  \"title\": \"问询形式\",\n  \"literal\": [\n    {\n      \"name\": \"read\",\n      \"title\": \"读文字\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"watch\",\n      \"title\": \"看视频\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"listen\",\n      \"title\": \"听音频\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionQueryFormatKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionQueryFormatKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  作答形式QuestionResponseFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionResponseFormatKind\",\n  \"title\": \"作答形式\",\n  \"literal\": [\n    {\n      \"name\": \"select\",\n      \"title\": \"选择\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"fillin\",\n      \"title\": \"填空\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"writeout\",\n      \"title\": \"解答\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"compose\",\n      \"title\": \"作文\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  作答形式QuestionResponseFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionResponseFormatKind\",\n  \"title\": \"作答形式\",\n  \"literal\": [\n    {\n      \"name\": \"compose\",\n      \"title\": \"作文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"writeout\",\n      \"title\": \"解答\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"fillin\",\n      \"title\": \"填空\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"select\",\n      \"title\": \"选择\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionResponseFormatKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionResponseFormatKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目审查偏型CheckStatusEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"CheckStatusEnum\",\n  \"title\": \"题目审查状态\",\n  \"literal\": [\n    {\n      \"name\": \"OPEN\",\n      \"title\": \"未处理\",\n      \"code\": 100\n    },\n    {\n      \"name\": \"PROCESSED\",\n      \"title\": \"已处理\",\n      \"code\": 200\n    },\n    {\n      \"name\": \"PASSED\",\n      \"title\": \"通过\",\n      \"code\": 210\n    },\n    {\n      \"name\": \"DENIED\",\n      \"title\": \"拒绝\",\n      \"code\": 220\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目审查偏型CheckStatusEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"checkstatusenum\",\n  \"title\": \"题目审查偏型\",\n  \"literal\": [\n    {\n      \"name\": \"OPEN\",\n      \"title\": \"未处理\",\n      \"code\": 0\n    },\n    {\n      \"name\": \"PASSED\",\n      \"title\": \"通过\",\n      \"code\": 100\n    },\n    {\n      \"name\": \"DENIED\",\n      \"title\": \"拒绝\",\n      \"code\": 200\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/CheckStatusEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"CheckStatusEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目难度QuestionDifficultyKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionDifficultyKind\",\n  \"title\": \"题目难度\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"5\",\n      \"title\": \"困难\",\n      \"code\": 5\n    },\n    {\n      \"name\": \"4\",\n      \"title\": \"较难\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"3\",\n      \"title\": \"中\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"2\",\n      \"title\": \"较易\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"1\",\n      \"title\": \"容易\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目难度QuestionDifficultyKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"questiondifficultykind\",\n  \"title\": \"题目难度\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"5\",\n      \"title\": \"困难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"4\",\n      \"title\": \"较难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"3\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"2\",\n      \"title\": \"较易\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"1\",\n      \"title\": \"容易\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionDifficultyKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionDifficultyKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语复合教育目标种类QuestionEnglishComboObjectiveKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionEnglishComboObjectiveKind\",\n  \"title\": \"英语复合教育目标种类\",\n  \"literal\": [\n    {\n      \"name\": \"vocabulary\",\n      \"title\": \"词汇\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"grammar\",\n      \"title\": \"语法\",\n      \"code\": 2\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语复合教育目标种类QuestionEnglishComboObjectiveKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionEnglishComboObjectiveKind\",\n  \"title\": \"英语复合教育目标种类\",\n  \"literal\": [\n    {\n      \"name\": \"vocabulary\",\n      \"title\": \"词汇\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"grammar\",\n      \"title\": \"语法\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionEnglishComboObjectiveKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionEnglishComboObjectiveKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-#：题目材料类型QuestionMaterialKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialKind\",\n  \"title\": \"英语材料类型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"questionMateriaKind_1\",\n      \"title\": \"广告通知类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_2\",\n      \"title\": \"叙事类\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"questinMateriaKind_3\",\n      \"title\": \"说明议论类\",\n      \"code\":3\n    },\n    {\n      \"name\": \"questionMateriaKind_4\",\n      \"title\": \"对话类\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"questionMateriaKind_5\",\n      \"title\": \"说明文\",\n      \"code\": 5\n    },\n    {\n      \"name\": \"questionMateriaKind_6\",\n      \"title\": \"记叙文\",\n      \"code\": 6\n    },\n    {\n      \"name\": \"questionMateriaKind_7\",\n      \"title\": \"议论文\",\n      \"code\": 7\n    },\n    {\n      \"name\": \"questionMateriaKind_8\",\n      \"title\": \"夹叙夹议\",\n      \"code\": 8\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-#：题目材料类型QuestionMaterialKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialKind\",\n  \"title\": \"英语重要题型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"questionMateriaKind_1\",\n      \"title\": \"广告通知类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_2\",\n      \"title\": \"叙事类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questinMateriaKind_3\",\n      \"title\": \"说明议论类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_4\",\n      \"title\": \"对话类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_5\",\n      \"title\": \"说明文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_6\",\n      \"title\": \"记叙文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_7\",\n      \"title\": \"议论文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_8\",\n      \"title\": \"夹叙夹议\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionMaterialKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionMaterialKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度QuestionMaterialLengthDeg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialLengthDeg\",\n  \"title\": \"题目材料长度\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"短\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"中\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"中长\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"长\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度QuestionMaterialLengthDeg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialLengthDeg\",\n  \"title\": \"题型长度\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"短\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"中长\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"长\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionMaterialLengthDeg",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionMaterialLengthDeg"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题源类型QuestionSourceKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceKind\",\n  \"title\": \"题源类型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"FromPast\",\n      \"code\": 1,\n      \"title\": \"高考真题\"\n    },\n    {\n      \"name\": \"FromExercise\",\n      \"code\": 2,\n      \"title\": \"同步练习\"\n    },\n    {\n      \"name\": \"FromSimulation\",\n      \"code\": 3,\n      \"title\": \"复习模拟\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题源类型QuestionSourceKind copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"questionsourcekind\",\n  \"title\": \"题源类型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"FromPast\",\n      \"code\": 1,\n      \"title\": \"高考真题\"\n    },\n    {\n      \"name\": \"FromExercise\",\n      \"code\": 2,\n      \"title\": \"同步练习\"\n    },\n    {\n      \"name\": \"FromSimulation\",\n      \"code\": 2,\n      \"title\": \"复习模拟\"\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionSourceKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionSourceKind"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目来源地区枚举QuestionSourceLocaEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"QuestionSourceLocaEnum\",\n    \"title\": \"题目来源地区枚举\",\n    \"literal\": [\n        {\n            \"name\": \"jiangsu1\",\n            \"title\": \"江苏1卷\",\n            \"code\": 2\n        },\n        {\n            \"name\": \"countrywide1\",\n            \"title\": \"全国1卷\",\n            \n            \"code\": 1\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目来源地区枚举QuestionSourceLocaEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"QuestionSourceLocaEnum\",\n  \"title\":\"题目来源地区枚举\",\n  \"literal\": [\n    { \"name\": \"全国\", \"code\": 1, \"title\":\"全国\"},\n    {\n  \"name\":\"jiangsu1\" ,\n  \"title\":\"江苏1卷\",\n  \"code\":1\n},\n{\n  \"name\":\"countrywide1\" ,\n  \"title\":\"全国1卷\",\n  \"code\":1\n}\n  ]\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionSourceLocaEnum",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionSourceLocaEnum"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-#:    题源时间枚举 QuestionSourceTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceTime\",\n  \"title\": \"题时间\",\n  \"literal\": [\n    {\n      \"name\": \"2000\",\n      \"title\": \"题源时间\",\n      \"code\": 2000\n    },\n    {\n      \"name\": \"2001\",\n      \"title\": \"题源时间\",\n      \"code\": 2001\n    },\n    {\n      \"name\": \"2002\",\n      \"title\": \"题源时间\",\n      \"code\": 2002\n    },\n    {\n      \"name\": \"2003\",\n      \"title\": \"题源时间\",\n      \"code\": 2003\n    },\n    {\n      \"name\": \"2004\",\n      \"title\": \"题源时间\",\n      \"code\": 2004\n    },\n    {\n      \"name\": \"2005\",\n      \"title\": \"题源时间\",\n      \"code\": 2005\n    },\n    {\n      \"name\": \"2006\",\n      \"title\": \"题源时间\",\n      \"code\": 2006\n    },\n    {\n      \"name\": \"2007\",\n      \"title\": \"题源时间\",\n      \"code\": 2007\n    },\n    {\n      \"name\": \"2008\",\n      \"title\": \"题源时间\",\n      \"code\": 2008\n    },\n    {\n      \"name\": \"2009\",\n      \"title\": \"题源时间\",\n      \"code\": 2009\n    },\n    {\n      \"name\": \"2010\",\n      \"title\": \"题源时间\",\n      \"code\": 2010\n    },\n    {\n      \"name\": \"2011\",\n      \"title\": \"题源时间\",\n      \"code\": 2011\n    },\n    {\n      \"name\": \"2012\",\n      \"title\": \"题源时间\",\n      \"code\": 2012\n    },\n    {\n      \"name\": \"2013\",\n      \"title\": \"题源时间\",\n      \"code\": 2013\n    },\n    {\n      \"name\": \"2014\",\n      \"title\": \"题源时间\",\n      \"code\": 2014\n    },\n    {\n      \"name\": \"2015\",\n      \"title\": \"题源时间\",\n      \"code\": 2015\n    },\n    {\n      \"name\": \"2016\",\n      \"title\": \"题源时间\",\n      \"code\": 2016\n    },\n    {\n      \"name\": \"2017\",\n      \"title\": \"题源时间\",\n      \"code\": 2017\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-#:   题源时间枚举 QuestionSourceTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceTime\",\n  \"title\": \"题时间\",\n  \"literal\": [\n    {\n      \"name\": \"2000\",\n      \"title\": \"题源时间\",\n      \"code\": 2000\n    },\n    {\n      \"name\": \"2001\",\n      \"title\": \"题源时间\",\n      \"code\": 2001\n    },\n    {\n      \"name\": \"2002\",\n      \"title\": \"题源时间\",\n      \"code\": 2002\n    },\n    {\n      \"name\": \"2003\",\n      \"title\": \"题源时间\",\n      \"code\": 2003\n    },\n    {\n      \"name\": \"2004\",\n      \"title\": \"题源时间\",\n      \"code\": 2004\n    },\n    {\n      \"name\": \"2005\",\n      \"title\": \"题源时间\",\n      \"code\": 2005\n    },\n    {\n      \"name\": \"2006\",\n      \"title\": \"题源时间\",\n      \"code\": 2006\n    },\n    {\n      \"name\": \"2007\",\n      \"title\": \"题源时间\",\n      \"code\": 2007\n    },\n    {\n      \"name\": \"2008\",\n      \"title\": \"题源时间\",\n      \"code\": 2008\n    },\n    {\n      \"name\": \"2009\",\n      \"title\": \"题源时间\",\n      \"code\": 2009\n    },\n    {\n      \"name\": \"2010\",\n      \"title\": \"题源时间\",\n      \"code\": 2010\n    },\n    {\n      \"name\": \"2011\",\n      \"title\": \"题源时间\",\n      \"code\": 2011\n    },\n    {\n      \"name\": \"2012\",\n      \"title\": \"题源时间\",\n      \"code\": 2012\n    },\n    {\n      \"name\": \"2013\",\n      \"title\": \"题源时间\",\n      \"code\": 2013\n    },\n    {\n      \"name\": \"2014\",\n      \"title\": \"题源时间\",\n      \"code\": 2014\n    },\n    {\n      \"name\": \"2015\",\n      \"title\": \"题源时间\",\n      \"code\": 2015\n    },\n    {\n      \"name\": \"2016\",\n      \"title\": \"题源时间\",\n      \"code\": 2016\n    },\n    {\n      \"name\": \"2017\",\n      \"title\": \"题源时间\",\n      \"code\": 2017\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionSourceTime",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionSourceTime"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度（英语阅读理解）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishReadingComprehensionMaterialLengthDeg\",\n  \"title\": \"英语阅读理解材料长度等级\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"330-\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"330～410\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"410～480\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"480+\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度（英语信息匹配）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishMatchingMaterialLengthDeg\",\n  \"title\": \"英语信息匹配材料长度等级\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"280-\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"280～310\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"310～370\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"370+\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度（英语完形填空）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishClozeMaterialLengthDeg\",\n  \"title\": \"英语完形填空材料长度等级\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"290-\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"290～320\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"320～360\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"360+\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目材料长度（英语读写任务）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishReadWriteTaskMaterialLengthDeg\",\n  \"title\": \"英语信息读写任务长度等级\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"330-\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"330～410\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"410～480\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"480+\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "教材体及其节点(BOT*)",
+			"description": "",
+			"item": [
+				{
+					"name": "教材体-C1-1：17通用版教材体（含所有层次节点）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"bot-std-17\",\n  \"title\": \"17通用高中教材体树\",\n  \"description\": \"教材体的17通用版本树\",\n  \"edition\": \"std-17\",\n  \n  \n  \"root\": {\n    \"koLyro\": \"body\",\n    \"koLyri\": \"just\",\n    \"name\": \"highschooltextbook\",\n    \"title\": \"高中教材\",\n    \"description\": \"\",\n    \"son\": [\n      {\n        \"koLyro\": \"discipline\",\n        \n        \"koLyri\": \"just\",\n        \"name\": \"english\",\n        \n        \"title\": \"英语\",\n        \n        \"description\": \"\",\n        \n        \"son\":[\n          {\n            \"koLyro\": \"volume\",\n            \"koLyri\": \"just\",\n            \"title\":\"高一\",\n            \"name\":\"hs1\",\n            \"description\": \"\"\n          },\n          {\n            \"koLyro\": \"volume\",\n            \"koLyri\": \"just\",\n            \"title\":\"hs2\",\n            \"name\":\"高二\",\n            \"description\": \"\"\n          }\n        ]\n      },\n      {\n        \"koLyro\": \"discipline\",\n        \"koLyri\": \"just\",\n        \"name\": \"math\",\n        \"title\": \"数学\",\n        \"description\": \"\",\n        \"son\": [\n          {\n            \"koLyro\": \"volume\",\n            \"koLyri\": \"just\",\n            \"title\":\"必修1\",\n            \"name\":\"requiredCourse1\",\n            \"description\": \"\",\n            \"son\": [\n              {\n                \"koLyro\": \"chapter\",\n                \"koLyri\": \"just\",\n                \"title\":\"第一章 \",\n                \"name\":\"chapter1\",\n                \"description\": \"\",\n                \"son\": [\n                  {\n                    \"koLyro\": \"section\",\n                    \"koLyri\": \"just\",\n                    \"title\":\"1.1 \",\n                    \"name\":\"1.1\",\n                    \"description\": \"\"\n                  }\n                ]  \n              }\n            ]\n          },\n          {\n            \"koLyro\": \"volume\",\n            \"koLyri\": \"just\",\n            \"title\":\"必修2\",\n            \"name\":\"requiredCourse2\",\n            \"description\": \"\",\n            \"son\": [\n              {\n                \"koLyro\": \"chapter\",\n                \"koLyri\": \"just\",\n                \"title\":\"第一章 \",\n                \"name\":\"chapter1\",\n                \"description\": \"\",\n                \"son\": [\n                  {\n                    \"koLyro\": \"section\",\n                    \"koLyri\": \"just\",\n                    \"title\":\"1.1 \",\n                    \"name\":\"1.1\",\n                    \"description\": \"\"\n                  }\n                ]  \n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-trees/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-trees",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*-0：获取所有BOTN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*-1：获取std-17版教材体的所有BOTN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/?where={\"edition\": \"std-17\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"edition\": \"std-17\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*-2：获取某节点的sonern节点",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/<id>/sonern",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								"<id>",
+								"sonern"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-D*：删除所有BOTN",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*：获取std-17版数学的册",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/?where={\"edition\": \"std-17\",\"discipline\":\"数学\",\"koLyro\":\"volume\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"edition\": \"std-17\",\"discipline\":\"数学\",\"koLyro\":\"volume\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-D*：删除所有BOTT",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-trees/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-trees",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "知识体及其节点(BOK*)",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "题目统计(QuestionSummation)",
+			"description": "",
+			"item": [
+				{
+					"name": "题目状态分布统计-R1-1：获取数学某章节中题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-summations/tagged-checked-all/?scope={\"discipline\":\"math\",\"botn\": \"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-summations",
+								"tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"math\",\"botn\": \"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：英语某册下完形填空复合形式的题目对于三条件的统计",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-summations/tagged-checked-all/?scope={\"koDiscipline\":\"english\",\"volume\": \"高一\",\"comboFormat\":\"Cloze\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-summations",
+								"tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"koDiscipline\":\"english\",\"volume\": \"高一\",\"comboFormat\":\"Cloze\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：批量获取数学一系列章节中题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/core/question-summations/batch-tagged-checked-all/?scope={\"discipline\":\"math\"}&sonern-section-of=botn-id",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"core",
+								"question-summations",
+								"batch-tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"math\"}",
+									"equals": true
+								},
+								{
+									"key": "sonern-section-of",
+									"value": "botn-id",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "388c90d5-e689-4e37-8677-4020cb49530a",
+							"name": "题目状态分布统计-R1-1：批量获取数学一系列章节中题目的分布",
+							"originalRequest": {
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n    \"第一章 牛顿力学\": {\n    \t\"id\": 111111,\n    \t\"titile\": \"第一章 牛顿力学\",\n        \"count\": 1,\n        \"summations\": [\n            {\n                \"criteria\": \"tagged\",\n                \"count\": 1\n            },\n            {\n                \"criteria\": \"checked\",\n                \"count\": 1\n            },\n            {\n                \"criteria\": \"all\",\n                \"count\": 1\n            }\n        ]\n    },    \n    \"第二章 牛顿力学\": {\n    \t\"id\": 111111,\n    \t\"titile\": \"第二章 牛顿力学\",\n        \"count\": 1,\n        \"summations\": [\n            {\n                \"criteria\": \"tagged\",\n                \"count\": 1\n            },\n            {\n                \"criteria\": \"checked\",\n                \"count\": 1\n            },\n            {\n                \"criteria\": \"all\",\n                \"count\": 1\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "题目状态分布统计-R1-1：批量获取英语某册下各复合形式的题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/core/question-summations/batch-tagged-checked-all/?scope={\"discipline\":\"english\",\"volume\": \"高一\"}&perComboFormat=true",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"core",
+								"question-summations",
+								"batch-tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"english\",\"volume\": \"高一\"}",
+									"equals": true
+								},
+								{
+									"key": "perComboFormat",
+									"value": "true",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "题目划分(QuestionPartition)",
+			"description": "",
+			"item": [
+				{
+					"name": "题目划分-R1-1：英语完形填空复合类型的题目在长度等级款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-material-kind/?scope={\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-material-kind",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目划分-R1-1：英语完形填空复合类型的题目在多维款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-multi-dimension/?scope={\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-multi-dimension",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目划分-R1-1：数学某节的题目在难度等级款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-difficulty/?scope={\"discipline\":\"math\", \"section\":\"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-difficulty",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"math\", \"section\":\"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目划分-R1-1：数学某节的题目在多维款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-multi-dimension/?scope={\"koDiscipline\":\"math\", \"section\":\"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-multi-dimension",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"koDiscipline\":\"math\", \"section\":\"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": [
+						{
+							"id": "7c090c9d-d778-4456-af5c-c0b7f84575cf",
+							"name": "题目划分-R1-1：数学某节的题目在多维款型上的划分",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-multi-dimension/?scope={\"discipline\":\"math\", \"section\":\"botn-id\"}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"question-partitions",
+										"by-multi-dimension",
+										""
+									],
+									"query": [
+										{
+											"key": "scope",
+											"value": "{\"discipline\":\"math\", \"section\":\"botn-id\"}",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n    \"count\": 0,\n    \"partition\": [\n        {\n            \"summations\": [\n                {\n                    \"name\": \"compose\",\n                    \"code\": 1,\n                    \"title\": \"作文\"\n                },\n                {\n                    \"name\": \"writeout\",\n                    \"code\": 1,\n                    \"title\": \"解答\"\n                },\n                {\n                    \"name\": \"fillin\",\n                    \"code\": 1,\n                    \"title\": \"填空\"\n                },\n                {\n                    \"name\": \"select\",\n                    \"code\": 1,\n                    \"title\": \"选择\"\n                }\n            ],\n            \"by\": \"QuestionResponseFormatKind\"\n        },\n        {\n            \"summations\": [\n                {\n                    \"name\": \"5\",\n                    \"code\": 5,\n                    \"title\": \"困难\"\n                },\n                {\n                    \"name\": \"4\",\n                    \"code\": 4,\n                    \"title\": \"较难\"\n                },\n                {\n                    \"name\": \"3\",\n                    \"code\": 3,\n                    \"title\": \"中\"\n                },\n                {\n                    \"name\": \"2\",\n                    \"code\": 2,\n                    \"title\": \"较易\"\n                },\n                {\n                    \"name\": \"1\",\n                    \"code\": 1,\n                    \"title\": \"容易\"\n                }\n            ],\n            \"by\": \"QuestionDifficultyKind\"\n        },\n        {\n            \"summations\": [\n                {\n                    \"name\": \"FromPast\",\n                    \"code\": 1,\n                    \"title\": \"高考真题\"\n                },\n                {\n                    \"name\": \"FromExercise\",\n                    \"code\": 2,\n                    \"title\": \"同步练习\"\n                },\n                {\n                    \"name\": \"FromSimulation\",\n                    \"code\": 3,\n                    \"title\": \"复习模拟\"\n                }\n            ],\n            \"by\": \"QuestionSourceKind\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "属性集PropertySet (TODO)",
+			"description": "",
+			"item": [
+				{
+					"name": "属性集-C1-1：题目基本标签math",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"math\",\n  \"title\": \"数学题基本标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"responseFormat\",\n      \"type\": {\n        \"name\": \"QuestionResponseFormatKind\",\n        \"literal\":[\n        ],\n        \"edit\":\"check-tag\"\n      }\n    },\n    {\n      \"name\": \"sourceKind\",\n      \"type\": {\n        \"name\": \"QuestionSourceKind\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceTime\",\n      \"type\": {\n        \"name\": \"QuestionSourceTimeEnum\",\n        \"literal\":[\n        ],\n        \"edit\":\"dropdown\"\n      }\n    },\n    {\n      \"name\": \"sourceArea\",\n      \"type\": {\n        \"name\": \"QuestionSourceLocaEnum\",\n        \"literal\":[\n        ]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目基本标签english",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"english\",\n  \"title\": \"英语完形填空基本标签\",\n  \"description\": \"sourceKind在录题界面，是固定的，因为教材会决定这个值.所有的复合形式的基本标签是一致的.\",\n  \"properties\": [\n    {\n      \"name\": \"sourceKind\",\n      \"type\": {\n        \"name\": \"QuestionSourceKind\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceTime\",\n      \"type\": {\n        \"name\": \"QuestionSourceTimeEnum\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceArea\",\n      \"type\": {\n        \"name\": \"QuestionSourceLocaEnum\",\n        \"literal\":[\n        ]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-R*-0：题目基本标签",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"math\",\n  \"title\": \"数学题基本标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"responseFormat\",\n      \"type\": {\n        \"name\": \"QuestionResponseFormatKind\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceKind\",\n      \"type\": {\n        \"name\": \"QuestionSourceKind\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceTime\",\n      \"type\": {\n        \"name\": \"QuestionSourceTimeEnum\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"sourceArea\",\n      \"type\": {\n        \"name\": \"QuestionSourceLocaEnum\",\n        \"literal\":[\n        ]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目高级标签math",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"name\":\"math\",\n  \"title\": \"数学题高级标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"difficulty\",\n      \"type\": {\n        \"name\": \"QuestionDifficultyKind\",\n        \"literal\":[\n        ]\n      }\n    },\n    {\n      \"name\": \"botnCat\",\n      \"type\": {\n        \"name\": \"BOTN\",\n        \"description\":\"这个标签的查看编辑界面是复杂的自定义控件\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-advanced-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-advanced-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目高级标签english-cloze",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"english-cloze\",\n  \"title\": \"英语完型填空高级标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"koMaterial\",\n      \"type\": {\n        \"name\": \"QuestionMaterialKind\",\n        \"literal\": []\n      }\n    },\n    {\n      \"name\": \"materialLengthDeg\",\n      \"type\": {\n  \"name\": \"EnglishMatchingMaterialLengthDeg\",\n  \"title\": \"英语信息匹配材料长度等级\",\n  \n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"280-\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"280～310\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"310～370\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"370+\",\n      \"code\": 4\n    }\n  ]\n}\n    },\n    {\n      \"optionCount\":7\n      \n      }\n    \n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-advanced-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-advanced-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-#：题目基本标签QuestionFoEnglishMatching",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionFoEnglishMatching\",\n  \"title\": \"英语信息匹配基本标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"koComboFormat\": \"Matching\"\n    },\n    {\n      \"koDiscipline\": \"English\"\n    },\n    {\n      \"name\": \"responseFormat\",\n      \"type\": {\n        \"name\": \"QuestionResponseFormatKind\",\n        \"title\": \"作答形式\",\n        \"literal\": [\n          {\n            \"name\": \"select\",\n            \"title\": \"选择\",\n            \"code\": 2\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"materialKind\",\n      \"type\": {\n        \"name\": \"QuestionMaterialKind\",\n        \"title\": \"英语材料类型\",\n        \"literal\": [\n          {\n            \"name\": \"questionMateriaKind\",\n            \"title\": \"广告通知类\",\n            \"code\": 1\n          },\n          {\n            \"name\": \"questionMateriaKind\",\n            \"title\": \"叙事类\",\n            \"code\": 2\n          },\n          {\n            \"name\": \"questinMateriaKind\",\n            \"title\": \"说明议论类\",\n            \"code\": 3\n          },\n          {\n            \"name\": \"questionMateriaKind\",\n            \"title\": \"对话类\",\n            \"code\": 4\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"materialLengthDeg\",\n      \"type\": {\n        \"name\": \"materialLengthDeg\",\n        \"type\": {\n          \"name\": \"EnglishMatchingMaterialLengthDeg\",\n          \"title\": \"英语信息匹配材料长度等级\",\n          \"literal\": [\n            {\n              \"name\": \"short\",\n              \"title\": \"280-\",\n              \"code\": 1\n            },\n            {\n              \"name\": \"middle\",\n              \"title\": \"280～310\",\n              \"code\": 2\n            },\n            {\n              \"name\": \"middellong\",\n              \"title\": \"310～370\",\n              \"code\": 3\n            },\n            {\n              \"name\": \"long\",\n              \"title\": \"370+\",\n              \"code\": 4\n            }\n          ]\n        }\n      }\n    },\n    {\n      \"optionCount\": 7\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目基本标签QuestionFoEnglishCloze",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionFoEnglishCloze\",\n  \"title\": \"英语完形填空基本标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"responseFormat\",\n      \"type\": {\n        \"name\": \"QuestionResponseFormatKind\",\n        \"title\": \"作答形式\",\n        \"literal\": [\n          {\n            \"name\": \"select\",\n            \"title\": \"选择\",\n            \"code\": 1\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"koMaterial\",\n      \"type\": {\n        \"name\": \"QuestionMaterialKind\",\n        \"title\": \"英语材料类型\",\n        \"literal\": [\n       \n        \n\n          {\n            \"name\": \"questionMateriaKind_5\",\n            \"title\": \"说明文\",\n            \"code\": 1\n          },\n          {\n            \"name\": \"questionMateriaKind_6\",\n            \"title\": \"记叙文\",\n            \"code\": 2\n          },\n          {\n            \"name\": \"questionMateriaKind_7\",\n            \"title\": \"议论文\",\n            \"code\": 3\n          },\n          {\n            \"name\": \"questionMateriaKind_8\",\n            \"title\": \"夹叙夹议\",\n            \"code\": 4\n          }\n        ]\n      }\n    },\n    {\n      \"name\": \"materialLengthDeg\",\n      \"type\": {\n        \"name\": \"QuestionMaterialLengthDeg\",\n        \"title\": \"题目材料长度\",\n        \"literal\": [\n          {\n            \"name\": \"short\",\n            \"title\": \"短\",\n            \"code\": 1\n          },\n          {\n            \"name\": \"middle\",\n            \"title\": \"中\",\n            \"code\": 2\n          },\n          {\n            \"name\": \"middellong\",\n            \"title\": \"中长\",\n            \"code\": 3\n          },\n          {\n            \"name\": \"long\",\n            \"title\": \"长\",\n            \"code\": 4\n          }\n        ]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "用户User",
+			"description": "",
+			"item": [
+				{
+					"name": "用户-C*-0：批量增加用户",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-RS-BULK",
+								"value": "*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n\t{\n\t  \"name\":\"陈老师\",\n\t  \"description\": \"学科管理员\",\n\t  \"active\": true,\n\t  \"role\":[\"xk-admin\"],\n\t  \"primaryRole\": \"xk-admin\",\n\t  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n\t  \"primaryDiscipline\": \"english\"\n\t},\n\t{\n\t  \"name\":\"褚老师\",\n\t  \"description\": \"学科负责人\",\n\t  \"active\": true,\n\t  \"role\":[\"xk-subadmin\"],\n\t  \"primaryRole\": \"xk-subadmin\",\n\t  \"discipline\": [\"english\"],\n\t  \"primaryDiscipline\": \"english\"\n\t}\n]"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(赵老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"赵老师\",\n  \"description\": \"学科管理员\",\n  \"active\": true,\n  \"role\":[\"xk-admin\"],\n  \"primaryRole\": \"xk-admin\",\n  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(钱老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"钱老师\",\n  \"description\": \"学科负责人\",\n  \"active\": true,\n  \"role\":[\"xk-subadmin\"],\n  \"primaryRole\": \"xk-subadmin\",\n  \"discipline\": [\"english\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(孙老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"孙老师\",\n  \"description\": \"学科负责人\",\n  \"active\": true,\n  \"role\":[\"xk-subadmin\"],\n  \"primaryRole\": \"xk-subadmin\",\n  \"discipline\": [\"math\"],\n  \"primaryDiscipline\": \"math\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(李老师) ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"李老师\",\n  \"description\": \"学科资源库打标员\",\n  \"active\": true,\n  \"role\":[\"xk-cb-tagist\"],\n  \"primaryRole\": \"xk-cb-tagist\",\n  \"discipline\": [\"english\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(周老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"周老师\",\n  \"description\": \"学科资源库打标员\",\n  \"active\": true,\n  \"role\":[\"xk-cb-tagist\"],\n  \"primaryRole\": \"xk-cb-tagist\",\n  \"discipline\": [\"math\"],\n  \"primaryDiscipline\": \"math\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(吴老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"吴老师\",\n  \"description\": \"学科资源录题员\",\n  \"active\": true,\n  \"role\":[\"xk-cb-typist\"],\n  \"primaryRole\": \"xk-cb-typist\",\n  \"discipline\": [\"english\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(郑老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"郑老师\",\n  \"description\": \"学科资源录题员\",\n  \"active\": true,\n  \"role\":[\"xk-cb-typist\"],\n  \"primaryRole\": \"xk-cb-typist\",\n  \"discipline\": [\"math\"],\n  \"primaryDiscipline\": \"math\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(王老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"王老师\",\n  \"description\": \"学科校本库打标员\",\n  \"active\": true,\n  \"role\":[\"xk-sb-tagist\"],\n  \"primaryRole\": \"xk-sb-tagist\",\n  \"discipline\": [\"english\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "用户-C1-0：增加用户(冯老师)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"冯老师\",\n  \"description\": \"学科校本库打标员\",\n  \"active\": true,\n  \"role\":[\"xk-sb-tagist\"],\n  \"primaryRole\": \"xk-sb-tagist\",\n  \"discipline\": [\"math\"],\n  \"primaryDiscipline\": \"math\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-0：查看所有用户",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "7a9a545e-880a-431d-ac0b-bdc8115fe97e",
+							"name": "题目-R*-0：查看所有用户",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/users/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\n\t\"items\":[\n\t\t{\n\t\t  \"name\":\"赵老师\",\n\t\t  \"description\": \"学科管理员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-admin\"],\n\t\t  \"primaryRole\": \"xk-admin\",\n\t\t  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"钱老师\",\n\t\t  \"description\": \"学科负责人\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-subadmin\"],\n\t\t  \"primaryRole\": \"xk-subadmin\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"吴老师\",\n\t\t  \"description\": \"学科资源录题员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-cb-typist\"],\n\t\t  \"primaryRole\": \"xk-cb-typist\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t}\n\t]\n}\n\n\n"
+						}
+					]
+				},
+				{
+					"name": "题目-U1-0：更改新用户的其名（然后删除之）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/users/{{new-id}}\",",
+									"        \"method\": \"DELETE\"",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"    }",
+									");"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"new-id\");",
+									"",
+									"",
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/users/\",",
+									"        \"method\": \"POST\",",
+									"        \"body\": {",
+									"              \"name\":\"待改名\",",
+									"              \"description\": \"学科校本库打标员\",",
+									"              \"active\": true,",
+									"              \"role\":[\"xk-sb-tagist\"],",
+									"              \"primaryRole\": \"xk-sb-tagist\",",
+									"              \"discipline\": [\"math\"],",
+									"              \"primaryDiscipline\": \"math\"",
+									"        }",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"        var jsonData = response.json();",
+									"        pm.globals.set(\"new-id\", jsonData._id);",
+									"    }",
+									");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"新名字\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/{{new-id}}/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"{{new-id}}",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "fe290f1f-601a-42d1-ab97-49aa6ee86bad",
+							"name": "题目-R*-0：查看所有用户",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/users/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\n\t\"items\":[\n\t\t{\n\t\t  \"name\":\"赵老师\",\n\t\t  \"description\": \"学科管理员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-admin\"],\n\t\t  \"primaryRole\": \"xk-admin\",\n\t\t  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"钱老师\",\n\t\t  \"description\": \"学科负责人\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-subadmin\"],\n\t\t  \"primaryRole\": \"xk-subadmin\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"吴老师\",\n\t\t  \"description\": \"学科资源录题员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-cb-typist\"],\n\t\t  \"primaryRole\": \"xk-cb-typist\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t}\n\t]\n}\n\n\n"
+						}
+					]
+				},
+				{
+					"name": "题目-U1-1：更改新用户的密码（然后删除之）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/users/{{new-id}}\",",
+									"        \"method\": \"DELETE\"",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"    }",
+									");"
+								]
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"new-id\");",
+									"",
+									"",
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/users/\",",
+									"        \"method\": \"POST\",",
+									"        \"body\": {",
+									"              \"name\":\"诸葛孔明\",",
+									"              \"description\": \"学科校本库打标员\",",
+									"              \"active\": true,",
+									"              \"role\":[\"xk-sb-tagist\"],",
+									"              \"primaryRole\": \"xk-sb-tagist\",",
+									"              \"discipline\": [\"math\"],",
+									"              \"primaryDiscipline\": \"math\"",
+									"        }",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"        var jsonData = response.json();",
+									"        pm.globals.set(\"new-id\", jsonData._id);",
+									"    }",
+									");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"passwd\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/{{new-id}}/passwd/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"{{new-id}}",
+								"passwd",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "642edfb7-f7f8-482c-8268-7d6603d4bdb9",
+							"name": "题目-R*-0：查看所有用户",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/users/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\n\t\"items\":[\n\t\t{\n\t\t  \"name\":\"赵老师\",\n\t\t  \"description\": \"学科管理员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-admin\"],\n\t\t  \"primaryRole\": \"xk-admin\",\n\t\t  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"钱老师\",\n\t\t  \"description\": \"学科负责人\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-subadmin\"],\n\t\t  \"primaryRole\": \"xk-subadmin\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"吴老师\",\n\t\t  \"description\": \"学科资源录题员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-cb-typist\"],\n\t\t  \"primaryRole\": \"xk-cb-typist\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t}\n\t]\n}\n\n\n"
+						}
+					]
+				},
+				{
+					"name": "题目-D*-0：删除所有用户",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-D1-1：新增然后删除一个用户",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"new-id\");",
+									"",
+									"",
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/users/\",",
+									"        \"method\": \"POST\",",
+									"        \"body\": {",
+									"              \"name\":\"冯老师\",",
+									"              \"description\": \"学科校本库打标员\",",
+									"              \"active\": true,",
+									"              \"role\":[\"xk-sb-tagist\"],",
+									"              \"primaryRole\": \"xk-sb-tagist\",",
+									"              \"discipline\": [\"math\"],",
+									"              \"primaryDiscipline\": \"math\"",
+									"        }",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"        var jsonData = response.json();",
+									"        pm.globals.set(\"new-id\", jsonData._id);",
+									"    }",
+									");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/{{new-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								"{{new-id}}"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "角色Role",
+			"description": "",
+			"item": [
+				{
+					"name": "角色-C1-0：增加角色(学科管理员)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"xk-admin\",\n  \"title\": \"学科管理员\",\n  \"description\": \"学科管理员能管理所有学科的所有事物\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-C1-0：增加角色(学科负责人)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"xk-subadmin\",\n  \"title\": \"学科负责人\",\n  \"description\": \"学科负责人管理某个单个学科的所有事物\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-C1-0：增加角色(学科资源库打标员)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"xk-cb-tagist\",\n  \"title\": \"学科资源库打标员\",\n  \"description\": \"学科资源库打标员，可以对某单个学科的题目进行达标操作\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-C1-0：增加角色(学科资源库录题员)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"xk-cb-tagist\",\n  \"title\": \"学科资源库录题员\",\n  \"description\": \"学科资源库录题员，可以对某单个学科的题目进行录入\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-C1-0：增加角色(学科校本库打标员)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"xk-sb-tagist\",\n  \"title\": \"学科校本库打标员\",\n  \"description\": \"学科校本库打标员，可以对校本中某单个学科的题目进行打标\",\n  \"default-home\": \"#/xk/exam-srv/exams/\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-C1-0：增加角色(超级管理员)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"superadmin\",\n  \"title\": \"超级管理员\",\n  \"description\": \"超级管理员，可以对本系统/系统联邦进行管理操作\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "角色-R*-0：查看所有角色",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "a657031c-8752-410c-88be-bed4ca047179",
+							"name": "题目-R*-0：查看所有用户",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/users/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"users",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\n\t\"items\":[\n\t\t{\n\t\t  \"name\":\"赵老师\",\n\t\t  \"description\": \"学科管理员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-admin\"],\n\t\t  \"primaryRole\": \"xk-admin\",\n\t\t  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"钱老师\",\n\t\t  \"description\": \"学科负责人\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-subadmin\"],\n\t\t  \"primaryRole\": \"xk-subadmin\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t},\n\t\t{\n\t\t  \"name\":\"吴老师\",\n\t\t  \"description\": \"学科资源录题员\",\n\t\t  \"active\": true,\n\t\t  \"role\":[\"xk-cb-typist\"],\n\t\t  \"primaryRole\": \"xk-cb-typist\",\n\t\t  \"discipline\": [\"english\"],\n\t\t  \"primaryDiscipline\": \"english\"\n\t\t}\n\t]\n}\n\n\n"
+						}
+					]
+				},
+				{
+					"name": "角色-D*-0：删除所有角色",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "角色-D1-1：删除新增的角色",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"new-id\");",
+									"",
+									"",
+									"pm.sendRequest(",
+									"    {",
+									"        \"url\": \"{{host}}:{{port}}/roles/\",",
+									"        \"method\": \"POST\",",
+									"        \"body\": {",
+									"              \"name\":\"xk-sb-tagist\",",
+									"              \"title\": \"学科校本库打标员\",",
+									"              \"description\": \"学科校本库打标员，可以对校本中某单个学科的题目进行打标\",",
+									"              \"default-home\": \"#/xk/exam-srv/exams/\"",
+									"        }",
+									"    },",
+									"    function (err, response) {",
+									"        console.log(response.json());",
+									"        var jsonData = response.json();",
+									"        pm.globals.set(\"new-id\", jsonData._id);",
+									"    }",
+									");"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/roles/{{new-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"roles",
+								"{{new-id}}"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "令牌Token",
+			"description": "",
+			"item": [
+				{
+					"name": "令牌-C1-0：使用用户名和密码获取新令牌",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/tokens/?username=赵老师&passwd=123456",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"tokens",
+								""
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "赵老师",
+									"equals": true
+								},
+								{
+									"key": "passwd",
+									"value": "123456",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "75da3028-0560-4e9b-8dcd-18c9efb0368d",
+							"name": "令牌-C1-0：使用用户名和密码获取新令牌",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"xk-admin\",\n  \"title\": \"学科管理员\",\n  \"description\": \"学科管理员能管理所有学科的所有事物\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/tokens/?username=赵老师&passwd=123456",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"tokens",
+										""
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "赵老师",
+											"equals": true
+										},
+										{
+											"key": "passwd",
+											"value": "123456",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\t\"header\":{\n\t\t\"typ\": \"JWT\",\n\t\t\"alg\": \"HS256\"\n\t},\n\t\"payload\":{\n\t\t\"uid\": \"123456789012345678901234\",\n\t\t\"role\": \"xk-admin\",\n\t\t\"iss\": \"rawstonedu\",\n\t\t\"userName\": \"赵老师\",\n\t\t\"timestamp\": \"144444444444\",\n\t\t\"exp\": \"15555555555\"\n\t},\n\t\"signature\": \"WERTGB$%^&*IFGBH^&*GFHJ^&*GHJ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "令牌-C1-0：使用有效旧令牌换新令牌",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/tokens/?token=$%RTGHJ%asdf%26YUIO",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"tokens",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "$%RTGHJ%asdf%26YUIO",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "509334b4-b120-4150-bd07-1f69126922fb",
+							"name": "令牌-C1-0：使用有效旧令牌换新令牌",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"xk-admin\",\n  \"title\": \"学科管理员\",\n  \"description\": \"学科管理员能管理所有学科的所有事物\",\n  \"default-home\": \"#/xk/pool-srv/quesbanks/core/\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/tokens/?username=赵老师&passwd=123456",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"tokens",
+										""
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "赵老师",
+											"equals": true
+										},
+										{
+											"key": "passwd",
+											"value": "123456",
+											"equals": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n\t\"header\":{\n\t\t\"typ\": \"JWT\",\n\t\t\"alg\": \"HS256\"\n\t},\n\t\"payload\":{\n\t\t\"uid\": \"123456789012345678901234\",\n\t\t\"role\": \"xk-admin\",\n\t\t\"iss\": \"rawstonedu\",\n\t\t\"userName\": \"赵老师\",\n\t\t\"timestamp\": \"144444444444\",\n\t\t\"exp\": \"15555555555\"\n\t},\n\t\"signature\": \"WERTGB$%^&*IFGBH^&*GFHJ^&*GHJ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "令牌-R1-0：查看令牌详情",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/debug/token-echos/?token={token}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"debug",
+								"token-echos",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "{token}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "16dcbf52-0efe-4ba8-98a5-8a85bc3cb183",
+							"name": "令牌-R1-0：查看令牌详情",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/debug/token-echos/{token}/",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"debug",
+										"token-echos",
+										"{token}",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Content-Length",
+									"value": "179",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 12 Oct 2017 02:39:42 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Server",
+									"value": "Eve/0.8-dev Werkzeug/0.11.15 Python/3.5.2",
+									"name": "Server",
+									"description": "A name for the server"
+								}
+							],
+							"cookie": [],
+							"responseTime": 40,
+							"body": "{\n    \"header\": {\n        \"typ\": \"JWT\",\n        \"alg\": \"HS256\"\n    },\n    \"payload\": {\n        \"uid\": \"123456789012345678901234\",\n        \"role\": \"xk-admin\",\n        \"iss\": \"rawstonedu\",\n        \"userName\": \"赵老师\",\n        \"timestamp\": \"144444444444\",\n        \"exp\": \"15555555555\"\n    },\n    \"signature\": \"WERTGB$%^&*IFGBH^&*GFHJ^&*GHJ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "令牌-D1-0：删除令牌（使无效）",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/tokens/{token}/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"tokens",
+								"{token}",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "考试Exam",
+			"description": "",
+			"item": [
+				{
+					"name": "考试-C1-0：增加考试",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"赵老师\",\n  \"description\": \"学科管理员\",\n  \"active\": true,\n  \"role\":[\"xk-admin\"],\n  \"primaryRole\": \"xk-admin\",\n  \"discipline\": [\"chinese\",\"english\",\"math\",\"physics\",\"chemistry\",\"biology\",\"politics\",\"history\",\"geography\"],\n  \"primaryDiscipline\": \"english\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/users/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"users",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

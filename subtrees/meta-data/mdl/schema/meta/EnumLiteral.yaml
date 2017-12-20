@@ -1,0 +1,15 @@
+$schema: 以Cerberus为主，JsonSchema为辅。
+
+definitions:
+  EnumLiteral:
+    name: EnumLiteral
+    title: 枚举文字
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+      title:
+        type: string
+      code:
+        type: integer

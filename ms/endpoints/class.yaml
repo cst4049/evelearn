@@ -1,0 +1,9 @@
+
+resources:
+  classes:
+    url: schools/<regex("[\w]+"):school>/classes
+    datasource:
+      source: classes
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Class/schema'

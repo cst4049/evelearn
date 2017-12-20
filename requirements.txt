@@ -1,0 +1,24 @@
+# eve的最新版本
+git+git://github.com/pyeve/eve.git
+PyYAML
+flask-cors
+PyJWT
+arrow
+
+pandas
+xlwt
+openpyxl
+
+xlrd
+
+jsonmerge
+jsonref
+
+uwsgi
+
+jieba
+simhash
+
+bs4
+
+click

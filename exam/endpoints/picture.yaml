@@ -1,0 +1,11 @@
+resources:
+  exam_pictures:
+  #  url: quesbanks/<regex("[\w]+"):quesBank>/pictures
+    url: "exam/pictures"
+    id_field: filename
+    item_lookup_field: filename
+    item_url: regex("(\w)+")
+    soft_delete: True
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Pictures/schema'

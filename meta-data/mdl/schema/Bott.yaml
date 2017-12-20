@@ -1,0 +1,10 @@
+
+definitions:
+  Bott:
+    name: Bott
+    title: 教材体树
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Burtree/schema'
+
+      

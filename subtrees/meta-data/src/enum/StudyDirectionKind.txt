@@ -1,0 +1,21 @@
+{
+  "name": "StudyDirectionKind",
+  "title": "分科方向",
+  "literal": [
+    {
+      "name": "general",
+      "title": "未分科",
+      "code": 1
+    },
+    {
+      "name": "art",
+      "title": "文科",
+      "code": 2
+    },
+    {
+      "name": "science",
+      "title": "理科",
+      "code": 3
+    }
+  ]
+}

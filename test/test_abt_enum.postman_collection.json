@@ -1,0 +1,270 @@
+{
+	"variables": [],
+	"info": {
+		"name": "test_abt_enum",
+		"_postman_id": "d6820e40-8dac-44c5-4544-d8b1ea040734",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "config",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var BEETHOVEN_HOST = \"127.0.0.1\"",
+							"var BEETHOVEN_PORT = 5000",
+							"",
+							"pm.globals.set(\"host\", BEETHOVEN_HOST);",
+							"pm.globals.set(\"port\", BEETHOVEN_PORT);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "localhost:",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"zyc_Demo\",\n\t\"title\" : \" this is demo title\",\n\t\"literal\": \"\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/zyc",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/zyc",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/mm/enums/zyc?embedded={\"literal\":1}",
+			"request": {
+				"url": {
+					"raw": "http://{{host}}:{{port}}/mm/enums/zyc?embedded={\"literal\":1}",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "{{port}}",
+					"path": [
+						"mm",
+						"enums",
+						"zyc"
+					],
+					"query": [
+						{
+							"key": "embedded",
+							"value": "{\"literal\":1}",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"zyc\",\n\t\"title\": \"this is patch title\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59ca129f1d41c838b4986680",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59ca129f1d41c838b4986680",
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\" this is test literal \",\n\t\"code\" : \"this is code \",\n\t\"title\" : \"this is literal title \",\n\t\"enum\":\"59ca129f1d41c838b4986680\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals/110",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"code\": \"110\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59c9ee581d41c82b62d668c5/literals/59cb5ae51d41c814fe3b97ea",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"哈哈哈哈哈哈 test put\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:5000/mm/enums/59ca129f1d41c838b4986680",
+			"request": {
+				"url": "http://{{host}}:{{port}}/mm/enums/59ca129f1d41c838b4986680",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"this is put test\",\n\t\"title\":\"this is title \"\n\t\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

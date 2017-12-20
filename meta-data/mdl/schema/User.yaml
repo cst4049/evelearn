@@ -1,0 +1,26 @@
+
+
+$schema: 以Cerberus为主，JsonSchema为辅。
+
+definitions:
+  User:
+    name: User
+    title: 用户
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+        minlength: 1
+        maxlength: 1024
+        unique: true
+
+      primaryRole:
+        type: dict
+        schema:
+          $ref: 'https://rawstonedu.com/schema#/definitions/Role/schema'
+      role:
+        type: list
+        schema:
+          type: dict
+          $ref: 'https://rawstonedu.com/schema#/definitions/Role/schema'

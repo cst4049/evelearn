@@ -1,0 +1,54 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  EnglishQuestionComboFormatKind:
+    name: EnglishQuestionComboFormatKind
+    title: 英语题型复合类型
+    literal:
+    - name: simpleSelection
+      title: 单项选择
+      code: 1
+      responseFormat: select
+    - name: readingComprehension
+      title: 阅读理解
+      code: 2
+      responseFormat: select
+    - name: matching
+      title: 信息匹配
+      code: 3
+      responseFormat: select
+    - name: cloze
+      title: 完形填空
+      code: 4
+      responseFormat: select
+    - name: fillWordInText
+      title: 短文填空
+      code: 5
+      responseFormat: fillin
+    - name: fillWordInSentence
+      title: 单句填空
+      code: 6
+      responseFormat: fillin
+    - name: textCorrection
+      title: 短文改错
+      code: 7
+      responseFormat: writeout
+    - name: sentenceCorrection
+      title: 单句改错
+      code: 8
+      responseFormat: writeout
+    - name: patternTransformation
+      title: 句型转换
+      code: 9
+      responseFormat: fillin
+    - name: phraseTranslation
+      title: 翻译短语
+      code: 10
+      responseFormat: fillin
+    - name: sentenceTranslation
+      title: 翻译句子
+      code: 11
+      responseFormat: fillin
+    - name: sentenceCompletion
+      title: 完成句子
+      code: 12
+      responseFormat: fillin

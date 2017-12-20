@@ -1,0 +1,17 @@
+literals:
+  url: mm/enums/<regex("[\w]+"):enum>/literals
+  additional_lookup:
+    url: regex("[\w]+")
+    field: code
+
+
+
+  type: dict
+  schema:  &Schema_Literal
+    name:
+     type: string #名字
+    title:
+     type: string #名字
+     default: ""
+    code:
+     type: number

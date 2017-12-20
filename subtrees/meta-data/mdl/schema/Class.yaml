@@ -1,0 +1,54 @@
+definitions:
+  Class:
+    type: dict
+    schema:
+      teacherSrole:
+        type: objectid
+        nullable: True
+        data_relation:
+          resource: teachers
+          field: _id
+          embeddable: True
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True
+      codeDtype:
+        type: string
+      code:
+        type: string
+
+      teacherTrole:
+        type: list
+
+      grade:
+        type: objectid
+        data_relation:
+          resource: grades
+          field: _id
+          embeddable: True
+
+      classKind:
+        type: string
+
+      studyDirection:
+        type: string
+
+      furtype:
+        type: string
+
+      teacherTrole:
+        type: list
+        schema:
+          type: dict
+          schema:
+            discipline:
+              type: string
+            teacher:
+              type: objectid
+              data_relation:
+                resource: teachers
+                field: _id
+                embeddable: True

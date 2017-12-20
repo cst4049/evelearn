@@ -1,0 +1,22 @@
+
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  question-e2-biology:
+    name: question-e2-biology
+    title: 生物题高级标签
+    description: ''
+    properties:
+    - name: difficulty
+      title: 难度标签
+      type:
+        name: QuestionDifficultyKind
+        literal:
+        - name: '1'
+          title: 易
+          code: 1
+        - name: '2'
+          title: 中
+          code: 2
+        - name: '3'
+          title: 难
+          code: 3

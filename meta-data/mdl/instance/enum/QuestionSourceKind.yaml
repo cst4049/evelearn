@@ -1,0 +1,15 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  QuestionSourceKind:
+    name: QuestionSourceKind
+    title: 题源类型
+    literal:
+    - name: FromExercise
+      code: 1
+      title: 同步练习
+    - name: FromSimulation
+      code: 2
+      title: 复习模拟
+    - name: FromPast
+      code: 3
+      title: 高考真题

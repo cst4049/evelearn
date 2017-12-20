@@ -1,0 +1,6 @@
+
+resources:
+  botts:
+    url: bot-trees
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Bott/schema'

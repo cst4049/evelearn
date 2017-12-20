@@ -1,0 +1,7 @@
+
+#EP: 知识点树节点
+bokts:
+  url: bok-trees
+  type: dict
+  schema:
+    <<: *burtree

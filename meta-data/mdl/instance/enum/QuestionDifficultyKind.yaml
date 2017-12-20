@@ -1,0 +1,17 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  QuestionDifficultyKind:
+    name: QuestionDifficultyKind
+    title: 题目难度
+    literal:
+
+
+    - name: easy
+      title: 容易
+      code: 1
+    - name: middle
+      title: 中
+      code: 2
+    - name: hard
+      title: 困难
+      code: 3

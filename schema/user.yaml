@@ -1,0 +1,120 @@
+
+users:
+  item_methods: ['GET','PATCH']
+  url: users
+  datasource:
+    source: users
+    projection: # 一般人看不到token和pasword
+      passwd: 0
+  ## 对这个资源设置变量缓存控制准则，覆盖全局变量缓存控制准则
+  cache_control: max-age=10,must-revalidate
+  cache_expires: 10
+  ## 默认的集合条目（即单数资源）地址为 "users/:_id"
+  ## 通过additional_lookup可以增加一个只读端点 "users/:account"
+  ## 如果是非只读，则应该新配置一个资源条目
+  additional_lookup:
+    url: regex("[\w]+")
+    field: name
+  # allowed_roles:
+  #   - admin
+  extra_response_fields:
+    - token
+#  public_methods:
+#    - POST # TODO: 测试使用
+
+  ################################################################
+  type: dict
+  schema:  &schema-user
+
+    # user + passwd 作为登录使用
+    # user 唯一
+    name:
+      type: string
+      required: true
+      minlength: 1
+      maxlength: 1024
+      unique: true
+
+    realname:
+      type: string
+
+
+    # TODO 密码构成策略
+    passwd:
+      type: string
+      required: false
+
+    # 用户状态
+    active:
+      type: boolean
+      default: true
+
+    #
+    role:
+      type: list
+      schema:
+        type: string
+        allowed:
+          - xk_admin
+          - xk_subadmin
+          - xk_cb_tagist
+          - xk_cb_typewritist  # 自造词 录入员
+          - xk_sb_tagist
+          - superadmin
+      required: true
+
+    primaryRole:
+      type: string
+      allowed:
+        - xk_admin
+        - xk_subadmin
+        - xk_cb_tagist
+        - xk_cb_typewritist
+        - xk_sb_tagist
+        - superadmin
+      required: true
+
+    discipline:
+      type: list
+      schema:
+        type: string
+
+    primaryDiscipline:
+      type: string
+      required: true
+
+    description:
+      type: string
+      required: false
+      default: ""
+
+#
+#
+##ep
+#protect-partOf-users:
+#  url: protect-partOf-users
+#  datasource:
+#    source: users
+#
+#  type: dict
+#  schema:
+#    <<: *schema-user
+#
+#
+##ep 还有private 后续设置
+#private-partOf-users:
+#  url: private-partOf-users
+#  datasource:
+#    source: users
+#
+#  type: dict
+#  schema:
+#    <<: *schema-user
+sysinit:
+  type: dict
+  schema:
+    <<: *schema-user
+  url: init
+  resource_methods: ["POST"]
+  datasource:
+    source: users

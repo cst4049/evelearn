@@ -1,0 +1,30 @@
+
+## EP question-stat-distribution-of-status
+## 统计题目的状态个数（有覆盖）
+## 这是一个batch操作，对N个bot节点依次将其作为题目范围，进行统计。
+## NOTICE: 合并时放在questions之后
+
+question-stat-status:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions-bot-status-stat
+  type: dict
+  schema:
+    <<: *questions
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+
+
+## EP questions-stat-distribution-of-tag
+## 统计题目集合的标签以及数量（分成多个划分维度，每个维度是不重复全覆盖）
+## 这是一个单次操作，对1个bot节点，将其作为题目范围，进行统计。
+question-stat-tag:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions-tag-status-stat
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+

@@ -1,0 +1,32 @@
+{
+  "name": "question-e2-sentenceCorrection",
+  "title": "英语单句改错高级标签",
+  
+  "description": "",
+  "properties": [
+    {
+      "name": "difficulty",
+      "type": {
+        "name": "QuestionDifficultyKind",
+        "title": "题目难度",
+        "literal": [
+          {
+            "name": "easy",
+            "title": "易",
+            "code": 1
+          },
+          {
+            "name": "normal",
+            "title": "中",
+            "code": 2
+          },
+          {
+            "name": "hard",
+            "title": "难",
+            "code": 3
+          }
+        ]
+      }
+    }
+  ]
+}

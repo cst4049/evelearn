@@ -1,0 +1,37 @@
+
+## EP: questionbanks
+
+definitions:
+  Quesbank:
+    name: Quesbank
+    title: 题库
+    schema:
+      name:
+        type: string
+        unique: True
+        description: 题库的名字
+
+
+      title:
+        type: string
+
+      # 题库类型:测试用，11月3号删除 TODO
+      kind:
+        type: string
+        description: |
+          题库的类型
+        enum: QuesbankKind
+        validator: bur_tree_node
+
+      # 题库类型:测试用，11月3号删除 TODO
+      period:
+        type: number
+        coerce: deunit
+
+      # 题库类型:测试用，11月3号删除 TODO
+      createAt:
+        type: datetime
+        default_setter: utcnow
+
+      description:
+        type: string

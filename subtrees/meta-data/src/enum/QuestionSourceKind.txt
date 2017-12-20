@@ -1,0 +1,24 @@
+{
+  "name": "QuestionSourceKind",
+  "title": "题源类型",
+  
+  
+  "literal": [
+
+    {
+      "name": "FromExercise",
+      "code": 1,
+      "title": "同步练习"
+    },
+    {
+      "name": "FromSimulation",
+      "code": 2,
+      "title": "复习模拟"
+    } ,
+    {
+      "name": "FromPast",
+      "code": 3,
+      "title": "高考真题"
+    }
+  ]
+}

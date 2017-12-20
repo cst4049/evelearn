@@ -1,0 +1,31 @@
+
+
+$schema: 以Cerberus为主，JsonSchema为辅。
+
+definitions:
+
+  Property:
+    name: Property
+    title: 属性
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+      title:
+        type: string
+      ui-format:
+        type: string
+      type:
+        type: dict
+        schema:
+          $ref: 'https://rawstonedu.com/schema#/definitions/Enum/schema'
+#        anyof:
+#          # 类型是一个enum
+#          - type: dict
+#            schema:
+#              $ref: 'https://rawstonedu.com/schema#/definitions/Enum/schema'
+#          # 类型是一个类（暂时忽略）
+#          - type: string
+
+

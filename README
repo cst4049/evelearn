@@ -1,0 +1,6 @@
+基于pyeve的开发版本(题库，bok，bot)
+与flask_mongoengine相比,eve的格式校验更强,拥有文档版本管理控制
+
+贝多芬产品-学科子系统-微服务端
+
+基于python-eve, flask

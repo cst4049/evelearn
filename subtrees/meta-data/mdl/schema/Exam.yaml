@@ -1,0 +1,12 @@
+## resource roles
+definitions:
+  Exams:
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+      title:
+        type: string
+      description:
+        type: string

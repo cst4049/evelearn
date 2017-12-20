@@ -1,0 +1,9 @@
+
+
+
+resources:
+  questions:
+    url: quesbanks/<regex("[\w]+"):quesBank>/questions
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/questions/schema'

@@ -1,0 +1,6 @@
+definitions:
+  Signals:
+    type: dict
+    schema:
+      name:
+        type: string

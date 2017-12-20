@@ -1,0 +1,7 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  question-e2-patternTransformation:
+    name: question-e2-patternTransformation
+    title: 英语句型转换高级标签
+    description: ''
+    properties: []

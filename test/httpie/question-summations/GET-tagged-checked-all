@@ -1,0 +1,5 @@
+#!/bin/bash
+
+bot_node_1=$(http -p b GET ${SUT_B}/bot-nodes/ token==${TOKEN} | jq -r '._items[0]._id')
+
+http -v GET ${SUT_B}/quesbanks/core/question-summations/tagged-checked-all/ token==${TOKEN} scope=='{"koDiscipline":"math","botn": "'"${bot_node_1}"'"}'

@@ -1,0 +1,21 @@
+{
+  "name": "QuestionDifficultyKind",
+  "title": "题目难度",
+  "literal": [
+    {
+      "name": "easy",
+      "title": "易",
+      "code": 1
+    },
+    {
+      "name": "middle",
+      "title": "中",
+      "code": 2
+    },
+    {
+      "name": "hard",
+      "title": "难",
+      "code": 3
+    }
+  ]
+}

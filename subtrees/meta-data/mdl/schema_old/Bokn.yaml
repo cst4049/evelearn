@@ -1,0 +1,8 @@
+
+definitions:
+  Bokn:
+    name: Bokn
+    title: 知识体节点
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/BurtreeNode/schema'

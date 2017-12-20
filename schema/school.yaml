@@ -1,0 +1,27 @@
+#EP schools
+schools:
+  url: schools
+  versioning: False
+
+  type: dict
+  schema:
+    name:
+      type: string
+
+    codeDtype:
+      type: string
+      unique: True
+
+    title:
+      type: string
+
+    code:
+      type: string
+
+    seminarSpans:
+      type: objectid
+      data_relation:
+        resource: seminar_spans
+        field: _id
+        embeddable: True
+

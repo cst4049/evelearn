@@ -1,0 +1,9 @@
+
+
+
+resources:
+  question-similar:
+    endpoint: question-similar
+    url-rule: '/quesbanks/<name>/questions/<id>/similar'
+    methods:
+      - GET

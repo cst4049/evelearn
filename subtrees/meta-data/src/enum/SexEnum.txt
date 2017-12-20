@@ -1,0 +1,26 @@
+{
+  "name": "SexEnum",
+  "title": "性别枚举",
+  "literal": [
+    {
+      "name": "unknown",
+      "title": "未知的",
+      "code": 0
+    },
+    {
+      "name": "male",
+      "title": "男",
+      "code": 1
+    },
+    {
+      "name": "female",
+      "title": "女",
+      "code": 2
+    },
+    {
+      "name": "unspecified",
+      "title": "未指定的",
+      "code": 3
+    }
+  ]
+}

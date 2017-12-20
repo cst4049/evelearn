@@ -1,0 +1,28 @@
+definitions:
+  SeminarSpans:
+    type: dict
+    schema:
+      spans:
+        type: list
+        default: []
+        schema:
+          type: objectid
+          data_relation:
+            resource: seminars
+            field: _id
+            embeddable: True
+
+      active:
+        type: objectid
+        data_relation:
+          resource: seminars
+          field: _id
+          embeddable: True
+
+
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True

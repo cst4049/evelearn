@@ -1,0 +1,31 @@
+
+#ep
+seminars:
+  url: schools/<regex("[\w]+"):school>/seminar-spans/<regex("[\w]+"):seminarSpans>/seminars
+
+  type: dict
+  schema:
+    start:
+      type: string
+
+    end:
+      type: string
+
+    title:
+      type: string
+
+    seminarSpans:
+      type: objectid
+      data_relation:
+        resource: seminar_spans
+        field: _id
+        embeddable: True
+
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True

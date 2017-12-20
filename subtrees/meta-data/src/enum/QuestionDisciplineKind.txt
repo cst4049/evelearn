@@ -1,0 +1,47 @@
+{
+  "name": "QuestionDisciplineKind",
+  "title": "题目科目类型",
+  "literal": [
+     
+    {
+      "name": "english",
+      "title": "英语",
+      "code": 1
+    },
+    {
+      "name": "math",
+      "title": "数学",
+      "code": 2
+    },
+    {
+      "name": "physics",
+      "title": "物理",
+      "code": 3
+    },
+    {
+      "name": "chemistry",
+      "title": "化学",
+      "code": 4
+    },
+    {
+      "name": "biology",
+      "title": "生物",
+      "code": 5
+    },
+    {
+      "name": "politics",
+      "title": "政治",
+      "code": 6
+    },
+    {
+      "name": "history",
+      "title": "历史",
+      "code": 7
+    },
+    {
+      "name": "geography",
+      "title": "地理",
+      "code": 8
+    }
+  ]
+}

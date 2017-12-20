@@ -1,0 +1,21 @@
+{
+  "name": "QuestionSourceDirectionKind",
+  "title": "文理分科字段",
+  "literal": [
+    {
+      "name": "science",
+      "code": 1,
+      "title": "理科"
+    },
+    {
+      "name": "art",
+      "code": 2,
+      "title": "文科"
+    },
+    {
+      "name": "general",
+      "code": 3,
+      "title": "文理双科"
+    }
+  ]
+}

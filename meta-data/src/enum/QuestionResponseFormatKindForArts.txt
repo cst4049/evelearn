@@ -1,0 +1,18 @@
+{
+	  "name": "QuestionResponseFormatKindForArts",
+	  
+	  "title": "文科作答类型",
+	  
+	  "literal": [
+	    {
+	      "name": "select",
+	      "title": "选择",
+	      "code": 1
+	    },
+	    {
+	      "name": "writeout",
+	      "title": "主观",
+	      "code": 2
+	    }
+	  ]
+	}

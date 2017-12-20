@@ -1,0 +1,1439 @@
+
+#EP: 教材体节点（参照官僚树结构）
+botns:
+  url: bot-nodes
+
+  type: dict
+  schema: &botn_select
+    koLyro:
+      type: string #外层编码 lyroCode可由此code推导处
+    koLyri: #内层类型
+      type: string #内层编码 lyriCode可由此推导出
+    dad:  # 物理父节点
+      type: string
+    son:  #物理子节点
+      type: string
+    name:
+      type: string
+      unique: Ture
+    title:
+      type: string
+
+
+#EP: 教材树节点
+botts:
+  url: bot-trees
+
+  type: dict
+  schema: &burtree
+    name:
+      type: string
+      unique: true
+    edition:
+      type: string
+    description:
+      type: string
+      nullable: true
+
+    title:
+      type: string
+
+    root:
+      type: dict
+      schema:
+        koLyro:
+          type: string
+        koLyri:
+          type: string
+        name:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        son:
+          type: list
+          nullable: true
+
+#官僚树结构
+BurTreeNode: &BurTreeNode
+  type: dict
+  schema:
+    koLyro: #外层类型
+      type: dict
+      schema:
+        code:
+          type: number  #外层编码 lyroCode可由此code推导处
+    koLyri: #内层类型
+      type: dict
+      schema:
+        code:
+          type: number  #内层编码 lyriCode可由此推导出
+    dad:  # 物理父节点
+      type: string
+    son:  #物理子节点
+      type: string
+    name:
+      type: string
+    title:
+      type: string
+
+
+
+
+#EP: enums
+enums:
+  url: mm/enums
+#  additional_lookup:
+#    url: regex("[\w]*")
+#    field: name
+  soft_delete: false
+  item_lookup_field: name # 覆盖objid
+  item_url: 'regex("[a-zA-Z_][a-zA-Z0-9_-]*")'  # 重写默认的查找路由，默认是objectid
+
+  type: dict
+  schema:
+    name:
+      type: string #名字
+      unique: true
+    title:
+      type: string #名字
+      default: ""
+    literal:
+      type: list
+      schema:
+        name:
+         type: string #名字
+         unique: true
+        title:
+         type: string #名字
+         default: ""
+        code:
+         type: number
+
+
+literals:
+  url: mm/enums/<regex("[\w]+"):enum>/literals
+  additional_lookup:
+    url: regex("[\w]+")
+    field: code
+
+
+
+  type: dict
+  schema:  &Schema_Literal
+    name:
+     type: string #名字
+    title:
+     type: string #名字
+     default: ""
+    code:
+     type: number
+
+#EP: 题目图片
+pictures:
+#  url: quesbanks/<regex("[\w]+"):quesBank>/pictures
+  url: quesbanks/pictures
+  type: dict
+  schema:
+#    questionBank:
+#      type: objectid
+#      data_relation:
+#        resource: questionbank
+#        field: _id
+#        embeddable: True
+
+    # 之后还是让前段初始化ckeditor的时候设置upload url包括一个题目id，上传图片的时候就可以自动添加这个参数了
+    question:
+      type: objectid
+      data_relation:
+        resource: question
+        field: _id
+        embeddable: True
+
+    # 文件名
+    filename:
+      type: string
+
+    # 文件的实体内容
+    upload:
+      type: list
+      schema:
+        type: media
+
+    # 应该可以不要这个东西，这个应该是csrf的时候认证用的
+    ckCsrfToken:
+      type: string
+
+
+## EP: questionbanks
+quesbanks:
+  url: quesbanks
+#  additional_lookup:
+#    url: regex("[\w]+")
+#    field: name
+  id_field: name
+  item_lookup_field: name # 覆盖objid
+  item_url: 'regex("[a-zA-Z_][a-zA-Z0-9_-]*")'  # 重写默认的查找路由，默认是objectid
+  soft_delete: false # 软删除关闭,否则会查找到以前已经删除的条目
+  type: dict
+  schema:
+
+
+    name:
+      type: string
+      unique: True
+      description: 题库的名字
+
+
+    title:
+      type: string
+
+    # 题库类型:测试用，11月3号删除 TODO
+    kind:
+      type: string
+      description: |
+        题库的类型
+      enum: QuesbankKind
+      validator: bur_tree_node
+
+    # 题库类型:测试用，11月3号删除 TODO
+    period:
+      type: number
+      coerce: deunit
+
+    # 题库类型:测试用，11月3号删除 TODO
+    createAt:
+      type: datetime
+      default_setter: utcnow
+
+    description:
+      type: string
+
+#Class
+QuestionPoCheck:
+  type: dict
+  schema: &QuestionPoCheck
+
+    #- 审查状态  ref by name 指向 enum
+    statusTypeOfCheck:
+      type: string
+      default: open
+
+    #- 首次审查时间
+    #- Done timeOfLastCheck => checkedAtFirstly
+    checkedTypeAtFirstly:
+      type: datetime
+
+    #- 最后审查时间
+    checkedTypeAtLastly:
+      type: datetime
+
+    #- 审核者
+    #- Done checkedBy => checkedByFirstly todo 根据token解析出用户ID
+    checkedTypeByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+      #- 审查状态  ref by name 指向 enum
+    statusTagOfCheck:
+      type: string
+      default: open
+
+    #- 首次审查时间
+    #- Done timeOfLastCheck => checkedAtFirstly
+    checkedTagAtFirstly:
+      type: datetime
+
+    #- 最后审查时间
+    checkedTagAtLastly:
+      type: datetime
+
+    #- 审核者
+    #- Done checkedBy => checkedByFirstly todo 根据token解析出用户ID
+    checkedTagByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+    #- 是否已审查，是一个lambda表达式 todo 是否已经审查
+    #- https://stackoverflow.com/questions/38479904/add-a-calculated-field-to-eve-schema
+    isChecked:
+      type: boolean
+      readonly: true
+
+    state:
+      type: number
+
+
+
+#Class
+QuestionPoTag:
+  type: dict
+  schema: &QuestionPoTag
+
+    # Done delete
+#    tag:
+#      type: string
+
+    # 首次打标时间
+    #- Done： tagedTime => taggedAtFirstly
+    taggedAtFirstly:
+      type: datetime
+
+    #- 末次打标时间
+    taggedAtLastly:
+      type: datetime
+
+    #- 首次达标者
+    #- Done tagedBy => taggedByFirstly todo 根据token解析出用户ID
+    taggedByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+
+#Class
+QuestionPoSource:
+  type: dict
+  schema: &QuestionPoSource
+
+    #- 题目来源类型，值是enum   范围是 mm/SourceKind/literals/name
+    # TODO 根据enum 展开
+    koSource:
+      type: string
+
+    #- 题目时间，值是enum，不许要展开，但会根据enum做验证
+    sourceTime:
+      type: string
+
+    # 题目来源地点
+    # TODO 根据enum 展开
+    sourceLoca:
+      type: string
+
+    # DONE: 去掉， 使用sourceLoca.title获得 前端需要相应的修改
+    sourceLocaTitle:
+      type: string
+
+    sourceDirectionKind:
+      type: string
+      nullable: True
+
+
+#Class
+QuestionPoStructure: #todo
+  type: dict
+  schema: &QuestionPoStructure
+
+    #- 英语题目挂载到册
+    #- vloume和section是互斥的
+    #- TODO move to QuestionPoDiscipline
+    #- TODO: volume =>  botnCat
+    volume:
+      type: objectid
+#    chapter:  # 章
+#      type: string
+
+    #- 非英语节的id
+    #- TODO move to QuestionPoDiscipline
+    #- TODO: section =>  botnCat
+    #- volume 和section 都改为botnCat后，需要在POST Question的做约束检测：英语的可以挂在volumen上，非英语的只能挂在section上。
+    section:
+      type: objectid
+      nullable: True
+
+    bot_path: # 推导属性 推导出来的
+      type: list
+      schema:
+        type: string
+
+    #- 子题个数
+    sonCount:  ##  改为sonCount
+      type: number
+
+    #- 子题列表，可能前段会把子题的属性放到父题中，而没有用这个属性。
+    son:
+      type: list
+      schema:
+        anyof_type:
+          type: [objectid,list]
+
+
+    #- 儿子的属性：
+    #- 如果是放到son列表中，那么一定是先按对象，然后按字段，组织数据，这个是行模式。
+    #- 如果是放在fieldOfSon中，那么一定是先按字段，然后是对象，这个是列模式（向量模式）。
+    #- DONE sonOfAttr => fieldOfSon
+    # fieldOfSon 和son 是互斥。 TODO： 使用son，弃用fieldOfSon
+    fieldOfSon:
+      type: dict
+      schema:
+        contOfKey:
+          type: list
+          schema:
+#            anyof_type: # 支持多选,单选
+#              type: [string,list]
+            type: string
+        blankCount:
+          type: list
+          nullable: True
+          schema:
+            type: number
+        contOfScantron:
+          type: list
+          schema:
+            type: string
+
+
+    #- TODO dadquestion 是一个推导属性
+    dadquestion:
+      type: objectid
+      readonly: true
+
+    # Done 该属性作为存储属性
+    dad:
+      type: objectid
+
+#Class
+QuestionPoContent:
+  type: dict
+  schema: &QuestionPoContent
+
+    # 题目内容
+    contOfQuery:
+      type: string
+
+    # 题目解析
+    contOfAnalysis:
+      type: string
+
+    # 辅助作答区域
+    contOfScantron:
+      type: string
+
+    # 答案
+    contOfKey:
+      schema:
+        # Done 多选 ["A","B"] 改为 "AB" 这种方式，无需list
+       #anyof_type: # 支持多选,单选
+       #type: [string,list]
+        type: string
+
+    # 录题人（首次）
+    # TODO: enteredBy =>typewritedByFirstly
+    typewritedByFirstly:
+      type: objectid
+      data_relation:
+        resource: users
+        field: _id
+        embeddable: True
+
+    # 首次录题时间
+    typewritedAtFirstly:
+      type: datetime
+      default_setter: utcnow
+
+    # 末次录题时间
+    typewritedAtLastly:
+      type: datetime
+
+
+#Class
+QuestionPoDiscipline:
+  type: dict
+  schema: &QuestionPoDiscipline
+
+    # 科目类型：TODO enum的literal带入
+    koDiscipline:
+      type: string
+      # TODO 自定义一个对属性的定义字段“enum”
+
+    # 问询形式，暂不使用
+    queryFormat:
+      type: string
+
+    # 作答形式： TODO enum 的literal带入
+    responseFormat:
+      type: string
+
+
+    # 复合形式： TODO enum 的literal带入
+    comboFormat:
+      type: string
+      # TODO 自定义一个对属性的定义字段“dominant”来表示什么时候这个字段必须有值，什么时候必须无值。
+
+
+    # 知识分类， TODO 返回的时候会展开
+    boknCat:
+      type: list
+      coerce: distbok # 去除重复的bokid
+      schema:
+        type: boknpid  # bokn 下的point objid
+        data_relation:
+          resource: bokns
+          field: _id
+          embeddable: True
+
+#    botn:
+#      type: string
+
+    # 难度
+    # TODO enum 展开
+    difficulty:
+      type: string
+
+    # 题材类型
+    koMaterial:
+      type: string
+
+    # 题材长度
+    materialLength:
+      type: string
+
+    materialLengthDeg:
+      type: string
+
+    objectiveOfCombo:
+      type: string
+
+    objectiveOfCognitiveKnowledge:
+      type: string
+
+    objectiveOfCognitiveProcess:
+      type: string
+
+#Class
+QuestionFoSelect:
+  type: dict
+  schema: &QuestionFoSelect
+
+    # 选项个数
+    optionCount:
+      type: number
+      nullable: True
+
+    # 选项叙述类型
+    optionOrdinal:
+      type: string
+      allowed:
+        - '1'
+        - 'a'
+        - 'A'
+
+    # 选项多选型
+    optionMultiplicity:
+      type: string
+      allowed:
+        - '1' # 表示单选题
+        - '1+' # 表示至少选一个
+        - '2+' # 表示选2个以上
+
+
+#Class
+QuestionFoFillin:
+  type: dict
+  schema: &QuestionFoFillin
+
+    # 空白个数
+    blankCount:
+      type: number
+      nullable: True
+
+    # 空白长度
+    blankLengths:
+      type: number
+
+
+#Class
+QuestionFoWriteout:
+  type: dict
+  schema: &QuestionFoWriteout
+
+    # 做答区尺寸
+    size:
+      type: dict
+      schema:
+        width:
+          type: number
+        height:
+          type: number
+
+#Class
+QuestionFoEnglish:
+  type: dict
+  schema: &QuestionFoEnglish
+
+    comboFormat:
+      type: string
+
+    responseFormat:
+      type: string
+
+#    botn:
+#      type: string
+#Class
+QuestionFoEnglishSimpleSelection:
+  type: dict
+  schema: &QuestionFoEnglishSimpleSelection
+
+    objectiveOfCombo:
+      type: string
+
+    responseFormat:
+      type: string
+
+#Class
+QuestionFoEnglishReadingComprehension:
+  type: dict
+  schema: &QuestionFoEnglishReadingComprehension
+    responseFormat:
+      type: string
+    objectiveOfCombo:
+      type: string
+    difficulty:
+      type: string
+#Class
+QuestionFoEnglishMatching:
+  type: dict
+  schema: &QuestionFoEnglishMatching
+    responseFormat:
+      type: string
+#Class
+QuestionFoEnglishCloze: &unit_info #通用信息
+  type: dict
+  schema: &QuestionFoEnglishCloze
+    responseFormat:
+      type: string
+    objectiveOfCombo:
+      type: string
+    difficulty:
+      type: string
+    koMaterial:
+      type: string
+    materialLengthDeg:
+      type: string
+#Class
+QuestionFoEnglishReadWriteTask:
+  <<: *unit_info
+#Class
+QuestionFoEnglishFillWordInText:
+  <<: *unit_info
+#Class
+QuestionFoEnglishFillWordInSentence:
+  <<: *unit_info
+#Class
+QuestionFoEnglishTextCorrection:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceCorrection:
+  <<: *unit_info
+#Class
+QuestionFoEnglishPatternTransformation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishPhraseTranslation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceTranslation:
+  <<: *unit_info
+#Class
+QuestionFoEnglishSentenceCompletion:
+  <<: *unit_info
+
+
+#EP:题目
+questions:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions
+
+  type: dict
+  schema: &questions
+    <<: *QuestionPoCheck
+    <<: *QuestionPoTag
+    <<: *QuestionPoSource
+    <<: *QuestionPoStructure
+    <<: *QuestionPoContent
+    <<: *QuestionPoDiscipline
+    <<: *QuestionFoSelect
+    <<: *QuestionFoFillin
+    <<: *QuestionFoWriteout
+    <<: *QuestionFoEnglish
+    <<: *QuestionFoEnglishSimpleSelection
+    <<: *QuestionFoEnglishReadingComprehension
+    <<: *QuestionFoEnglishMatching
+    quesBank:
+      type: string
+      data_relation:
+        resource: quesbanks
+        field: name
+        embeddable: True
+
+
+
+## 题目的带属性集
+question_e1part:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/e1-part-of-questions
+  datasource:
+    source: questions
+
+## 题目的带属性集
+question_e2part:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/e2-part-of-questions
+  resource_methods: []
+  item_methods: ["PATCH"]
+  datasource:
+    source: questions
+
+## EP question-stat-distribution-of-status
+## 统计题目的状态个数（有覆盖）
+## 这是一个batch操作，对N个bot节点依次将其作为题目范围，进行统计。
+## NOTICE: 合并时放在questions之后
+
+question-stat-status:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions-bot-status-stat
+  type: dict
+  schema:
+    <<: *questions
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+
+
+## EP questions-stat-distribution-of-tag
+## 统计题目集合的标签以及数量（分成多个划分维度，每个维度是不重复全覆盖）
+## 这是一个单次操作，对1个bot节点，将其作为题目范围，进行统计。
+question-stat-tag:
+  type: dict
+  schema:
+    <<: *questions
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions-tag-status-stat
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+
+
+
+## EP tag端点
+## 只用于POST EP，表示对某个题目进行标签修改或设置
+question-tagging:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions/<regex("[\w]+"):_id>/tag/
+  type: dict
+  schema:
+    <<: *questions
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+
+
+##EP: signals 状态机所使用的信号的定义，类似Enum
+signal:
+  type: dict
+  schema: &Schema_Signal
+    name:
+      type: string
+
+
+
+
+users:
+  item_methods: ['GET','PATCH']
+  url: users
+  datasource:
+    source: users
+    projection: # 一般人看不到token和pasword
+      passwd: 0
+  ## 对这个资源设置变量缓存控制准则，覆盖全局变量缓存控制准则
+  cache_control: max-age=10,must-revalidate
+  cache_expires: 10
+  ## 默认的集合条目（即单数资源）地址为 "users/:_id"
+  ## 通过additional_lookup可以增加一个只读端点 "users/:account"
+  ## 如果是非只读，则应该新配置一个资源条目
+  additional_lookup:
+    url: regex("[\w]+")
+    field: name
+  # allowed_roles:
+  #   - admin
+  extra_response_fields:
+    - token
+#  public_methods:
+#    - POST # TODO: 测试使用
+
+  ################################################################
+  type: dict
+  schema:  &schema-user
+
+    # user + passwd 作为登录使用
+    # user 唯一
+    name:
+      type: string
+      required: true
+      minlength: 1
+      maxlength: 1024
+      unique: true
+
+    realname:
+      type: string
+
+
+    # TODO 密码构成策略
+    passwd:
+      type: string
+      required: false
+
+    # 用户状态
+    active:
+      type: boolean
+      default: true
+
+    #
+    role:
+      type: list
+      schema:
+        type: string
+        allowed:
+          - xk_admin
+          - xk_subadmin
+          - xk_cb_tagist
+          - xk_cb_typewritist  # 自造词 录入员
+          - xk_sb_tagist
+          - superadmin
+      required: true
+
+    primaryRole:
+      type: string
+      allowed:
+        - xk_admin
+        - xk_subadmin
+        - xk_cb_tagist
+        - xk_cb_typewritist
+        - xk_sb_tagist
+        - superadmin
+      required: true
+
+    discipline:
+      type: list
+      schema:
+        type: string
+
+    primaryDiscipline:
+      type: string
+      required: true
+
+    description:
+      type: string
+      required: false
+      default: ""
+
+#
+#
+##ep
+#protect-partOf-users:
+#  url: protect-partOf-users
+#  datasource:
+#    source: users
+#
+#  type: dict
+#  schema:
+#    <<: *schema-user
+#
+#
+##ep 还有private 后续设置
+#private-partOf-users:
+#  url: private-partOf-users
+#  datasource:
+#    source: users
+#
+#  type: dict
+#  schema:
+#    <<: *schema-user
+sysinit:
+  type: dict
+  schema:
+    <<: *schema-user
+  url: init
+  resource_methods: ["POST"]
+  datasource:
+    source: users
+#EP: propertySet of question-basic-tags
+propertysets:
+  item_url: 'regex("[a-zA-Z_][a-zA-Z0-9_-]*")'
+  item_lookup_field: name
+  soft_delete: false
+  url: propertysets
+  type: dict
+  schema: &schemaPropertySet
+    name:
+      type: string
+      unique: true
+
+    title:
+      type: string
+
+    description:
+      type: string
+
+    properties:
+      type: list
+      schema:
+        type: dict
+        schema:
+
+          name:
+            type: string
+
+          ui-format:
+            type: string
+            allowed:
+              - dropdown
+              - radio-tag
+
+          type:
+            type: dict
+            schema:
+              name:
+                type: string
+              title:
+                type: string
+              description:
+                type: string
+              literal:
+                type: list
+                schema:
+                  type: dict
+                  schema:
+                    name:
+                      type: string
+                    title:
+                      type: string
+                    code:
+                      type: integer
+
+#
+#
+#
+#question-basic-tags:
+#  url: question-basic-tags
+#  item_url: regex("[a-zA-Z_][a-zA-Z0-9_-]*")
+#  item_lookup_field: name
+#  datasource:
+#    source: property-sets
+#  type: dict
+#  schema:
+#    <<: *schemaPropertySet
+#
+#
+#question-advanced-tags:
+#  url: question-advanced-tags
+#  id_field: name
+#  item_url: regex("[a-zA-Z_][a-zA-Z0-9_-]*")
+#  item_lookup_field: name
+#  datasource:
+#    source: property-sets
+#  type: dict
+#  schema:
+#    <<: *schemaPropertySet
+
+## resource roles
+exams:
+  datasource:
+    source: exams
+  cache_control: 'max-age=10,must-revalidate'
+  cache_expires: 10
+  ####
+  schema:
+    name:
+      type: string
+      required: true
+    title:
+      type: string
+    description:
+      type: string
+
+#EP: propertySet of question-basic-tags
+jsonWebToken:
+  type: dict
+  schema:
+    header:
+      type: dict
+      schema:
+        typ:
+          type: string
+          defalut: JWT
+        alg:
+          type: string
+          defalut: HS256
+
+    payload:
+      type: dict
+      schema:
+
+        # 即 _id
+        uid:
+          type: string
+
+        timestamp:
+          type: number
+
+        role:
+          type: string
+
+        exp:
+          type: number
+
+        # 即 name
+        userNmae:
+          type: string
+
+        iss:
+          type: string
+          defalut: rawstonedu
+
+    signature:
+      type: string
+
+#EP: Role
+roles:
+  url: roles
+
+  cache_control: 'max-age=10,must-revalidate'
+  cache_expires: 10
+
+  type: dict
+  schema:
+
+
+    name:
+      type: string
+
+
+    title:
+      type: string
+
+    description:
+      type: string
+
+    default-home:
+      type: string
+      default: "#/xk/pool-srv/quesbanks/core/"
+
+#    privilege:
+#      type: list
+#EP: 知识体节点（参照官僚树结构）
+bokns:
+  url: bok-nodes
+  type: dict
+  schema: *botn_select
+
+#EP: 知识点树节点
+bokts:
+  url: bok-trees
+  type: dict
+  schema:
+    <<: *burtree
+#EP schools
+schools:
+  url: schools
+  type: dict
+  schema:
+    name:
+      type: string
+
+    codeDtype:
+      type: string
+      unique: True
+
+    title:
+      type: string
+
+    code:
+      type: string
+
+
+
+
+
+#EP grades
+grades:
+  url: schools/<regex("[\w]+"):school>/grades
+  type: dict
+  schema:
+    kind:
+      type: string
+      default: seniorMiddle
+    birth:
+      type: datetime
+      unique: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+
+
+#EP classStype 传统班
+classStypes:
+  url: schools/<regex("[\w]+"):school>/grades/<regex("[\w]+"):grade>/ClassStypes
+  datasource:
+    source: classes
+  versioning: False
+
+  type: dict
+  schema:
+    num:
+      type: number
+    code:
+      type: string
+      required: True
+    tag:
+      type: list
+      schema:
+        type: string
+    studyDirection:
+      type: string
+      required: True
+
+    furtype:
+      type: string
+      default: ClassStype
+    grade:
+      type: objectid
+      data_relation:
+        resource: grades
+        field: _id
+        embeddable: True
+
+    classKind:
+      type: string
+
+    teacherSrole:
+      type: objectid
+      nullable: True
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+
+
+    teacherTrole:
+      type: dict
+      schema:
+        math:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        english:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+
+        physics:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        biology:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        chemistry:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        geography:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        history:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+        politics:
+          type: objectid
+          nullable: True
+          data_relation:
+            resource: teachers
+            field: _id
+            embeddable: True
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+
+#行政班
+classAtypes:
+  url: schools/<regex("[\w]+"):school>/grades/<regex("[\w]+"):grade>/ClassAtypes
+  datasource:
+    source: classes
+  versioning: False
+  type: dict
+  schema:
+    code:
+      type: string
+
+
+    classKind:
+      type: string
+
+    tag:
+      type: list
+      schema:
+        type: string
+
+    grade:
+      type: objectid
+      data_relation:
+        resource: grades
+        field: _id
+        embeddable: True
+
+    teacherSrole:
+      type: objectid
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassAtype
+
+# 学科班
+classDtypes:
+  url: schools/<regex("[\w]+"):school>/ClassDtypes
+  datasource:
+    source: classes
+    versioning: False
+  type: dict
+  schema:
+
+    classKind:
+      type: string
+
+    num:
+      type: number
+    code:
+      type: string
+    tag:
+      type: list
+      schema:
+        type: string
+
+
+    teacherTrole:
+      type: objectid
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassDtype
+
+# 组合班
+classTtypes:
+  url: schools/<regex("[\w]+"):school>/ClassTtypes
+  datasource:
+    source: classes
+  versioning: False
+
+  type: dict
+  schema:
+    code:
+      type: string
+
+    classKind:
+      type: string
+
+    tag:
+      type: list
+      schema:
+        type: string
+
+#    teacherTrole:
+#      type: list
+#      schema:
+#        type: objectid
+    teacherTrole:
+      type: dict
+      keyschema:
+        type: string
+#        regex: [a-z]+
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassTtype
+
+
+classes:
+  url: schools/<regex("[\w]+"):school>/classes
+  datasource:
+    source: classes
+
+  type: dict
+  schema:
+    teacherSrole:
+      type: objectid
+      nullable: True
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+    codeDtype:
+      type: string
+    code:
+      type: string
+
+    teacherTrole:
+      nullable: True
+      anyof:
+        - type: objectid
+        - type: dict
+
+
+#teachers
+teachers:
+  url: schools/<regex("[\w]+"):school>/teachers
+  type: dict
+  schema:
+    name:
+      type: string
+    code:
+      type: number
+    codeDtype:
+      type: string
+      unique: True
+    title:
+      type: string
+    sex:
+      type: string
+    discipline:
+      type: list
+      schema:
+        type: string
+
+    primaryDiscipline:
+      type: string
+
+    userStatus:
+      type: string
+      default: active
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+
+#ep
+students:
+  url: schools/<regex("[\w]+"):school>/classes/<regex("[\w]+"):class>/students
+
+  type: dict
+  schema:
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    class:
+      type: objectid
+      data_relation:
+        resource: classes
+        field: _id
+        embeddable: True
+
+    userStatus:
+      type: string
+      default: active
+
+    code:
+      type: number
+
+    codeDtype:
+      type: string
+      unique: True
+    name:
+      type: string

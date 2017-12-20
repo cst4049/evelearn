@@ -1,0 +1,3 @@
+#!/bin/bash
+
+http -b GET ${SUT_B}/mm/enums/ token==$TOKEN

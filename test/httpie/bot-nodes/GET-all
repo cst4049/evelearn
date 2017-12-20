@@ -1,0 +1,7 @@
+#!/bin/bash
+
+http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN
+
+http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN \
+  where='{"edition": "std-17","koLyro":"discipline","name":"math"}'
+

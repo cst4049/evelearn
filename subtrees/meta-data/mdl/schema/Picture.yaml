@@ -1,0 +1,32 @@
+definitions:
+  Pictures:
+    type: dict
+    schema:
+  #    questionBank:
+  #      type: objectid
+  #      data_relation:
+  #        resource: questionbank
+  #        field: _id
+  #        embeddable: True
+
+      # 之后还是让前段初始化ckeditor的时候设置upload url包括一个题目id，上传图片的时候就可以自动添加这个参数了
+      question:
+        type: objectid
+        data_relation:
+          resource: questions
+          field: _id
+          embeddable: True
+
+      # 文件名
+      filename:
+        type: string
+
+      # 文件的实体内容
+      upload:
+        type: list
+        schema:
+          type: media
+
+      # 应该可以不要这个东西，这个应该是csrf的时候认证用的
+      ckCsrfToken:
+        type: string

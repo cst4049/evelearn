@@ -1,0 +1,15 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  QuestionResponseFormatKind:
+    name: QuestionResponseFormatKind
+    title: 作答形式
+    literal:
+    - name: select
+      title: 选择
+      code: 1
+    - name: fillin
+      title: 填空
+      code: 2
+    - name: writeout
+      title: 解答
+      code: 3

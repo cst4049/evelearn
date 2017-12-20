@@ -1,0 +1,37 @@
+
+#EP: 教材树节点
+botts:
+  url: bot-trees
+
+  type: dict
+  schema: &burtree
+    name:
+      type: string
+      unique: true
+    edition:
+      type: string
+    description:
+      type: string
+      nullable: true
+
+    title:
+      type: string
+
+    root:
+      type: dict
+      schema:
+        koLyro:
+          type: string
+        koLyri:
+          type: string
+        name:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+          nullable: true
+        son:
+          type: list
+          nullable: true
+

@@ -1,0 +1,26 @@
+{
+  "name": "ClassFurtypeEnum",
+  "title": "班级类型枚举",
+  "literal": [
+    {
+      "name": "ClassStype",
+      "title": "传统班级",
+      "code": 1
+    },
+    {
+      "name": "ClassAtype",
+      "title": "行政班级",
+      "code": 2
+    },
+    {
+      "name": "ClassDtype",
+      "title": "学科班级",
+      "code": 3
+    },
+    {
+      "name": "ClassTtype",
+      "title": "学科组合班级",
+      "code": 4
+    }
+  ]
+}

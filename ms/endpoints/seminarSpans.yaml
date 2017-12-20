@@ -1,0 +1,9 @@
+resources:
+  seminarSpans:
+    url: schools/<regex("[\w]+"):school>/seminar-spans
+    datasource:
+      source: seminar_spans
+    versioning: False
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/SeminarSpans/schema'

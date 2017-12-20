@@ -1,0 +1,6 @@
+resources:
+  teachers:
+    url: schools/<regex("[\w]+"):school>/teachers
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Teachers/schema'

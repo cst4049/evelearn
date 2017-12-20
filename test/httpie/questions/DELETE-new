@@ -1,0 +1,19 @@
+#!/bin/bash
+
+__DIR__=$(cd "$(dirname "$0")"; pwd)
+
+
+math_section_first=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"section","name":"1.集合"}' | jq -r '._items[0]._id')
+
+
+new_id=$(sed 's/^section.*/section: '"${math_section_first}"'/'  ${__DIR__}/question-POST.yaml | yaml2json - \
+  | http -b POST ${SUT_B}/quesbanks/core/questions token==$TOKEN |tee| jq -r '._id')
+
+
+http -v DELETE ${SUT_B}/quesbanks/core/questions/${new_id} token==$TOKEN
+
+
+#TODO: 查询如果不加上deleted=false会返回404但是仍然有返回数据，我们的实现中，应当默认加上_deleted=false。
+
+http -v GET ${SUT_B}/quesbanks/core/questions/${new_id} token==$TOKEN \
+  where=='{"_deleted": "false"}' \

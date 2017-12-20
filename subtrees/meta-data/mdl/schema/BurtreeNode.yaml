@@ -1,0 +1,20 @@
+definitions:
+  BurtreeNode:
+    name: BurtreeNode
+    title: 官僚树节点
+    type: dict
+    schema:
+      koLyro:
+        type: string
+      koLyri:
+        type: string
+      name:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+        nullable: true
+      son:
+        type: list
+        nullable: true

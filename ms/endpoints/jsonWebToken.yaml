@@ -1,0 +1,5 @@
+resources:
+  jsonWebToken:
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/JsonWebToken/schema'

@@ -1,0 +1,18 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  question-e2-simpleSelection:
+    name: question-e2-simpleSelection
+    title: 英语单项选择高级标签
+    description: ''
+    properties:
+    - name: objectiveOfCombo
+      type:
+        name: QuestionEnglishComboObjectiveKind
+        title: 英语复合教育目标种类
+        literal:
+        - name: vocabulary
+          title: 词汇
+          code: 1
+        - name: grammar
+          title: 语法
+          code: 2

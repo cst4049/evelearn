@@ -1,0 +1,26 @@
+{
+  "name": "question-e2-fillWordInText",
+  "title": "英语短文填空高级标签",
+  "description": "",
+  "properties": [
+    {
+      "name": "objectiveOfCombo",
+      "type": {
+        "name": "QuestionEnglishComboObjectiveKind",
+        "title": "英语复合教育目标种类",
+        "literal": [
+          {
+            "name": "vocabulary",
+            "title": "词汇",
+            "code": 1
+          },
+          {
+            "name": "grammar",
+            "title": "语法",
+            "code": 2
+          }
+        ]
+      }
+    }
+  ]
+}

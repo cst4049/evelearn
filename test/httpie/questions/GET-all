@@ -1,0 +1,15 @@
+#!/bin/bash
+
+__DIR__=$(cd "$(dirname "$0")"; pwd)
+
+
+math_section_first=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"section","name":"1.集合"}' | jq -r '._items[0]._id')
+
+
+http -v GET ${SUT_B}/quesbanks/core/questions \
+  token==$TOKEN \
+  where=='{"botn": "'"${math_section_first}"'"}' \
+  max_results==2 \
+  page==1
+
+

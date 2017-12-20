@@ -1,0 +1,25 @@
+
+definitions:
+  Botn:
+    name: Botn
+    title: 教材体节点
+    type: dict
+    schema:
+      koLyro:
+        type: string #外层编码 lyroCode可由此code推导处
+      koLyri: #内层类型
+        type: string #内层编码 lyriCode可由此推导出
+      dad:  # 物理父节点
+        type: objectid
+        nullable: True
+      son:  #物理子节点
+        type: list
+        default: []
+        schema:
+          type: objectid
+          nullable: True
+      name:
+        type: string
+        unique: True
+      title:
+        type: string

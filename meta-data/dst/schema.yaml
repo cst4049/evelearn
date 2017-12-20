@@ -1,0 +1,137 @@
+Enum:
+  name: Enum
+  schema:
+    demo-int:
+      type: number
+    literal:
+      schema:
+        schema: !!python/object/new:builtins.dict
+          dictitems:
+            code: &id001
+              type: integer
+            name: &id002
+              required: true
+              type: string
+            title: &id003
+              type: string
+            xx: &id004
+              required: true
+              type: string
+        type: dict
+      type: list
+    name:
+      required: true
+      type: string
+    title:
+      type: string
+    type:
+      type: string
+  title: 枚举
+  type: dict
+EnumLiteral:
+  name: EnumLiteral
+  schema:
+    code: *id001
+    name: *id002
+    title: *id003
+    xx: *id004
+  title: 枚举文字
+  type: dict
+Property:
+  name: Property
+  schema:
+    name: &id005
+      required: true
+      type: string
+    title: &id006
+      type: string
+    type: &id007
+      anyof:
+      - schema: !!python/object/new:builtins.dict
+          dictitems:
+            name: *id005
+            title: *id006
+            type: *id007
+        type: dict
+      - type: string
+  title: 属性
+  type: dict
+PropertySet:
+  name: PropertySet
+  schema:
+    description:
+      type: string
+    name:
+      required: true
+      type: string
+      unique: true
+    properties:
+      schema:
+        schema: !!python/object/new:builtins.dict
+          dictitems:
+            name: *id005
+            title: *id006
+            type: *id007
+        type: dict
+      type: list
+    title:
+      type: string
+  title: 属性集合
+  type: dict
+Quesbank:
+  name: Quesbank
+  schema:
+    createAt:
+      default_setter: utcnow
+      type: datetime
+    description:
+      type: string
+    kind:
+      description: '题库的类型
+
+        '
+      enum: QuesbankKind
+      type: string
+      validator: bur_tree_node
+    name:
+      description: 题库的名字
+      type: string
+      unique: true
+    period:
+      coerce: deunit
+      type: number
+    title:
+      type: string
+  title: 题库
+Role:
+  name: Role
+  schema:
+    description: &id008
+      type: string
+    name: &id009
+      type: string
+  title: 角色
+  type: dict
+User:
+  name: User
+  schema:
+    name:
+      maxlength: 1024
+      minlength: 1
+      required: true
+      type: string
+      unique: true
+    primaryRole:
+      schema: !!python/object/new:builtins.dict
+        dictitems:
+          description: *id008
+          name: *id009
+      type: dict
+    role:
+      schema: !!python/object/new:builtins.dict
+        dictitems:
+          description: *id008
+          name: *id009
+      type: list
+  title: 用户
+  type: dict

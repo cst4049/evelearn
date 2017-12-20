@@ -1,0 +1,38 @@
+
+definitions:
+  Bott:
+    name: Bott
+    title: 教材体树
+    type: dict
+    schema: &burtree
+      name:
+        type: string
+        unique: true
+      edition:
+        type: string
+      description:
+        type: string
+        nullable: true
+
+      title:
+        type: string
+
+      root:
+        type: dict
+        schema:
+          koLyro:
+            type: string
+          koLyri:
+            type: string
+          name:
+            type: string
+          title:
+            type: string
+          description:
+            type: string
+            nullable: true
+          son:
+            type: list
+            nullable: true
+
+      

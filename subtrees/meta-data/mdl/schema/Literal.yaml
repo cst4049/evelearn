@@ -1,0 +1,10 @@
+definitions:
+  Literals:
+    type: dict
+    schema:
+      name:
+       type: string #名字
+      title:
+       type: string #名字
+      code:
+       type: number

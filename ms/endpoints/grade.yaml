@@ -1,0 +1,7 @@
+#EP grades
+resources:
+  grades:
+    url: schools/<regex("[\w]+"):school>/grades
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Grades/schema'

@@ -1,0 +1,290 @@
+
+#EP classStype 传统班
+classStypes:
+  url: schools/<regex("[\w]+"):school>/grades/<regex("[\w]+"):grade>/classStypes
+  datasource:
+    source: classes
+  versioning: False
+
+  type: dict
+  schema:
+    num:
+      type: number
+    code:
+      type: string
+      required: True
+    tag:
+      type: list
+      schema:
+        type: string
+    studyDirection:
+      type: string
+      required: True
+
+    furtype:
+      type: string
+      default: ClassStype
+    grade:
+      type: objectid
+      data_relation:
+        resource: grades
+        field: _id
+        embeddable: True
+
+    classKind:
+      type: string
+
+    teacherSrole:
+      type: objectid
+      nullable: True
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+
+
+    teacherTrole:
+      type: list
+      default: []
+      schema:
+        type: dict
+        schema:
+          discipline:
+            type: string
+          teacher:
+            nullable: true
+            type: objectid
+            data_relation:
+              resource: teachers
+              field: _id
+              embeddable: True
+
+
+#
+#    teacherTrole:
+#      type: dict
+#      schema:
+#        math:
+#          type: objectid
+#          nullable: True
+#          data_relation:
+#            resource: teachers
+#            field: _id
+#
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+
+#行政班
+classAtypes:
+  url: schools/<regex("[\w]+"):school>/grades/<regex("[\w]+"):grade>/classAtypes
+  datasource:
+    source: classes
+  versioning: False
+  type: dict
+  schema:
+    code:
+      type: string
+
+
+    classKind:
+      type: string
+
+    tag:
+      type: list
+      schema:
+        type: string
+
+    grade:
+      type: objectid
+      data_relation:
+        resource: grades
+        field: _id
+        embeddable: True
+
+    teacherSrole:
+      type: objectid
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassAtype
+
+# 学科班
+classDtypes:
+  url: schools/<regex("[\w]+"):school>/classDtypes
+  datasource:
+    source: classes
+    versioning: False
+  type: dict
+  schema:
+
+    classKind:
+      type: string
+
+    num:
+      type: number
+    code:
+      type: string
+    tag:
+      type: list
+      schema:
+        type: string
+
+
+    teacherTrole:
+      type: list
+      default: []
+      schema:
+        type: dict
+        schema:
+          discipline:
+            type: string
+          teacher:
+            nullable: true
+            type: objectid
+            data_relation:
+              resource: teachers
+              field: _id
+              embeddable: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassDtype
+
+# 组合班
+classTtypes:
+  url: schools/<regex("[\w]+"):school>/classTtypes
+  datasource:
+    source: classes
+  versioning: False
+
+  type: dict
+  schema:
+    code:
+      type: string
+
+    classKind:
+      type: string
+
+    tag:
+      type: list
+      schema:
+        type: string
+
+    teacherTrole:
+      type: list
+      default: []
+      schema:
+        type: dict
+        schema:
+          discipline:
+            type: string
+          teacher:
+            type: objectid
+            nullable: true
+            data_relation:
+              resource: teachers
+              field: _id
+              embeddable: True
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+    furtype:
+      type: string
+      default: ClassTtype
+
+
+classes:
+  url: schools/<regex("[\w]+"):school>/classes
+  datasource:
+    source: classes
+
+  type: dict
+  schema:
+    teacherSrole:
+      type: objectid
+      nullable: True
+      data_relation:
+        resource: teachers
+        field: _id
+        embeddable: True
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+    codeDtype:
+      type: string
+    code:
+      type: string
+
+    teacherTrole:
+      type: list
+
+    grade:
+      type: objectid
+      data_relation:
+        resource: grades
+        field: _id
+        embeddable: True
+
+    classKind:
+      type: string
+
+    studyDirection:
+      type: string
+
+    furtype:
+      type: string
+
+    teacherTrole:
+      type: list
+      schema:
+        type: dict
+        schema:
+          discipline:
+            type: string
+          teacher:
+            type: objectid
+            data_relation:
+              resource: teachers
+              field: _id
+              embeddable: True
+
+
+#      schema:
+#        type: objectid
+#        data_relation:
+#          resource: teachers
+#          field: _id
+#          embeddable: True

@@ -1,0 +1,11 @@
+
+definitions:
+  Role:
+    name: Role
+    title: 角色
+    type: dict
+    schema:
+      name:
+        type: string
+      description:
+        type: string

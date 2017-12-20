@@ -1,0 +1,56 @@
+- name: "一"
+  value: 1
+
+- name: "二"
+  value:  2
+
+- name: "三"
+  value:  3
+
+- name: "四"
+  value:  4
+
+- name: "五"
+  value: 5
+
+- name: "六"
+  value: 6
+
+- name: "七"
+  value:  7
+
+- name: "八"
+  value: 8
+
+- name: "九"
+  value: 9
+
+- name: "十"
+  value:  10
+
+- name: "十一"
+  value:  11
+
+- name: "十二"
+  value:  12
+
+- name: "十三"
+  value: 13
+
+- name: 十四
+  value: 14
+
+- name: 十五
+  value:  15
+
+- name: 十六
+  value:  16
+
+- name: 十七
+  value:  17
+
+- name: 十八
+  value:  18
+
+- name: 十九
+  value:  19

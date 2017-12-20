@@ -1,0 +1,32 @@
+definitions:
+  Seminars:
+    type: dict
+    schema:
+      start:
+        type: string
+
+      end:
+        type: string
+
+      title:
+        type: string
+
+      activeTime:
+        type: string
+
+      seminarSpans:
+        type: objectid
+        data_relation:
+          resource: seminarSpans
+          field: _id
+          embeddable: True
+
+
+
+
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True

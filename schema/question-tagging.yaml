@@ -1,0 +1,14 @@
+
+
+## EP tag端点
+## 只用于POST EP，表示对某个题目进行标签修改或设置
+question-tagging:
+  url: quesbanks/<regex("[\w]+"):quesBank>/questions/<regex("[\w]+"):_id>/tag/
+  type: dict
+  schema:
+    <<: *questions
+  item_lookup: False
+  id_field: question
+  datasource:
+    source: questions
+

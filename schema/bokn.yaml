@@ -1,0 +1,17 @@
+
+#EP: 知识体节点（参照官僚树结构）
+bokns:
+  url: bok-nodes
+  type: dict
+  schema: *botn_select
+
+
+
+
+#EP
+bokn_son:
+  url: bok-nodes/<regex("[\w]+"):dad>/son
+  datasource:
+    source: bokns
+  type: dict
+  schema: *botn_select

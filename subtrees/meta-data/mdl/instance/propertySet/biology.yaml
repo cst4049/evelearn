@@ -1,0 +1,131 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  question-e1-biology:
+    name: question-e1-biology
+    title: 生物基本标签
+    description: ''
+    properties:
+    - name: responseFormat
+      ui-format: radio-tag
+      type:
+        name: QuestionResponseFormatKind
+        title: 作答形式
+        literal:
+        - name: select
+          title: 选择
+          code: 1
+        - name: fillin
+          title: 填空
+          code: 2
+        - name: writeout
+          title: 解答
+          code: 3
+    - name: sourceKind
+      ui-format: radio-tag
+      type:
+        name: QuestionSourceKind
+        literal:
+        - name: FromExercise
+          code: 2
+          title: 同步练习
+        - name: FromSimulation
+          code: 3
+          title: 复习模拟
+        - name: FromPast
+          code: 1
+          title: 高考真题
+    - name: sourceTime
+      ui-format: dropdown
+      type:
+        name: QuestionSourceTimeEnum
+        literal:
+        - name: '2000'
+          title: '2000'
+          code: 2000
+        - name: '2001'
+          title: '2001'
+          code: 2001
+        - name: '2002'
+          title: '2002'
+          code: 2002
+        - name: '2003'
+          title: '2003'
+          code: 2003
+        - name: '2004'
+          title: '2004'
+          code: 2004
+        - name: '2005'
+          title: '2005'
+          code: 2005
+        - name: '2006'
+          title: '2006'
+          code: 2006
+        - name: '2007'
+          title: '2007'
+          code: 2007
+        - name: '2008'
+          title: '2008'
+          code: 2008
+        - name: '2009'
+          title: '2009'
+          code: 2009
+        - name: '2010'
+          title: '2010'
+          code: 2010
+        - name: '2011'
+          title: '2011'
+          code: 2011
+        - name: '2012'
+          title: '2012'
+          code: 2012
+        - name: '2013'
+          title: '2013'
+          code: 2013
+        - name: '2014'
+          title: '2014'
+          code: 2014
+        - name: '2015'
+          title: '2015'
+          code: 2015
+        - name: '2016'
+          title: '2016'
+          code: 2016
+        - name: '2017'
+          title: '2017'
+          code: 2017
+    - name: sourceArea
+      ui-format: dropdown
+      type:
+        name: QuestionSourceLocaEnum
+        title: 题目来源地区枚举
+        literal:
+        - name: countrywide1
+          title: 全国1卷
+          code: 1
+        - name: countrywide2
+          title: 全国2卷
+          code: 2
+        - name: countrywide3
+          title: 全国3卷
+          code: 3
+        - name: beijing
+          title: 北京卷
+          code: 4
+        - name: shandong
+          title: 山东卷
+          code: 5
+        - name: tianjin
+          title: 天津卷
+          code: 6
+        - name: jiangsu
+          title: 江苏卷
+          code: 7
+        - name: zhejiang
+          title: 浙江卷
+          code: 8
+        - name: shanghai
+          title: 上海卷
+          code: 9
+        - name: hainan
+          title: 海南卷
+          code: 10

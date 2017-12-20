@@ -1,0 +1,7 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  question-e2-sentenceCompletion:
+    name: question-e2-sentenceCompletion
+    title: 英语完成句子高级标签
+    description: ''
+    properties: []

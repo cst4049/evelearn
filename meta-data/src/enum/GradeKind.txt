@@ -1,0 +1,26 @@
+{
+  "name": "GradeKind",
+  "title": "年级类型",
+  "literal": [
+    {
+      "name": "primary",
+      "title": "小学",
+      "code": 1
+    },
+    {
+      "name": "juniorMiddle",
+      "title": "初中",
+      "code": 2
+    },
+    {
+      "name": "seniorMiddle",
+      "title": "高中",
+      "code": 3
+    },
+    {
+      "name": "k12",
+      "title": "K12",
+      "code": 4
+    }
+  ]
+}

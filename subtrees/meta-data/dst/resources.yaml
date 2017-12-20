@@ -1,0 +1,48 @@
+propertysets:
+  item_lookup_field: name
+  item_url: regex("[a-zA-Z_][a-zA-Z0-9_-]*")
+  soft_delete: false
+  url: propertysets
+question-similar:
+  endpoint: question-similar
+  methods:
+  - GET
+  url-rule: /quesbanks/<name>/questions/<id>/similar
+users:
+  additional_lookup:
+    field: name
+    url: regex("[\w]+")
+  cache_control: max-age=10,must-revalidate
+  cache_expires: 10
+  datasource:
+    projection:
+      passwd: 0
+    source: users
+  extra_response_fields:
+  - token
+  item_methods:
+  - GET
+  schema: !!python/object/new:builtins.dict
+    dictitems:
+      name:
+        maxlength: 1024
+        minlength: 1
+        required: true
+        type: string
+        unique: true
+      primaryRole:
+        schema: !!python/object/new:builtins.dict
+          dictitems:
+            description: &id001
+              type: string
+            name: &id002
+              type: string
+        type: dict
+      role:
+        schema: !!python/object/new:builtins.dict
+          dictitems:
+            description: *id001
+            name: *id002
+        type: list
+  type: dict
+  url: users

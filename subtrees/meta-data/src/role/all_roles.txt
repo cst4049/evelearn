@@ -1,0 +1,42 @@
+[
+  {
+    "name": "superadmin",
+    "title": "超级管理员",
+    "description": "超级管理员，可以对本系统/系统联邦进行管理操作"
+  },
+  {
+    "name": "xk_subadmin",
+    "title": "学科负责人",
+    "description": "学科负责人管理某个单个学科的所有事物",
+    "default-home": "#/xk/pool-srv/quesbanks/core/"
+  },
+  {
+    "name": "xk_admin",
+    "title": "学科管理员",
+    "description": "学科管理员能管理所有学科的所有事物",
+    "default-home": "#/xk/pool-srv/quesbanks/core/"
+  },
+  {
+    "name": "xk_sb_tagist",
+    "title": "学科校本库打标员",
+    "description": "学科校本库打标员，可以对校本中某单个学科的题目进行打标",
+    "default-home": "#/xk/exam-srv/exams/"
+  },
+  {
+    "name": "xk_cb_tagist",
+    "title": "学科资源库打标员",
+    "description": "学科资源库打标员，可以对某单个学科的题目进行达标操作",
+    "default-home": "#/xk/pool-srv/quesbanks/core/"
+  },
+  {
+    "name": "xk_cb_typewritist",
+    "title": "学科资源库录题员",
+    "description": "学科资源库录题员，可以对某单个学科的题目进行录入",
+    "default-home": "#/xk/pool-srv/quesbanks/core/"
+  },
+  {
+    "name": "xg_admin",
+    "title": "学校管理员",
+    "description": "管理学校"
+  }
+]

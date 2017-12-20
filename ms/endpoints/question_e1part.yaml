@@ -1,0 +1,8 @@
+resources:
+  question_e1part:
+    url: quesbanks/<regex("[\w]+"):quesBank>/e1-part-of-questions
+    datasource:
+      source: questions
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/question_e1part/schema'

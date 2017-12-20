@@ -1,0 +1,79 @@
+
+
+definitions:
+  Sysinit:
+    name: sysinit
+    title: 初始化
+    type: dict
+    schema:
+
+      # user + passwd 作为登录使用
+      # user 唯一
+      name:
+        type: string
+        required: true
+        minlength: 1
+        maxlength: 1024
+        unique: true
+
+      realname:
+        type: string
+
+
+      # TODO 密码构成策略
+      passwd:
+        type: string
+        required: false
+
+      # 用户状态
+      active:
+        type: boolean
+        default: true
+
+      #
+      role:
+        type: list
+        schema:
+          type: string
+          allowed:
+            - xk_admin
+            - xk_subadmin
+            - xk_cb_tagist
+            - xk_cb_typewritist  # 自造词 录入员
+            - xk_sb_tagist
+            - superadmin
+            - xg_admin
+
+        required: true
+
+      primaryRole:
+        type: string
+        allowed:
+          - xk_admin
+          - xk_subadmin
+          - xk_cb_tagist
+          - xk_cb_typewritist
+          - xk_sb_tagist
+          - superadmin
+          - xg_admin
+        required: true
+
+      discipline:
+        type: list
+        schema:
+          type: string
+
+      primaryDiscipline:
+        type: string
+        required: true
+
+      description:
+        type: string
+        required: false
+        default: ""
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True

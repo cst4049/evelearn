@@ -1,0 +1,45 @@
+definitions:
+  ClassDType:
+    type: dict
+    schema:
+
+      classKind:
+        type: string
+
+      num:
+        type: number
+      code:
+        type: string
+      tag:
+        type: list
+        schema:
+          type: string
+
+
+      teacherTrole:
+        type: list
+        default: []
+        schema:
+          type: dict
+          schema:
+            discipline:
+              type: string
+            teacher:
+              nullable: true
+              type: objectid
+              data_relation:
+                resource: teachers
+                field: _id
+                embeddable: True
+
+
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True
+
+      furtype:
+        type: string
+        default: ClassDtype

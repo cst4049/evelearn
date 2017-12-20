@@ -1,0 +1,7 @@
+resources:
+  pictures:
+  #  url: quesbanks/<regex("[\w]+"):quesBank>/pictures
+    url: "quesbanks/pictures"
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Pictures/schema'

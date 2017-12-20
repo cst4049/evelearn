@@ -1,0 +1,24 @@
+{
+	  "name": "QuestionResponseFormatKind",
+	  
+	  "title": "理科作答类型",
+	  
+	  "literal": [
+	    {
+	      "name": "select",
+	      "title": "选择",
+	      "code": 1
+	    },
+	    {
+	      "name": "fillin",
+	      "title": "填空",
+	      "code": 2
+	    },
+	    {
+	      "name": "writeout",
+	      "title": "解答",
+	      "code": 3
+	    }
+	  ]
+	}
+	

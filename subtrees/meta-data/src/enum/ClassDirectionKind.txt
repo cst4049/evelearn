@@ -1,0 +1,21 @@
+{
+    "literal": [
+        {
+            "code": 1, 
+            "name": "art", 
+            "title": "文科"
+        }, 
+        {
+            "code": 2, 
+            "name": "science", 
+            "title": "理科"
+        }, 
+        {
+            "code": 3, 
+            "name": "general", 
+            "title": "综合"
+        }
+    ], 
+    "name": "ClassDirectionKind", 
+    "title": "学科方向"
+}

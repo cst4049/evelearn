@@ -1,0 +1,18 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  EnglishReadingComprehensionMaterialLengthDeg:
+    name: EnglishReadingComprehensionMaterialLengthDeg
+    title: 英语阅读理解材料长度等级
+    literal:
+    - name: short
+      title: 330-
+      code: 1
+    - name: middle
+      title: 330～410
+      code: 2
+    - name: middellong
+      title: 410～480
+      code: 3
+    - name: long
+      title: 480+
+      code: 4

@@ -1,0 +1,75 @@
+{
+  "name": "ExampaperDisciplineKind",
+  "title": "试卷科目类型",
+  "literal": [
+  {
+      "name": "chinese",
+      "title": "语文",
+      "code": 1
+    },
+    {
+      "name": "english",
+      "title": "英语",
+      "code": 2
+    },
+    {
+      "name": "math",
+      "title": "数学",
+      "code": 3
+    },
+    {
+      "name": "physics",
+      "title": "物理",
+      "code": 4
+    },
+    {
+      "name": "chemistry",
+      "title": "化学",
+      "code": 5
+    },
+    {
+      "name": "biology",
+      "title": "生物",
+      "code": 6
+    },
+    {
+      "name": "politics",
+      "title": "政治",
+      "code": 7
+    },
+    {
+      "name": "history",
+      "title": "历史",
+      "code": 8
+    },
+    {
+      "name": "geography",
+      "title": "地理",
+      "code": 9
+    },   {
+      "name": "mathforscience",
+      "title": "理科数学",
+      
+      "code":10
+    },
+    {
+      "name": "mathforliberalarts",
+      "title": "文科数学",
+       
+      "code":11
+
+    },
+    
+    {
+      "name": "synforscience",
+      "title": "理综",
+      "code":12
+    },
+    
+    {
+      "name": "synforliberalarts",
+      "title": "文综",
+      "code":13
+    }
+  ]
+}

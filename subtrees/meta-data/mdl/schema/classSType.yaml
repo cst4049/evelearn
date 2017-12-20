@@ -1,0 +1,63 @@
+definitions:
+  ClassSType:
+
+    type: dict
+    schema:
+      num:
+        type: number
+      code:
+        type: string
+        required: True
+      tag:
+        type: list
+        schema:
+          type: string
+      studyDirection:
+        type: string
+        required: True
+
+      furtype:
+        type: string
+        default: ClassStype
+      grade:
+        type: objectid
+        data_relation:
+          resource: grades
+          field: _id
+          embeddable: True
+
+      classKind:
+        type: string
+
+      teacherSrole:
+        type: objectid
+        nullable: True
+        data_relation:
+          resource: teachers
+          field: _id
+          embeddable: True
+
+
+      teacherTrole:
+        type: list
+        default: [                {"discipline":"math","teacher":null},                {"discipline":"english","teacher":null},                {"discipline":"biology","teacher":null},                {"discipline":"chemistry","teacher":null},                {"discipline":"physics","teacher":null},                {"discipline":"geography","teacher":null},                {"discipline":"history","teacher":null},                {"discipline":"politics","teacher":null}                ]
+        schema:
+
+          type: dict
+          schema:
+            discipline:
+              type: string
+            teacher:
+              nullable: true
+              type: objectid
+              data_relation:
+                resource: teachers
+                field: _id
+                embeddable: True
+
+      school:
+        type: objectid
+        data_relation:
+          resource: schools
+          field: _id
+          embeddable: True

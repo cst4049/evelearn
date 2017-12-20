@@ -1,0 +1,1254 @@
+{
+	"variables": [],
+	"info": {
+		"name": "按资源操作组织",
+		"_postman_id": "8dcae70e-bf99-c0e3-83fa-2e92ad0f7442",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "题库",
+			"description": "",
+			"item": [
+				{
+					"name": "题库-C1-1：新建core题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"_id\"] = responseBody.has(\"_id\")",
+									"if (tests[\"_id\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    quesbankId = responseData._id;",
+									"    pm.globals.set(\"qbid\", quesbankId);",
+									"}",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/quesbanks/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-R1-1：获取core题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"name\"] = responseBody.has(\"name\")",
+									"if (tests[\"name\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    bankname = responseData.name;",
+									"    pm.globals.set(\"qbname\", bankname);",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/quesbanks/core/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-R*：读取所有题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/quesbanks/",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题库-D*：删除所有题库",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/quesbanks/",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "枚举Enum",
+			"description": "",
+			"item": [
+				{
+					"name": "枚举-D*：删除所有枚举",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "所有枚举总览",
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：科目类型QuestionDisciplineKind",
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionDisciplineKind\",\n  \"title\": \"题目科目类型\",\n  \"literal\": [\n    {\n      \"name\": \"chinese\",\n      \"title\": \"语文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"english\",\n      \"title\": \"英语\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"math\",\n      \"title\": \"数学\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"physics\",\n      \"title\": \"物理\",\n      \"code\": 4\n    },\n    {\n      \"name\": \"chemistry\",\n      \"title\": \"化学\",\n      \"code\": 5\n    },\n    {\n      \"name\": \"biology\",\n      \"title\": \"生物\",\n      \"code\": 6\n    },\n    {\n      \"name\": \"politics\",\n      \"title\": \"政治\",\n      \"code\": 7\n    },\n    {\n      \"name\": \"history\",\n      \"title\": \"历史\",\n      \"code\": 8\n    },\n    {\n      \"name\": \"geography\",\n      \"title\": \"地理\",\n      \"code\": 9\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-R1-1：科目类型QuestionDisciplineKind",
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionDisciplineKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-2：英语题目复合形式 EnglishQuestionComboFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"EnglishQuestionComboFormatKind\",\n  \"title\": \"英语题型复合类型\",\n  \"literal\": [\n    {\n      \"name\": \"simpleselection\",\n      \"title\": \"单项选择\",\n      \"code\": 1,\n      \"comboFormat\": \"select\"\n    },\n    {\n      \"name\": \"matching\",\n      \"title\": \"信息匹配\",\n      \"code\": 3,\n      \"comboFormat\": \"select\"\n    },\n    {\n      \"name\": \"readwritetask\",\n      \"title\": \"读写任务\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"fillwordinsentence\",\n      \"title\": \"单句填空\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"fillwordintext\",\n      \"title\": \"短文填空\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"textcorrection\",\n      \"title\": \"短文改错\",\n      \"code\": 1,\n      \"comboFormat\": \"writeout\"\n    },\n    {\n      \"name\": \"sentencecorrection\",\n      \"title\": \"单句改错\",\n      \"code\": 1,\n      \"comboFormat\": \"writeout\"\n    },\n    {\n      \"name\": \"phrasetranslation\",\n      \"title\": \"翻译短语\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"patterntransformation\",\n      \"title\": \"句型转换\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"sentencecompletion\",\n      \"title\": \"完成句子\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"sentencetranslation\",\n      \"title\": \"翻译句子\",\n      \"code\": 1,\n      \"comboFormat\": \"fillin\"\n    },\n    {\n      \"name\": \"cloze\",\n      \"title\": \"完形填空\",\n      \"code\": 4,\n      \"comboFormat\": \"select\"\n    },\n    {\n      \"name\": \"readingcomprehension\",\n      \"title\": \"阅读理解\",\n      \"code\": 2,\n      \"comboFormat\": \"select\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-R1-2：英语题目复合形式 EnglishQuestionComboFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/EnglishQuestionComboFormatKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1:    题源时间枚举 QuestionSourceTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceTime\",\n  \"title\": \"题时间\",\n  \"literal\": [\n    {\n      \"name\": \"2000\",\n      \"title\": \"题源时间\",\n      \"code\": 2000\n    },\n    {\n      \"name\": \"2001\",\n      \"title\": \"题源时间\",\n      \"code\": 2001\n    },\n    {\n      \"name\": \"2002\",\n      \"title\": \"题源时间\",\n      \"code\": 2002\n    },\n    {\n      \"name\": \"2003\",\n      \"title\": \"题源时间\",\n      \"code\": 2003\n    },\n    {\n      \"name\": \"2004\",\n      \"title\": \"题源时间\",\n      \"code\": 2004\n    },\n    {\n      \"name\": \"2005\",\n      \"title\": \"题源时间\",\n      \"code\": 2005\n    },\n    {\n      \"name\": \"2006\",\n      \"title\": \"题源时间\",\n      \"code\": 2006\n    },\n    {\n      \"name\": \"2007\",\n      \"title\": \"题源时间\",\n      \"code\": 2007\n    },\n    {\n      \"name\": \"2008\",\n      \"title\": \"题源时间\",\n      \"code\": 2008\n    },\n    {\n      \"name\": \"2009\",\n      \"title\": \"题源时间\",\n      \"code\": 2009\n    },\n    {\n      \"name\": \"2010\",\n      \"title\": \"题源时间\",\n      \"code\": 2010\n    },\n    {\n      \"name\": \"2011\",\n      \"title\": \"题源时间\",\n      \"code\": 2011\n    },\n    {\n      \"name\": \"2012\",\n      \"title\": \"题源时间\",\n      \"code\": 2012\n    },\n    {\n      \"name\": \"2013\",\n      \"title\": \"题源时间\",\n      \"code\": 2013\n    },\n    {\n      \"name\": \"2014\",\n      \"title\": \"题源时间\",\n      \"code\": 2014\n    },\n    {\n      \"name\": \"2015\",\n      \"title\": \"题源时间\",\n      \"code\": 2015\n    },\n    {\n      \"name\": \"2016\",\n      \"title\": \"题源时间\",\n      \"code\": 2016\n    },\n    {\n      \"name\": \"2017\",\n      \"title\": \"题源时间\",\n      \"code\": 2017\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1:   题源时间枚举 QuestionSourceTime",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionSourceTime",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceTime\",\n  \"title\": \"题时间\",\n  \"literal\": [\n    {\n      \"name\": \"2000\",\n      \"title\": \"题源时间\",\n      \"code\": 2000\n    },\n    {\n      \"name\": \"2001\",\n      \"title\": \"题源时间\",\n      \"code\": 2001\n    },\n    {\n      \"name\": \"2002\",\n      \"title\": \"题源时间\",\n      \"code\": 2002\n    },\n    {\n      \"name\": \"2003\",\n      \"title\": \"题源时间\",\n      \"code\": 2003\n    },\n    {\n      \"name\": \"2004\",\n      \"title\": \"题源时间\",\n      \"code\": 2004\n    },\n    {\n      \"name\": \"2005\",\n      \"title\": \"题源时间\",\n      \"code\": 2005\n    },\n    {\n      \"name\": \"2006\",\n      \"title\": \"题源时间\",\n      \"code\": 2006\n    },\n    {\n      \"name\": \"2007\",\n      \"title\": \"题源时间\",\n      \"code\": 2007\n    },\n    {\n      \"name\": \"2008\",\n      \"title\": \"题源时间\",\n      \"code\": 2008\n    },\n    {\n      \"name\": \"2009\",\n      \"title\": \"题源时间\",\n      \"code\": 2009\n    },\n    {\n      \"name\": \"2010\",\n      \"title\": \"题源时间\",\n      \"code\": 2010\n    },\n    {\n      \"name\": \"2011\",\n      \"title\": \"题源时间\",\n      \"code\": 2011\n    },\n    {\n      \"name\": \"2012\",\n      \"title\": \"题源时间\",\n      \"code\": 2012\n    },\n    {\n      \"name\": \"2013\",\n      \"title\": \"题源时间\",\n      \"code\": 2013\n    },\n    {\n      \"name\": \"2014\",\n      \"title\": \"题源时间\",\n      \"code\": 2014\n    },\n    {\n      \"name\": \"2015\",\n      \"title\": \"题源时间\",\n      \"code\": 2015\n    },\n    {\n      \"name\": \"2016\",\n      \"title\": \"题源时间\",\n      \"code\": 2016\n    },\n    {\n      \"name\": \"2017\",\n      \"title\": \"题源时间\",\n      \"code\": 2017\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目来源地区枚举QuestionSourceLocaEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"QuestionSourceLocaEnum\",\n\t\"title\":\"题目来源地区枚举\",\n\t\"literal\": [\n\t\t{ \"name\": \"全国\", \"code\": 1, \"title\":\"全国\"},\n\t\t{\n\t\"name\":\"jiangsu1\" ,\n\t\"title\":\"江苏1卷\",\n\t\"code\":1\n},\n{\n\t\"name\":\"countrywide1\" ,\n\t\"title\":\"全国1卷\",\n\t\"code\":1\n}\n\t]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目来源地区枚举QuestionSourceLocaEnum copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionSourceLocaEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"QuestionSourceLocaEnum\",\n\t\"title\":\"题目来源地区枚举\",\n\t\"literal\": [\n\t\t{ \"name\": \"全国\", \"code\": 1, \"title\":\"全国\"},\n\t\t{\n\t\"name\":\"jiangsu1\" ,\n\t\"title\":\"江苏1卷\",\n\t\"code\":1\n},\n{\n\t\"name\":\"countrywide1\" ,\n\t\"title\":\"全国1卷\",\n\t\"code\":1\n}\n\t]\n\t\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：官僚树内层次枚举Lyrienum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"LyriEnum\",\n  \"title\": \"官僚树外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"super\",\n      \"title\": \"超\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"just\",\n      \"title\": \"恰\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"sub\",\n      \"title\": \"亚\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"infra\",\n      \"title\": \"次\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1：官僚树内层次枚举Lyrienum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/LyriEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"LyriEnum\",\n  \"title\": \"官僚树外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"super\",\n      \"title\": \"超\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"just\",\n      \"title\": \"恰\",\n      \"code\": 2\n    },\n    {\n      \"name\": \"sub\",\n      \"title\": \"亚\",\n      \"code\": 3\n    },\n    {\n      \"name\": \"infra\",\n      \"title\": \"次\",\n      \"code\": 4\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 官僚树透视层次FlrEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"FlrEnum\",\n  \"title\": \"官僚树内层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"inner\",\n      \"title\": \"内层\"\n    },\n    {\n      \"name\": \"outer\",\n      \"title\": \"外层\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 官僚树透视层次FlrEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/FlrEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"flrenum\",\n  \"title\": \"官僚树内层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"inner\",\n      \"title\": \"内层\"\n    },\n    {\n      \"name\": \"outer\",\n      \"title\": \"外层\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 问询形式QuestionQueryFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionQueryFormatKind\",\n  \"title\": \"问询形式\",\n  \"literal\": [\n    {\n      \"name\": \"read\",\n      \"title\": \"读文字\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"watch\",\n      \"title\": \"看视频\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"listen\",\n      \"title\": \"听音频\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 问询形式QuestionQueryFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionQueryFormatKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionQueryFormatKind\",\n  \"title\": \"问询形式\",\n  \"literal\": [\n    {\n      \"name\": \"read\",\n      \"title\": \"读文字\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"watch\",\n      \"title\": \"看视频\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"listen\",\n      \"title\": \"听音频\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  作答形式QuestionResponseFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionResponseFormatKind\",\n  \"title\": \"作答形式\",\n  \"literal\": [\n    {\n      \"name\": \"compose\",\n      \"title\": \"作文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"writeout\",\n      \"title\": \"解答\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"fillin\",\n      \"title\": \"填空\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"select\",\n      \"title\": \"选择\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  作答形式QuestionResponseFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionResponseFormatKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionResponseFormatKind\",\n  \"title\": \"作答形式\",\n  \"literal\": [\n    {\n      \"name\": \"compose\",\n      \"title\": \"作文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"writeout\",\n      \"title\": \"解答\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"fillin\",\n      \"title\": \"填空\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"select\",\n      \"title\": \"选择\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 教材体外层次枚举BotLyroEnum",
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BotLyroEnum\",\n  \"title\": \"教材体外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"chapter\",\n      \"title\": \"教材章\"\n    },\n    {\n      \"name\": \"volume\",\n      \"title\": \"教材册\"\n    },\n    {\n      \"name\": \"discipline\",\n      \"title\": \"教材域/科目\"\n    },\n    {\n      \"name\": \"body\",\n      \"title\": \"教材体\"\n    },\n    {\n      \"name\": \"section\",\n      \"title\": \"教材节\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 教材体外层次枚举BotLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/BotLyroEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BotLyroenum\",\n  \"title\": \"教材体外层次枚举\",\n  \"literal\": [\n    {\n      \"name\": \"chapter\",\n      \"title\": \"教材章\"\n    },\n    {\n      \"name\": \"volume\",\n      \"title\": \"教材册\"\n    },\n    {\n      \"name\": \"discipline\",\n      \"title\": \"教材域/科目\"\n    },\n    {\n      \"name\": \"body\",\n      \"title\": \"教材体\"\n    },\n    {\n      \"name\": \"section\",\n      \"title\": \"教材节\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目审查偏型CheckStatusEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"CheckStatusEnum\",\n  \"title\": \"题目审查偏型\",\n  \"literal\": [\n    {\n      \"name\": \"OPEN\",\n      \"title\": \"未处理\",\n      \"code\": 0\n    },\n    {\n      \"name\": \"PASSED\",\n      \"title\": \"通过\",\n      \"code\": 100\n    },\n    {\n      \"name\": \"DENIED\",\n      \"title\": \"拒绝\",\n      \"code\": 200\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题目审查偏型CheckStatusEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/CheckStatusEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"checkstatusenum\",\n  \"title\": \"题目审查偏型\",\n  \"literal\": [\n    {\n      \"name\": \"OPEN\",\n      \"title\": \"未处理\",\n      \"code\": 0\n    },\n    {\n      \"name\": \"PASSED\",\n      \"title\": \"通过\",\n      \"code\": 100\n    },\n    {\n      \"name\": \"DENIED\",\n      \"title\": \"拒绝\",\n      \"code\": 200\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目难度QuestionDifficultyKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionDifficultyKind\",\n  \"title\": \"题目难度\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"5\",\n      \"title\": \"困难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"4\",\n      \"title\": \"较难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"3\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"2\",\n      \"title\": \"较易\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"1\",\n      \"title\": \"容易\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  题目难度QuestionDifficultyKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionDifficultyKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"questiondifficultykind\",\n  \"title\": \"题目难度\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"5\",\n      \"title\": \"困难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"4\",\n      \"title\": \"较难\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"3\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"2\",\n      \"title\": \"较易\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"1\",\n      \"title\": \"容易\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  试卷科目类型ExampaperDisciplineKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ExampaperDisciplineKind\",\n  \"title\": \"试卷科目类型\",\n  \"literal\": [\n    {\n      \"name\": \"chinese\",\n      \"title\": \"语文\"\n    },\n    {\n      \"name\": \"english_exam\",\n      \"title\": \"英语\"\n    },\n    {\n      \"name\": \"math_exam\",\n      \"title\": \"数学\"\n    },\n    {\n      \"name\": \"mathforscience\",\n      \"title\": \"理科数学\"\n    },\n    {\n      \"name\": \"mathforliberalarts\",\n      \"title\": \"文科数学\"\n    },\n    {\n      \"name\": \"physics_exam\",\n      \"title\": \"物理\"\n    },\n    {\n      \"name\": \"chemistry_exam\",\n      \"title\": \"化学\"\n    },\n    {\n      \"name\": \"biology_exam\",\n      \"title\": \"生物\"\n    },\n    {\n      \"name\": \"synforscience\",\n      \"title\": \"理综\"\n    },\n    {\n      \"name\": \"politics_exam\",\n      \"title\": \"政治\"\n    },\n    {\n      \"name\": \"history_exam\",\n      \"title\": \"历史\"\n    },\n    {\n      \"name\": \"geography_exam\",\n      \"title\": \"地理\"\n    },\n    {\n      \"name\": \"synforliberalarts\",\n      \"title\": \"文综\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1  试卷科目类型ExampaperDisciplineKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/ExampaperDisciplineKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ExampaperDisciplineKind\",\n  \"title\": \"试卷科目类型\",\n  \"literal\": [\n    {\n      \"name\": \"chinese\",\n      \"title\": \"语文\"\n    },\n    {\n      \"name\": \"english_exam\",\n      \"title\": \"英语\"\n    },\n    {\n      \"name\": \"math_exam\",\n      \"title\": \"数学\"\n    },\n    {\n      \"name\": \"mathforscience\",\n      \"title\": \"理科数学\"\n    },\n    {\n      \"name\": \"mathforliberalarts\",\n      \"title\": \"文科数学\"\n    },\n    {\n      \"name\": \"physics_exam\",\n      \"title\": \"物理\"\n    },\n    {\n      \"name\": \"chemistry_exam\",\n      \"title\": \"化学\"\n    },\n    {\n      \"name\": \"biology_exam\",\n      \"title\": \"生物\"\n    },\n    {\n      \"name\": \"synforscience\",\n      \"title\": \"理综\"\n    },\n    {\n      \"name\": \"politics_exam\",\n      \"title\": \"政治\"\n    },\n    {\n      \"name\": \"history_exam\",\n      \"title\": \"历史\"\n    },\n    {\n      \"name\": \"geography_exam\",\n      \"title\": \"地理\"\n    },\n    {\n      \"name\": \"synforliberalarts\",\n      \"title\": \"文综\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语复合教育目标种类QuestionEnglishComboObjectiveKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionEnglishComboObjectiveKind\",\n  \"title\": \"英语复合教育目标种类\",\n  \"literal\": [\n    {\n      \"name\": \"vocabulary\",\n      \"title\": \"词汇\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"grammar\",\n      \"title\": \"语法\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语复合教育目标种类QuestionEnglishComboObjectiveKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionEnglishComboObjectiveKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionEnglishComboObjectiveKind\",\n  \"title\": \"英语复合教育目标种类\",\n  \"literal\": [\n    {\n      \"name\": \"vocabulary\",\n      \"title\": \"词汇\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"grammar\",\n      \"title\": \"语法\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语重要题型QuestionMaterialKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialKind\",\n  \"title\": \"英语重要题型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"questionMateriaKind_1\",\n      \"title\": \"广告通知类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_2\",\n      \"title\": \"叙事类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questinMateriaKind_3\",\n      \"title\": \"说明议论类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_4\",\n      \"title\": \"对话类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_5\",\n      \"title\": \"说明文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_6\",\n      \"title\": \"记叙文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_7\",\n      \"title\": \"议论文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_8\",\n      \"title\": \"夹叙夹议\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 英语重要题型QuestionMaterialKind copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionMaterialKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialKind\",\n  \"title\": \"英语重要题型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"questionMateriaKind_1\",\n      \"title\": \"广告通知类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_2\",\n      \"title\": \"叙事类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questinMateriaKind_3\",\n      \"title\": \"说明议论类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_4\",\n      \"title\": \"对话类\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_5\",\n      \"title\": \"说明文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_6\",\n      \"title\": \"记叙文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_7\",\n      \"title\": \"议论文\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"questionMateriaKind_8\",\n      \"title\": \"夹叙夹议\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题型长度QuestionMaterialLengthDeg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialLengthDeg\",\n  \"title\": \"题型长度\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"短\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"中长\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"长\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题型长度QuestionMaterialLengthDeg",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionMaterialLengthDeg",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionMaterialLengthDeg\",\n  \"title\": \"题型长度\",\n  \"literal\": [\n    {\n      \"name\": \"short\",\n      \"title\": \"短\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middle\",\n      \"title\": \"中\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"middellong\",\n      \"title\": \"中长\",\n      \"code\": 1\n    },\n    {\n      \"name\": \"long\",\n      \"title\": \"长\",\n      \"code\": 1\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题源类型QuestionSourceKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"QuestionSourceKind\",\n  \"title\": \"题源类型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"FromPast\",\n      \"code\": 1,\n      \"title\": \"高考真题\"\n    },\n    {\n      \"name\": \"FromExercise\",\n      \"code\": 2,\n      \"title\": \"同步练习\"\n    },\n    {\n      \"name\": \"FromSimulation\",\n      \"code\": 2,\n      \"title\": \"复习模拟\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 题源类型QuestionSourceKind copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/QuestionSourceKind",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"questionsourcekind\",\n  \"title\": \"题源类型\",\n  \n  \n  \"literal\": [\n    {\n      \"name\": \"FromPast\",\n      \"code\": 1,\n      \"title\": \"高考真题\"\n    },\n    {\n      \"name\": \"FromExercise\",\n      \"code\": 2,\n      \"title\": \"同步练习\"\n    },\n    {\n      \"name\": \"FromSimulation\",\n      \"code\": 2,\n      \"title\": \"复习模拟\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 知识体外层次枚举BOKLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BOKLyroEnum\",\n  \"title\": \"知识体外层次枚举\",\n  \n  \"literal\": [\n    {\n      \"name\": \"discipline\",\n      \"title\": \"知识域/科目\"\n    },\n    {\n      \"name\": \"area\",\n      \"title\": \"知识区\"\n    },\n    {\n      \"name\": \"topic\",\n      \"title\": \"知识主题\"\n    },\n    {\n      \"name\": \"point\",\n      \"title\": \"知识点\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-C1-1 知识体外层次枚举BOKLyroEnum",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									" "
+								]
+							}
+						}
+					],
+					"request": {
+						"url": "{{host}}:{{port}}/mm/enums/BOKLyroEnum",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"BOKLyroEnum\",\n  \"title\": \"知识体外层次枚举\",\n  \n  \"literal\": [\n    {\n      \"name\": \"discipline\",\n      \"title\": \"知识域/科目\"\n    },\n    {\n      \"name\": \"area\",\n      \"title\": \"知识区\"\n    },\n    {\n      \"name\": \"topic\",\n      \"title\": \"知识主题\"\n    },\n    {\n      \"name\": \"point\",\n      \"title\": \"知识点\"\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "教材体及其节点",
+			"description": "",
+			"item": [
+				{
+					"name": "数学 学科",
+					"request": {
+						"url": "{{host}}:{{port}}/bot-nodes/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"数学\",\n  \"name\": \"math\",\n  \"son\": [\n    {\n      \"title\": \"必修1\",\n      \"name\": \"requiredCourse1\",\n      \"dadCrslyro\": \"math\"\n    },\n    {\n      \"title\": \"必修2\",\n      \"name\": \"requiredCourse2\",\n      \"dadCrslyro\": \"math\",\n      \"koLyro\": {\n        \"code\": 1\n      }\n    },\n    {\n      \"title\": \"必修2\",\n      \"name\": \"requiredCourse2\",\n      \"dadCrslyro\": \"math\",\n      \"koLyro\": {\n        \"code\": 1\n      }\n    },\n    {\n      \"title\": \"必修3\",\n      \"name\": \"requiredCourse3\",\n      \"dadCrslyro\": \"math\",\n      \"koLyro\": {\n        \"code\": 1\n      }\n    },\n    {\n      \"title\": \"必修3\",\n      \"name\": \"requiredCourse3\",\n      \"dadCrslyro\": \"math\",\n      \"koLyro\": {\n        \"code\": 1\n      }\n    }\n  ]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体-C1-1：17通用版教材体（含所有层次节点）",
+					"request": {
+						"url": "{{host}}:{{port}}/bot-trees/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"bot-std-17\",\n  \"title\": \"17通用高中教材体树\",\n  \"description\": \"教材体的17通用版本树\",\n  \"edition\": \"std-17\",\n  \n  \"root\": {\n    \"koLyro\": \"body\",\n    \"koLyri\": \"just\",\n    \"name\": \"高中教材\",\n    \"title\": \"高中教材\",\n    \"description\": \"\",\n    \"son\": [\n      {\n        \"koLyro\": \"discipline\",\n        \"koLyri\": \"just\",\n        \"name\": \"英语\",\n        \"title\": \"英语\",\n        \"description\": \"\",\n        \"son\":[\n        \n        ]\n      },\n      {\n        \"koLyro\": \"discipline\",\n        \"koLyri\": \"just\",\n        \"name\": \"数学\",\n        \"title\": \"数学\",\n        \"description\": \"\",\n        \"son\": [\n          \n          \n        ]\n      }\n    ]\n  }\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "知识体及其节点",
+			"description": "",
+			"item": []
+		}
+	]
+}

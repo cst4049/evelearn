@@ -1,0 +1,8 @@
+#!/bin/bash
+
+filepath=$(cd "$(dirname "$0")"; pwd)
+
+http -v -f POST ${SUT_B}/quesbanks/pictures/ token==$TOKEN filename=picture  upload@${filepath}/a.png
+
+pic_url=$(http -b -f POST ${SUT_B}/quesbanks/pictures/ token==$TOKEN filename=picture  upload@${filepath}/a.png | tee | jq -r '.url')
+http -v GET ${pic_url}

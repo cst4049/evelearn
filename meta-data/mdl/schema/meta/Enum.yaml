@@ -1,0 +1,38 @@
+
+
+$schema: 以Cerberus为主，JsonSchema为辅。
+
+definitions:
+
+  EnumLiteral:
+    name: EnumLiteral
+    title: 枚举文字
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+      title:
+        type: string
+      code:
+        type: integer
+
+
+  Enum:
+    name: Enum
+    title: 枚举
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+      title:
+        type: string
+      type:             #表示类型?
+        type: string
+      literal:
+        type: list
+        schema:
+          type: dict
+          schema:
+            $ref: 'https://rawstonedu.com/schema#/definitions/EnumLiteral/schema'

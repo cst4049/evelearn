@@ -1,0 +1,10 @@
+
+definitions:
+  Bokt:
+    name: Bokt
+    title: 知识体树
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Botn/schema'
+
+      

@@ -1,0 +1,63 @@
+{
+    "name": "QuestionSourceLocaEnum",
+    "title": "题目来源地区枚举",
+    "literal": [
+       
+        {
+            "name": "countrywide1",
+            "title": "全国1卷",
+            
+            "code": 1
+        },
+        {
+            "name": "countrywide2",
+            "title": "全国2卷",
+            
+            "code": 2
+        },
+        {
+            "name": "countrywide3",
+            "title": "全国3卷",
+            
+            "code": 3
+        },
+        {
+            "name": "beijing",
+            "title": "北京卷",
+            "code": 4
+        },
+        {
+            "name": "shandong",
+            "title": "山东卷",
+            "code": 5
+        },
+        {
+            "name": "tianjin",
+            "title": "天津卷",
+            "code": 6
+        },
+        {
+            "name": "jiangsu",
+            "title": "江苏卷",
+            "code": 7
+        }
+        ,
+        {
+            "name": "zhejiang",
+            "title": "浙江卷",
+            "code": 8
+        },
+        {
+            "name": "shanghai",
+            "title": "上海卷",
+            "code": 9
+        }
+        ,
+        {
+            "name": "hainan",
+            "title": "海南卷",
+            "code": 10
+        }
+        
+    ]
+}

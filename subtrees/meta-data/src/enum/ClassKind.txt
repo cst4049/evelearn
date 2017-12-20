@@ -1,0 +1,29 @@
+{
+  "name": "ClassKind",
+  "title": "班级类型枚举",
+  "literal": [
+     
+    {
+      "name": "火箭班",
+      
+      "title":"火箭班",
+      
+      "code": 1
+    },
+     {
+      "name": "特长班",
+      
+      "title":"特长班",
+      
+      "code": 1
+    },  {
+      "name": "平行班",
+      
+      "title":"平行班",
+      
+      "code": 1
+    }
+    
+    
+    ]
+}

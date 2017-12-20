@@ -1,0 +1,6 @@
+#官僚树结构
+resources:
+  burTreeNode:
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/BurTreeNode/schema'

@@ -1,0 +1,31 @@
+
+
+
+resources:
+  users:
+    item_methods: ['GET']
+    url: users
+    datasource:
+      source: users
+      projection: # 一般人看不到token和pasword
+        passwd: 0
+    ## 对这个资源设置变量缓存控制准则，覆盖全局变量缓存控制准则
+    cache_control: max-age=10,must-revalidate
+    cache_expires: 10
+    ## 默认的集合条目（即单数资源）地址为 "users/:_id"
+    ## 通过additional_lookup可以增加一个只读端点 "users/:account"
+    ## 如果是非只读，则应该新配置一个资源条目
+    additional_lookup:
+      url: regex("[\w]+")
+      field: name
+    # allowed_roles:
+    #   - admin
+    extra_response_fields:
+      - token
+  #  public_methods:
+  #    - POST # TODO: 测试使用
+
+    ################################################################
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/User/schema'

@@ -1,0 +1,26 @@
+{
+  "name": "QuestionMaterialLengthDeg",
+  "title": "题目材料长度",
+  "literal": [
+    {
+      "name": "short",
+      "title": "短",
+      "code": 1
+    },
+    {
+      "name": "middle",
+      "title": "中",
+      "code": 2
+    },
+    {
+      "name": "middellong",
+      "title": "中长",
+      "code": 3
+    },
+    {
+      "name": "long",
+      "title": "长",
+      "code": 4
+    }
+  ]
+}

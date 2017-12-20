@@ -1,0 +1,28 @@
+
+#EP: Role
+roles:
+  url: roles
+
+  cache_control: 'max-age=10,must-revalidate'
+  cache_expires: 10
+
+  type: dict
+  schema:
+
+
+    name:
+      type: string
+
+
+    title:
+      type: string
+
+    description:
+      type: string
+
+    default-home:
+      type: string
+      default: "#/xk/pool-srv/quesbanks/core/"
+
+#    privilege:
+#      type: list

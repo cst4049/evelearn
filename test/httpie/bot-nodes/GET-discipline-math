@@ -1,0 +1,10 @@
+#!/bin/bash
+
+http -v GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"discipline","name":"math"}'
+
+dad_id=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"discipline","name":"math"}' | jq -r '._items[0]._id')
+
+http -v GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"dad": "'"${dad_id}"'"}'
+
+
+math_section_first=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"section","name":"1.集合"}')

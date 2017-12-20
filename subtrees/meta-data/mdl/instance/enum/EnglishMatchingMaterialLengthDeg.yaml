@@ -1,0 +1,18 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  EnglishMatchingMaterialLengthDeg:
+    name: EnglishMatchingMaterialLengthDeg
+    title: 英语信息匹配材料长度等级
+    literal:
+    - name: short
+      title: 280-
+      code: 1
+    - name: middle
+      title: 280～310
+      code: 2
+    - name: middellong
+      title: 310～370
+      code: 3
+    - name: long
+      title: 370+
+      code: 4

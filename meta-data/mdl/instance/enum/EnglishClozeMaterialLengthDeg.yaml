@@ -1,0 +1,18 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  EnglishClozeMaterialLengthDeg:
+    name: EnglishClozeMaterialLengthDeg
+    title: 英语完形填空材料长度等级
+    literal:
+    - name: short
+      title: 290-
+      code: 1
+    - name: middle
+      title: 290～320
+      code: 2
+    - name: middellong
+      title: 320～360
+      code: 3
+    - name: long
+      title: 360+
+      code: 4

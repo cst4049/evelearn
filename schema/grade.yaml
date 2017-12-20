@@ -1,0 +1,22 @@
+
+#EP grades
+grades:
+  url: schools/<regex("[\w]+"):school>/grades
+  type: dict
+  schema:
+    kind:
+      type: string
+      default: seniorMiddle
+    birth:
+      type: datetime
+      unique: True
+
+
+    school:
+      type: objectid
+      data_relation:
+        resource: schools
+        field: _id
+        embeddable: True
+
+

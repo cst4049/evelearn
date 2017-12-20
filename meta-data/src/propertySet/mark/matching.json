@@ -1,0 +1,69 @@
+{
+  "name": "question-e2-matching",
+  "title": "英语信息匹配基本标签",
+  "description": "",
+  "properties": [
+    {
+      "name": "koMaterial",
+     
+      "type": {
+        "name": "QuestionMaterialKind",
+        "title": "英语材料类型",
+        "literal": [
+          {
+            "name": "questionMateriaKind",
+            "title": "广告通知类",
+            "code": 1
+          },
+          {
+            "name": "questionMateriaKind",
+            "title": "叙事类",
+            "code": 2
+          },
+          {
+            "name": "questinMateriaKind",
+            "title": "说明议论类",
+            "code": 3
+          },
+          {
+            "name": "questionMateriaKind",
+            "title": "对话类",
+            "code": 4
+          }
+        ]
+      }
+    },
+    {
+  
+        "name": "materialLengthDeg",
+        
+        "type": {
+          "name": "EnglishMatchingMaterialLengthDeg",
+          "title": "英语信息匹配材料长度等级",
+          "literal": [
+            {
+              "name": "short",
+              "title": "280-",
+              "code": 1
+            },
+            {
+              "name": "middle",
+              "title": "280～310",
+              "code": 2
+            },
+            {
+              "name": "middellong",
+              "title": "310～370",
+              "code": 3
+            },
+            {
+              "name": "long",
+              "title": "370+",
+              "code": 4
+            }
+          ]
+        }
+       
+    } 
+  ]
+}

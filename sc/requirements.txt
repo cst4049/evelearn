@@ -1,0 +1,7 @@
+# 科学计算sc中所使用的包
+# 因为是基于anaconda3，所以大部分科学计算包不用另外安装
+
+jieba
+simhash
+bs4
+click

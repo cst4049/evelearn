@@ -1,0 +1,10 @@
+resources:
+  question_e2part:
+    url: quesbanks/<regex("[\w]+"):quesBank>/e2-part-of-questions
+    resource_methods: []
+    item_methods: ["PATCH"]
+    datasource:
+      source: questions
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/questions/schema'

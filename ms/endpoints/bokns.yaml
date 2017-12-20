@@ -1,0 +1,7 @@
+
+resources:
+  bokns:
+    url: bok-nodes
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Bokn/schema'

@@ -1,0 +1,11 @@
+bug:
+  soft_delete设置为true时:
+   github地址: https://github.com/pyeve/eve/issues/335
+
+   GET {{host}}:{{port}}/quesbanks
+   可以正常查找到未删除文档
+   GET {{host}}:{{port}}/quesbanks/core
+   以非默认id_field core参数查询,当存在删除与未删除版本时首先查找到已经删除的条目,并且报404错误,无法查找到新增的未删除文档
+   将soft_delete设置未false，即关闭安全删除,查找正常但是删除文档时会删除所有version记录
+   试验方案:
+     soft_delete设置为false，开发完毕关闭delete请求

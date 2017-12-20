@@ -1,0 +1,2969 @@
+{
+	"variables": [],
+	"info": {
+		"name": "枚举",
+		"_postman_id": "331afcec-2f7d-57e7-cc6b-83e59a6027c5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "题源类型QuestionSourceKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionSourceKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionsourcekind\" ,\n\t\"title\":\"题源类型\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源类型QuestionSourceKind  高考真题 FromPast",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"FromPast\",\n\t\"code\":1,\n\t\"title\":\"高考真题\"\n\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源类型QuestionSourceKind  1",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"FromExercise\",\n\t\"code\":2,\n\t\"title\":\"同步练习\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间 questionSourceTime",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"FromSimulation\",\n\t\"code\":2,\n\t\"title\":\"复习模拟\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "{{EHOST}}:{{EPORT}}/mm/enums/",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id",
+							"    postman.setGlobalVariable(\"QuestionSourceTimeId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionsourcetime\" ,\n\t\"title\":\"题源时间\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2000\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2000\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2001\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2001\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2002\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2002\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2003\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2003\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2004\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2004\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2005\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2005\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2006\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2006\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2007\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2007\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2008\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2008\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2009\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2009\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2010\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2010\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2011\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2011\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2012\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2012\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2013\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2013\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2014\",\n\t\"title\":\"题源时间\",\n\t\"code\":2014\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2015\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2015\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2016\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2016\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源时间questionSourceTime copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceTimeId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2017\" ,\n\t\"title\":\"题源时间\",\n\t\"code\":2017\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceLocaEnum}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源地区 questionSourceLocalEnum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionSourceLocaEnum\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionsourcelocaenum\" ,\n\t\"title\":\"题目来源地区枚举\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源地区 questionSourceLocalEnum copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceLocaEnum}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"jiangsu1\" ,\n\t\"title\":\"江苏1卷\",\n\t\"code\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "题源地区 questionSourceLocalEnum copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionSourceLocaEnum}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"countrywide1\" ,\n\t\"title\":\"全国1卷\",\n\t\"code\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/enums",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BOKLyroEnum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"BokLyroEnumId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"boklyroenum\" ,\n\t\"title\":\"知识体外层次枚举\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BOKLyroEnum copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BokLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"discipline\" ,\n\t\"title\":\"知识域/科目\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BOKLyroEnum copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BokLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"area\" ,\n\t\"title\":\"知识区\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BOKLyroEnum copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BokLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"topic\" ,\n\t\"title\":\"知识主题\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BOKLyroEnum copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BokLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"point\" ,\n\t\"title\":\"知识点\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{LyriEnumId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lyrienum 官僚树外层次枚举",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"lyriEnumId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"lyrienum\" ,\n\t\"title\":\"官僚树外层次枚举\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lyrienum 官僚树外层次枚举",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{LyriEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"super\" ,\n\t\"title\":\"超\",\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lyrienum 官僚树外层次枚举",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{LyriEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"just\" ,\n\t\"title\":\"恰\",\n\n\t\"code\":2\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lyrienum 官僚树外层次枚举",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{LyriEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"sub\" ,\n\t\"title\":\"亚\",\n\n\t\"code\":3\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "lyrienum 官僚树外层次枚举",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{LyriEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"infra\" ,\n\t\"title\":\"次\",\n\t\"code\":4\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy",
+			"request": {
+				"url": "{{EHOST}}{{EPORT}}/mm/enums/",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionDisciplineKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questiondisciplinekind\" ,\n\t\"title\":\"题目科目类型\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"chinese\" ,\n\t\"title\":\"语文\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"english\" ,\n\t\"title\":\"英语\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"math\" ,\n\t\"title\":\"数学\",\n\t\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"physics\" ,\n\t\"title\":\"物理\",\n\t\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"chemistry\" ,\n\t\"title\":\"化学\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"biology\" ,\n\t\"title\":\"生物\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"politics\" ,\n\t\"title\":\"政治\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"history\" ,\n\t\"title\":\"历史\",\n\t\"code\": 1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDisciplineKind copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"geography\" ,\n\t\"title\":\"地理\",\n\t\"code\": 1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionQueryFormatKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionQueryFormatKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionqueryformatkind\" ,\n\t\"title\":\"问询形式\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionQueryFormatKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionQueryFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"listen\" ,\n\t\"title\":\"听音频\",\n\t\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionQueryFormatKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionQueryFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"watch\" ,\n\t\"title\":\"看视频\",\n\t\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionQueryFormatKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionQueryFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"read\" ,\n\t\"title\":\"读文字\",\n\t\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionResponseFormatKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionResponseFormatKind\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionresponseformatkind\" ,\n\t\"title\":\"作答形式\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionResponseFormatKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionResponseFormatKind}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"select\" ,\n\t\"title\":\"选择\",\n\t\n\t\"code\": 1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionResponseFormatKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionResponseFormatKind}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"fillin\" ,\n\t\"title\":\"填空\",\n\t\n\t\"code\": 1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionResponseFormatKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionResponseFormatKind}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"writeout\" ,\n\t\"title\":\"解答\",\n\t\n\t\"code\": 1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionResponseFormatKind copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionResponseFormatKind}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"compose\" ,\n\t\"title\":\"作文\",\n\t\n\t\"code\": 1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FlrEnum 官僚树透视层次",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"flrEnumId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"flrenum\" ,\n\t\"title\":\"官僚树内层次枚举\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FlrEnum 官僚树透视层次 copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{FlrEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"outer\" ,\n\t\"title\":\"外层\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FlrEnum 官僚树透视层次 copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{FlrEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"inner\" ,\n\t\"title\":\"内层\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"botLyroEnumId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"botlyroenum\" ,\n\t\"title\":\"教材体外层次枚举\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum 1",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BotLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"body\" ,\n\t\"title\":\"教材体\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BotLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"discipline\" ,\n\t\"title\":\"教材域/科目\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BotLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"volume\" ,\n\t\"title\":\"教材册\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BotLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"chapter\" ,\n\t\"title\":\"教材章\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{BotLyroEnumId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"section\" ,\n\t\"title\":\"教材节\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckStatusEnum",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"checkStatusEnum\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"checkstatusenum\" ,\n\t\"title\":\"题目审查偏型\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckStatusEnum copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{CheckStatusEnum}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"OPEN\" ,\n\t\"title\":\"未处理\",\n\t\n\t\"code\":0\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckStatusEnum copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{CheckStatusEnum}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"PASSED\",\n\t\"title\":\"通过\",\n\t\n\t\"code\":100\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "CheckStatusEnum copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{CheckStatusEnum}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"DENIED\" ,\n\t\"title\":\"拒绝\",\n\t\n\t\"code\":200\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionDifficultyKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questiondifficultykind\" ,\n\t\"title\":\"题目难度\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDifficultyKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"5\" ,\n\t\"title\":\"困难\",\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDifficultyKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"4\" ,\n\t\"title\":\"较难\",\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDifficultyKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"3\" ,\n\t\"title\":\"中\",\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDifficultyKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"2\" ,\n\t\"title\":\"较易\",\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionDifficultyKind copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDifficultyKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"1\" ,\n\t\"title\":\"容易\",\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"ExampapperDisciplineKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"exampaperdisciplinekind\" ,\n\t\"title\":\"试卷科目类型\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"chinese_exam\" ,\n\t\"title\":\"语文\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"english_exam\" ,\n\t\"title\":\"英语\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"math_exam\" ,\n\t\"title\":\"数学\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "MathForScience 理科数学",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"mathforscience\" ,\n\t\"title\":\"理科数学\"\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "MathForLiberalArts 文科数学",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"mathforliberalarts\" ,\n\t\"title\":\"文科数学\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"physics_exam\" ,\n\t\"title\":\"物理\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"chemistry_exam\" ,\n\t\"title\":\"化学\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"biology_exam\" ,\n\t\"title\":\"生物\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "synForScience 理综",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"synforscience\" ,\n\t\"title\":\"理综\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"politics_exam\" ,\n\t\"title\":\"政治\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"history_exam\" ,\n\t\"title\":\"历史\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ExampaperDisciplineKind copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"geography_exam\" ,\n\t\"title\":\"地理\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SynForLiberalArts 文综",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{ExampapperDisciplineKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"synforliberalarts\" ,\n\t\"title\":\"文综\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionEnglishComboObjectiveKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionEnglishComboObjectiveKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\"name\":\"questionenglishcomboobjectivekind\" ,\n\t\"title\":\"英语复合教育目标种类\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionEnglishComboObjectiveKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionEnglishComboObjectiveKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\"name\":\"vocabulary\" ,\n\t\"title\":\"词汇\",\n\t\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionEnglishComboObjectiveKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionEnglishComboObjectiveKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\t\"name\":\"grammar\" ,\n\t\"title\":\"语法\",\n\t\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionMaterialKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionmaterialkind\" ,\n\t\"title\":\"问题重要类型\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_1\" ,\n\t\"title\":\"广告通知类\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_2\" ,\n\t\"title\":\"叙事类\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questinMateriaKind_3\" ,\n\t\"title\":\"说明议论类\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_4\" ,\n\t\"title\":\"对话类\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_5\" ,\n\t\"title\":\"说明文\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_6\" ,\n\t\"title\":\"记叙文\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_7\" ,\n\t\"title\":\"议论文\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialKind copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionMateriaKind_8\" ,\n\t\"title\":\"夹叙夹议\",\n\n\n\t\"code\":1\n\t\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialLengthDeg",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"QuestionMaterialLengthDegId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"questionmateriallengtheg\" ,\n\t\"title\":\"题型长度\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialLengthDeg copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialLengthDegId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"short\" ,\n\t\"title\":\"短\",\n\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialLengthDeg copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialLengthDegId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"middle\" ,\n\t\"title\":\"中\",\n\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "中长 middle long",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialLengthDegId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"middellong\" ,\n\t\"title\":\"中长\",\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "QuestionMaterialLengthDeg copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionMaterialLengthDegId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"long\" ,\n\t\"title\":\"长\",\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "分割线 copy copy copy copy copy copy copy copy copy copy copy copy copy",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{QuestionDisciplineKindId}}/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "EnglishQuestionComboFormatKind",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"",
+							"",
+							"tests[\"_id\"] = responseBody.has(\"_id\")",
+							"if (tests[\"_id\"]){",
+							"    var responseData = JSON.parse(responseBody);",
+							"    quesbankId = responseData._id;",
+							"    postman.setGlobalVariable(\"EnglishQuestionComboFormatKindId\",quesbankId)",
+							"}"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"EnglishQuestionComboFormatKind\" ,\n\t\"title\":\"英语题型复合类型\"\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SimpleSelection",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"simpleselection\" ,\n\t\n\t\"title\":\"单项选择\",\n\t\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ReadingComprehension",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"readingcomprehension\" ,\n\t\n\t\"title\":\"阅读理解\",\n\n\t\n\t\"code\":2\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Matching",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"matching\" ,\n\t\n\t\"title\":\"单项选择\",\n\t\n\t\n\t\"code\":3\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Cloze",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"cloze\" ,\n\t\n\t\"title\":\"完形填空\",\n\t\n\t\n\t\"code\":4\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ReadWriteTask",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"readwritetask\" ,\n\t\n\t\"title\":\"读写任务\",\n\t\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FillWordInText",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"fillwordintext\" ,\n\t\n\t\"title\":\"短文填空\",\n\t\n\t\n\t\"code\":1\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FillWordInSentence",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"fillwordinentence\" ,\n\t\n\t\"title\":\"单句填空\",\n\n\t\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TextCorrection",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"textcorrection\" ,\n\t\n\t\"title\":\"短文改错\",\n\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SentenceCorrection",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"sentencecorrection\" ,\n\t\n\t\"title\":\"单句改错\",\n\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PatternTransformation",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"patterntransformation\" ,\n\t\n\t\"title\":\"句型转换\",\n\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PhraseTranslation",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"phrasetranslation\" ,\n\t\n\t\"title\":\"翻译短语\",\n\n\t\"code\" :1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SentenceTranslation",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"sentencetranslation\" ,\n\t\n\t\"title\":\"翻译句子\",\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SentenceCompletion",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/{{EnglishQuestionComboFormatKindId}}/literals",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"sentencecompletion\" ,\n\t\n\t\"title\":\"完成句子\",\n\n\t\"code\":1\n\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "BotLyroEnum 枚举",
+			"request": {
+				"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d9e9061d41c82c22d526d4/literals",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

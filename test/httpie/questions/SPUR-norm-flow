@@ -1,0 +1,77 @@
+#!/bin/bash
+
+__DIR__=$(cd "$(dirname "$0")"; pwd)
+
+
+math_section_first=$(http -b GET ${SUT_B}/bot-nodes/ token==$TOKEN where=='{"edition": "std-17","koLyro":"section","name":"1.集合"}' | jq -r '._items[0]._id')
+
+
+echo "================新建题目"
+
+new_id=$(
+sed 's/^section.*/section: '"${math_section_first}"'/'  ${__DIR__}/question-POST.yaml | yaml2json - \
+| http -b POST ${SUT_B}/quesbanks/core/questions token==$TOKEN | jq -r '._id' \
+)
+
+#TODO: 使用 X-HTTP-METHOD-OVERRIDE 之后， eve.config.ITEM_METHODS 需要更改， 并且要看钩子中的方法是SPUR还是PATCH
+
+echo "================发信号 created"
+
+http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+  X-HTTP-METHOD-OVERRIDE:SPUR \
+  X-SPUR-SIGNAL:created
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================发信号 typewrited"
+
+#http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+#  X-HTTP-METHOD-OVERRIDE:SPUR \
+#  X-SPUR-SIGNAL:typewrited
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================发信号 check-typewrite-pass"
+
+http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+  X-HTTP-METHOD-OVERRIDE:SPUR \
+  X-SPUR-SIGNAL:check-typewrite-pass
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================打标（会在后台触发taagged）"
+http -v PATCH ${SUT_B}/quesbanks/core/questions/tagging/ token==$TOKEN  << EOF
+[{
+   "_id":"${new_id}",
+   "taginfo":{
+     "difficulty":"easy"
+   }
+}]
+EOF
+
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================发信号 check-tag-pass"
+
+http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+  X-HTTP-METHOD-OVERRIDE:SPUR \
+  X-SPUR-SIGNAL:check-tag-pass
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================发信号 check-tag-reset"
+
+http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+  X-HTTP-METHOD-OVERRIDE:SPUR \
+  X-SPUR-SIGNAL:check-tag-reset
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'
+
+echo "================发信号 check-typewrite-reset"
+
+http -v POST ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN \
+  X-HTTP-METHOD-OVERRIDE:SPUR \
+  X-SPUR-SIGNAL:check-typewrite-reset
+
+http -b GET ${SUT_B}/quesbanks/core/questions/${new_id}/ token==$TOKEN | tee | jq -r '.state'

@@ -1,0 +1,79 @@
+
+#EP: propertySet of question-basic-tags
+propertysets:
+  item_url: 'regex("[a-zA-Z_][a-zA-Z0-9_-]*")'
+  item_lookup_field: name
+  soft_delete: false
+  url: propertysets
+  type: dict
+  schema: &schemaPropertySet
+    name:
+      type: string
+      unique: true
+
+    title:
+      type: string
+
+    description:
+      type: string
+
+    properties:
+      type: list
+      schema:
+        type: dict
+        schema:
+
+          name:
+            type: string
+
+          ui-format:
+            type: string
+            allowed:
+              - dropdown
+              - radio-tag
+
+          type:
+            type: dict
+            schema:
+              name:
+                type: string
+              title:
+                type: string
+              description:
+                type: string
+              literal:
+                type: list
+                schema:
+                  type: dict
+                  schema:
+                    name:
+                      type: string
+                    title:
+                      type: string
+                    code:
+                      type: integer
+
+#
+#
+#
+#question-basic-tags:
+#  url: question-basic-tags
+#  item_url: regex("[a-zA-Z_][a-zA-Z0-9_-]*")
+#  item_lookup_field: name
+#  datasource:
+#    source: property-sets
+#  type: dict
+#  schema:
+#    <<: *schemaPropertySet
+#
+#
+#question-advanced-tags:
+#  url: question-advanced-tags
+#  id_field: name
+#  item_url: regex("[a-zA-Z_][a-zA-Z0-9_-]*")
+#  item_lookup_field: name
+#  datasource:
+#    source: property-sets
+#  type: dict
+#  schema:
+#    <<: *schemaPropertySet

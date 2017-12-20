@@ -1,0 +1,9 @@
+resources:
+  ClassTtypes:
+    url: schools/<regex("[\w]+"):school>/classTtypes
+    datasource:
+      source: classes
+    versioning: False
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/ClassType/schema'

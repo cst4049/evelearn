@@ -1,0 +1,1630 @@
+{
+	"id": "5098f366-4374-9e76-154b-e850c8d4632d",
+	"name": "页面所使用接口",
+	"description": "资源库管理测试用例",
+	"order": [],
+	"folders": [
+		{
+			"owner": "2898876",
+			"name": "bot相关-zyc",
+			"description": "",
+			"order": [
+				"cbc2309d-a1de-f110-6500-583561a9b7d6"
+			],
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"folders_order": [
+				"016f7790-1214-578a-d7d5-8d2a9abb64a8"
+			],
+			"id": "9ccbbbc8-0228-ceff-8b4a-452a784b856f",
+			"lastUpdatedBy": "2898876"
+		},
+		{
+			"name": "录题界面接口",
+			"description": "",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"order": [
+				"bd6d1aae-9601-cd80-4917-deb9672c8e49",
+				"c8e9c1c4-86fd-144a-5fa5-8c099146c24e",
+				"2d45ffa9-cd4f-ce8e-5282-f60b234ed3fd",
+				"df64f1f6-a740-655c-de6e-5858a75d735a",
+				"8e53cb51-9cd3-54d7-2b8e-ec066511a97b",
+				"99b9dfcf-996c-243f-a5ec-b1f9537b3cce",
+				"e6c17175-e192-a3f3-0715-b8dff37fcaa9",
+				"ee0fdcc3-3264-f747-0111-6b4aadbb8a57",
+				"39b0f83a-6d5e-2b1f-1766-c0cfdef8d177",
+				"9ce65486-9589-14d9-c556-c9f586b0a962"
+			],
+			"owner": 0,
+			"folders_order": [
+				"1997d5e2-4c30-f503-af7e-8f3fe5d8125c"
+			],
+			"id": "499df225-048a-c575-e34f-ad8d8a5c346e"
+		},
+		{
+			"id": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"name": "英语题型复合类型_新增扩展属性 copy",
+			"description": "",
+			"order": [
+				"16cd8d34-ae10-d36b-8a36-5abb51555065",
+				"9b3dc9f1-19b9-b0f6-809a-0a0378f0d3b6",
+				"ab87780a-495e-1f0c-b3d6-dc26ea91a829",
+				"ca4b0c21-d25e-af86-6ff9-76efb06daaa7",
+				"a4d76e0f-d14b-3d20-4cb1-8de739674cce",
+				"51aaf2a5-ab64-2b09-bb90-7d3a2398f875",
+				"cf1ecc60-776a-fa51-8f44-f49d3d1a714b",
+				"9a775a21-6366-e373-cc69-d57f29478da7",
+				"f1f295db-39e4-79c0-be7a-29cdd3cbfac2",
+				"ddcb5802-f7bd-7888-3c0b-4fe7efb1dc57",
+				"842ed71b-8b02-a468-b396-8a5e24bd67a6",
+				"b15374f6-1e1b-28a9-3664-7902111a7367",
+				"787fd680-abab-1b96-4b5d-56333b3ab777",
+				"d025f5f8-205d-5891-7cbb-2b0ffd39c9d2"
+			],
+			"owner": "2898876",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"folders_order": [],
+			"lastUpdatedBy": "2898876"
+		},
+		{
+			"id": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"name": "获取科下属的册 copy",
+			"description": "",
+			"order": [
+				"a551cd61-3258-d722-e0ec-13f904706ac8",
+				"84086078-c994-fad4-4f00-7643928c9b8f",
+				"7e2433bd-ae9c-80d1-407a-a3035a7d23bc",
+				"55543b4c-a31b-c267-360b-1e59e25b37f8",
+				"7488db85-6bab-3290-851a-6117cf03567f",
+				"5ecefa69-bc24-c74c-9870-3eccb3840328"
+			],
+			"owner": "2898876",
+			"folder": "9ccbbbc8-0228-ceff-8b4a-452a784b856f",
+			"folders_order": [],
+			"lastUpdatedBy": "2898876"
+		},
+		{
+			"name": "资源库管理界面接口",
+			"description": "",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"order": [
+				"cc1b7ea4-c6ec-869a-f0fd-e5e8ffe090ab",
+				"286d9969-b38a-7360-a146-8dfc9a0e10e3",
+				"52b9beb7-40e5-a55f-8837-9dc11b28506e",
+				"c59a9b6f-9f96-8700-e058-16a7d9a8e505",
+				"e2c8db19-6882-f19d-be10-b0292306acab",
+				"cd40ce94-31c2-f764-25da-53c7160d039a",
+				"378217e7-04a8-74e8-b434-17f090710344",
+				"ed8b2c5d-1110-b977-1cf7-8329107e630b",
+				"3c3fbb0b-ca06-4e08-a10f-82d31b9e2a1e",
+				"054556fc-de0d-a2eb-9841-4fc33b8b70c1",
+				"7539f052-3d22-10b0-c1a1-3a8ab9962afa",
+				"d715e55a-5a46-7453-e23f-24fa87e36da3",
+				"3bdd6c04-ba12-c880-7f5e-4d73592b2491",
+				"54632461-e21f-74b9-2dc5-a5e61eb209ab",
+				"89e32a76-3f5b-4846-0e0f-d8b35f0f94b9",
+				"e2dd4128-5262-c30c-65b3-a84952c317f9",
+				"990ebbea-5658-cabe-750a-84705d4cb1f3",
+				"eacc2116-6498-b437-49bd-2e8aa57784e9",
+				"8c8013e2-7161-d6d5-a67c-2d06e94475b6"
+			],
+			"owner": 0,
+			"folders_order": [
+				"9ccbbbc8-0228-ceff-8b4a-452a784b856f"
+			],
+			"id": "d0534511-dfec-4479-005f-7e153fc92d18"
+		}
+	],
+	"folders_order": [
+		"d0534511-dfec-4479-005f-7e153fc92d18",
+		"499df225-048a-c575-e34f-ad8d8a5c346e"
+	],
+	"timestamp": 1507364423957,
+	"owner": "2898876",
+	"public": false,
+	"requests": [
+		{
+			"id": "054556fc-de0d-a2eb-9841-4fc33b8b70c1",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507466690916,
+			"name": "新建一个题目(包含复合信息)英语",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"volume\":\"高一\",\n\t\"comboFormat\": \"完型填空\",\n\t\"tag\": \"词汇\",\n\t\"koDiscipline\":\"english\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "16cd8d34-ae10-d36b-8a36-5abb51555065",
+			"method": "POST",
+			"name": "EnglishQuestionComboFormatKind copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"EnglishQuestionComboFormatKind\" ,\n  \"title\":\"英语题型复合类型\"\n\n}"
+		},
+		{
+			"id": "286d9969-b38a-7360-a146-8dfc9a0e10e3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"_id\"] = responseBody.has(\"_id\")\nif (tests[\"_id\"]){\n    var responseData = JSON.parse(responseBody);\n    quesbankId = responseData._id;\n    pm.globals.set(\"qbid\", quesbankId);\n}\n\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507465928922,
+			"name": "新建一个题库",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\":\"chinese\",\n\t\"title\": \"语文题库\",\n\t\"description\": \"存储语文的题库\"\n\t\n}"
+		},
+		{
+			"id": "2d45ffa9-cd4f-ce8e-5282-f60b234ed3fd",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"_id\"] = responseBody.has(\"_id\")\nif (tests[\"_id\"]){\n    var responseData = JSON.parse(responseBody);\n    qid = responseData._id;\n    pm.globals.set(\"lu_quesionid\", qid);\n}\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469510938,
+			"name": "新建一个题目",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+		},
+		{
+			"id": "378217e7-04a8-74e8-b434-17f090710344",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"botn\":\"第一章 牛顿力学\",\"statusOfCheck\":\"pass\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"botn\":\"第一章 牛顿力学\",\"statusOfCheck\":\"pass\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469435153,
+			"name": "获取审核通过的题目",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": []
+		},
+		{
+			"id": "39b0f83a-6d5e-2b1f-1766-c0cfdef8d177",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507471158561,
+			"name": "上传题目包含子题(解答)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"sonOfAttr\": {\n    \t\"answerSettings\": [\"辅助作答信息\",\"辅助作答信息2\"]\n    }\n}"
+		},
+		{
+			"id": "3bdd6c04-ba12-c880-7f5e-4d73592b2491",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507468832501,
+			"name": "数学题tag(带有难度标签)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"koDiscipline\":\"math\",\n\t\"volume\": \"必修一\",\n\t\"chapter\": \"第一章 数列\",\n\t\"botn\": \"第一节 等差数列\",\n\t\"difficulty\": \"难\"\n}"
+		},
+		{
+			"id": "3c3fbb0b-ca06-4e08-a10f-82d31b9e2a1e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507466599514,
+			"name": "新建一个题目(包含章节信息)非英语",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"volume\":\"必修一\",\n\t\"chapter\": \"第一章 角度\",\n\t\"botn\": \"第一节 光的反射\",\n\t\"koDiscipline\": \"math\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "51aaf2a5-ab64-2b09-bb90-7d3a2398f875",
+			"method": "POST",
+			"name": "FillWordInText copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"fillwordintext\" ,\n  \n  \"title\":\"短文填空\",\n  \n  \n  \"code\":1,\n  \n  \"comboFormat\":\"fillin\"\n\n}"
+		},
+		{
+			"id": "52b9beb7-40e5-a55f-8837-9dc11b28506e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469405818,
+			"name": "题库里新建一个题目(已打标已审核)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"botn\": \"第一章 牛顿力学\",\n\t\"tag\": \"牛顿第一定律\",\n\t\"statusOfCheck\": \"pass\"\n}"
+		},
+		{
+			"id": "54632461-e21f-74b9-2dc5-a5e61eb209ab",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"botn\":\"第一节 光的反射\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"botn\":\"第一节 光的反射\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507373987398,
+			"name": "获取所有指定节点下的题目",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "54632461-e21f-74b9-2dc5-a5e61eb209ab",
+			"folderId": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "55543b4c-a31b-c267-360b-1e59e25b37f8",
+			"method": "POST",
+			"name": "数学 册. 必修二",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"title\":\"必修2\",\n  \n  \n  \"name\":\"requiredCourse2\",\n  \n  \n  \"dadCrslyro\": \"math\"\n  \n  \n  \n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "5ecefa69-bc24-c74c-9870-3eccb3840328",
+			"method": "POST",
+			"name": "数学 册. 选修一",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"title\":\"选修1\",\n  \n  \n  \"name\":\"electiveCourse1\",\n\n  \n  \"dadCrslyro\": \"math\",\n  \n  \"koLyro\":{\"code\":10000,\"name\":\"zyc\"}\n  \n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "7488db85-6bab-3290-851a-6117cf03567f",
+			"method": "POST",
+			"name": "数学 册. 必修3",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"title\":\"必修3\",\n  \n  \n  \"name\":\"requiredCourse3\",\n  \n  \n  \"dadCrslyro\": \"math\"\n  \n  \n  \n}"
+		},
+		{
+			"id": "7539f052-3d22-10b0-c1a1-3a8ab9962afa",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507468540519,
+			"name": "新增题带有tag属性(单选题，考察语法)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"koDiscipline\":\"english\",\n\t\"volume\": \"高一\",\n\t\"comboFormat\": \"单项选择\",\n\t\"objectiveOfCombo\": \"语法\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "787fd680-abab-1b96-4b5d-56333b3ab777",
+			"method": "POST",
+			"name": "Cloze copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"cloze\" ,\n  \n  \"title\":\"完形填空\",\n  \n  \n  \"code\":4,\n  \n  \"comboFormat\":\"select\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "7e2433bd-ae9c-80d1-407a-a3035a7d23bc",
+			"method": "POST",
+			"name": "数学 册. 必修一",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"title\":\"必修1\",\n  \n  \n  \"name\":\"requiredCourse1\",\n  \n \n  \n  \"dadCrslyro\": \"math\"\n  \n  \n  \n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "84086078-c994-fad4-4f00-7643928c9b8f",
+			"method": "POST",
+			"name": "数学 学科",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"title\":\"数学\",\n  \n  \n  \"name\":\"math\",\n\n  \"koLyro\":\" luroEnum的objectId\"\n  \n  \n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "842ed71b-8b02-a468-b396-8a5e24bd67a6",
+			"method": "POST",
+			"name": "SentenceCompletion",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"sentencecompletion\" ,\n  \n  \"title\":\"完成句子\",\n\n\n  \"code\":1,\n  \n  \"comboFormat\":\"fillin\"\n\n}"
+		},
+		{
+			"id": "89e32a76-3f5b-4846-0e0f-d8b35f0f94b9",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"comboFormat\":\"完型填空\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"comboFormat\":\"完型填空\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507466869109,
+			"name": "获取指定复合形式下的所有题",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"id": "8c8013e2-7161-d6d5-a67c-2d06e94475b6",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions-tag-status-stat?where={\"volume\":\"必修一\",\"koDiscipline\":\"math\",\"botn\":\"第一节 等差数列\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"volume\":\"必修一\",\"koDiscipline\":\"math\",\"botn\":\"第一节 等差数列\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507455884742,
+			"name": "查询数学的tag信息",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "8c8013e2-7161-d6d5-a67c-2d06e94475b6",
+			"folderId": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"id": "8e53cb51-9cd3-54d7-2b8e-ec066511a97b",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions/{{lu_quesionid}}/pictures",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [
+				{
+					"key": "image",
+					"value": "a.png",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "filename",
+					"value": "cake",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "tests[\"url\"] = responseBody.has(\"url\")\nif (tests[\"url\"]){\n    var responseData = JSON.parse(responseBody);\n    url = responseData.url;\n    pm.globals.set(\"pic_url\", url);\n}",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507470102486,
+			"name": "给该题目上传一个图片",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d"
+		},
+		{
+			"id": "990ebbea-5658-cabe-750a-84705d4cb1f3",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions-bot-status-stat?where={\"volume\":\"高一\",\"koDiscipline\":\"english\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"volume\":\"高一\",\"koDiscipline\":\"english\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507444883768,
+			"name": "获取指定科目的题在册中的分布(英语)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "990ebbea-5658-cabe-750a-84705d4cb1f3",
+			"folderId": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"id": "99b9dfcf-996c-243f-a5ec-b1f9537b3cce",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/{{pic_url}}",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "image",
+					"value": "a.png",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "filename",
+					"value": "cake",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507470095383,
+			"name": "获取上传图片",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "9a775a21-6366-e373-cc69-d57f29478da7",
+			"method": "POST",
+			"name": "SentenceCorrection copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"sentencecorrection\" ,\n  \n  \"title\":\"单句改错\",\n\n\n  \"code\":1,\n  \n  \"comboFormat\":\"writeout\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "9b3dc9f1-19b9-b0f6-809a-0a0378f0d3b6",
+			"method": "POST",
+			"name": "Matching copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"matching\" ,\n  \n  \"title\":\"信息匹配\",\n  \n  \n  \"code\":3,\n  \n  \"comboFormat\":\"select\"\n}"
+		},
+		{
+			"id": "9ce65486-9589-14d9-c556-c9f586b0a962",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions/{{dadid}}",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [
+				{
+					"key": "image",
+					"value": "a.png",
+					"description": "",
+					"type": "file",
+					"enabled": true
+				},
+				{
+					"key": "filename",
+					"value": "cake",
+					"description": "",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "params",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507471626851,
+			"name": "获取多题信息的父题(父题包含所有子题信息)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "a4d76e0f-d14b-3d20-4cb1-8de739674cce",
+			"method": "POST",
+			"name": "FillWordInSentence copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"fillwordinsentence\" ,\n  \n  \"title\":\"单句填空\",\n\n  \"code\":1,\n  \n  \"comboFormat\":\"fillin\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": null,
+			"dataMode": "params",
+			"description": "",
+			"folder": "016f7790-1214-578a-d7d5-8d2a9abb64a8",
+			"headerData": [],
+			"headers": "",
+			"helperAttributes": {},
+			"id": "a551cd61-3258-d722-e0ec-13f904706ac8",
+			"method": "GET",
+			"name": "获取科目的册/book",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [
+				{
+					"description": "",
+					"enabled": true,
+					"equals": true,
+					"key": "where",
+					"value": "{\"dadCrslyro\":\"math\",\"koLyro\":{\"code\":1}}"
+				}
+			],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/?where={\"dadCrslyro\":\"math\",\"koLyro\":{\"code\":1}}",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "ab87780a-495e-1f0c-b3d6-dc26ea91a829",
+			"method": "POST",
+			"name": "SimpleSelection copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"simpleselection\" ,\n  \n  \"title\":\"单项选择\",\n  \n  \n  \"code\":1,\n  \n  \"comboFormat\":\"select\"\n\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "b15374f6-1e1b-28a9-3664-7902111a7367",
+			"method": "POST",
+			"name": "SentenceTranslation copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"sentencetranslation\" ,\n  \n  \"title\":\"翻译句子\",\n\n  \"code\":1,\n  \n  \"comboFormat\":\"fillin\"\n}"
+		},
+		{
+			"id": "bd6d1aae-9601-cd80-4917-deb9672c8e49",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "var BEETHOVEN_HOST = \"127.0.0.1\"\nvar BEETHOVEN_PORT = 5000\npm.globals.set(\"host\", BEETHOVEN_HOST);\npm.globals.set(\"port\", BEETHOVEN_PORT);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507465299025,
+			"name": "初始化配置",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "bd6d1aae-9601-cd80-4917-deb9672c8e49"
+		},
+		{
+			"id": "c59a9b6f-9f96-8700-e058-16a7d9a8e505",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469414131,
+			"name": "新建一个题目(审核被拒绝)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"botn\": \"第一章 牛顿力学\",\n\t\"statusOfCheck\": \"deny\"\n}"
+		},
+		{
+			"id": "c8e9c1c4-86fd-144a-5fa5-8c099146c24e",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": "tests[\"_id\"] = responseBody.has(\"_id\")\nif (tests[\"_id\"]){\n    var responseData = JSON.parse(responseBody);\n    quesbankId = responseData._id;\n    pm.globals.set(\"lu_qbid\", quesbankId);\n}\n\n\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469339255,
+			"name": "新建一个题库",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"name\":\"chinese\",\n\t\"title\": \"语文题库\",\n\t\"description\": \"存储语文的题库\"\n\t\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "ca4b0c21-d25e-af86-6ff9-76efb06daaa7",
+			"method": "POST",
+			"name": "ReadWriteTask copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"readwritetask\" ,\n  \n  \"title\":\"读写任务\",\n  \n  \n  \"code\":1,\n\n  \"comboFormat\":\"fillin\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": null,
+			"dataMode": "params",
+			"description": "",
+			"descriptionFormat": "html",
+			"headerData": [],
+			"headers": "",
+			"helperAttributes": {},
+			"method": "GET",
+			"name": "获取该册下所有章和节",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/botn/<id>/sonward",
+			"folder": "9ccbbbc8-0228-ceff-8b4a-452a784b856f",
+			"id": "cbc2309d-a1de-f110-6500-583561a9b7d6",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d"
+		},
+		{
+			"id": "cc1b7ea4-c6ec-869a-f0fd-e5e8ffe090ab",
+			"headers": "",
+			"headerData": [],
+			"url": "localhost:",
+			"queryParams": [],
+			"preRequestScript": "var BEETHOVEN_HOST = \"127.0.0.1\"\nvar BEETHOVEN_PORT = 5000\npm.globals.set(\"host\", BEETHOVEN_HOST);\npm.globals.set(\"port\", BEETHOVEN_PORT);",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507465299025,
+			"name": "初始化配置",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": []
+		},
+		{
+			"id": "cd40ce94-31c2-f764-25da-53c7160d039a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"botn\":\"第一章 牛顿力学\",\"tag\":{\"$exists\":true}}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"botn\":\"第一章 牛顿力学\",\"tag\":{\"$exists\":true}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469427756,
+			"name": "获取已经打标的题目",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": []
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "cf1ecc60-776a-fa51-8f44-f49d3d1a714b",
+			"method": "POST",
+			"name": "TextCorrection copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"textcorrection\" ,\n  \n  \"title\":\"短文改错\",\n\n\n  \"code\":1,\n  \n  \"comboFormat\":\"writeout\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "d025f5f8-205d-5891-7cbb-2b0ffd39c9d2",
+			"method": "POST",
+			"name": "ReadingComprehension copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"readingcomprehension\" ,\n  \n  \"title\":\"阅读理解\",\n\n  \n  \"code\":2,\n  \n  \"comboFormat\":\"select\"\n}"
+		},
+		{
+			"id": "d715e55a-5a46-7453-e23f-24fa87e36da3",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507468815614,
+			"name": "增题tag属性(完型填空,330-,叙述类型)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"rawModeData": "{\n\t\"koDiscipline\":\"english\",\n\t\"volume\": \"高一\",\n\t\"comboFormat\": \"完型填空\",\n\t\"koMaterial\": \"叙事类\",\n\t\"materialLength\":\"330-\"\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "ddcb5802-f7bd-7888-3c0b-4fe7efb1dc57",
+			"method": "POST",
+			"name": "PatternTransformation copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"patterntransformation\" ,\n  \n  \"title\":\"句型转换\",\n\n\n  \"code\":1,\n  \n  \"comboFormat\":\"fillin\"\n}"
+		},
+		{
+			"id": "df64f1f6-a740-655c-de6e-5858a75d735a",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions/{{lu_quesionid}}",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469614353,
+			"name": "获取指定题目(主要用来修改该题)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+		},
+		{
+			"id": "e2c8db19-6882-f19d-be10-b0292306acab",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"botn\":\"第一章 牛顿力学\",\"tag\":{\"$exists\":false},\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"botn\":\"第一章 牛顿力学\",\"tag\":{\"$exists\":false},\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469420876,
+			"name": "获取未打标未审核或未通过的题目",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": []
+		},
+		{
+			"id": "e2dd4128-5262-c30c-65b3-a84952c317f9",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions-bot-status-stat?where={\"volume\":\"必修一\",\"koDiscipline\":\"math\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"volume\":\"必修一\",\"koDiscipline\":\"math\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507444907265,
+			"name": "获取指定科目的题在册章节中的分布",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "e2dd4128-5262-c30c-65b3-a84952c317f9",
+			"folderId": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"id": "e6c17175-e192-a3f3-0715-b8dff37fcaa9",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "tests[\"_items\"] = responseBody.has(\"_items\")\nif (tests[\"_items\"]){\n    var responseData = JSON.parse(responseBody);\n    questionlist = responseData._items;\n    dadid = questionlist[0]._id\n    pm.globals.set(\"dadid\", dadid);\n}\n",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507471599808,
+			"name": "上传题目包含子题(选择)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"sonOfAttr\": {\n    \t\"answer\": [\"A\",\"C\",\"B\"]\n    }\n}"
+		},
+		{
+			"id": "eacc2116-6498-b437-49bd-2e8aa57784e9",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions-tag-status-stat?where={\"volume\":\"高一\",\"koDiscipline\":\"english\",\"botn\":\"QuestionFoEnglishReadingComprehension\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"volume\":\"高一\",\"koDiscipline\":\"english\",\"botn\":\"QuestionFoEnglishReadingComprehension\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507455868015,
+			"name": "查询复合类型是完型填空的标签信息",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": [],
+			"isFromCollection": true,
+			"collectionRequestId": "eacc2116-6498-b437-49bd-2e8aa57784e9",
+			"folderId": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"rawModeData": "{\n\t\"grandpa\":\"必修一\",\n\t\"father\": \"第一章\",\n\t\"botn\": \"第一节 光的反射\"\n}"
+		},
+		{
+			"id": "ed8b2c5d-1110-b977-1cf7-8329107e630b",
+			"headers": "",
+			"headerData": [],
+			"url": "{{host}}:{{port}}/questionbanks/{{qbid}}/questions?where={\"botn\":\"第一章 牛顿力学\"}",
+			"folder": "d0534511-dfec-4479-005f-7e153fc92d18",
+			"queryParams": [
+				{
+					"key": "where",
+					"value": "{\"botn\":\"第一章 牛顿力学\"}",
+					"equals": true,
+					"description": "",
+					"enabled": true
+				}
+			],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507469440808,
+			"name": "获取所有题目(包括未打标未审核)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"responses": []
+		},
+		{
+			"id": "ee0fdcc3-3264-f747-0111-6b4aadbb8a57",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+			"folder": "499df225-048a-c575-e34f-ad8d8a5c346e",
+			"queryParams": [],
+			"preRequestScript": "",
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1507471064950,
+			"name": "上传题目包含子题(填空)",
+			"description": "初始化信息:\n  主机信息和端口信息",
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"sonOfAttr\": {\n    \t\"blankCount\": [1,3]\n    }\n}"
+		},
+		{
+			"currentHelper": "normal",
+			"data": [],
+			"dataMode": "raw",
+			"description": "",
+			"folder": "1997d5e2-4c30-f503-af7e-8f3fe5d8125c",
+			"headerData": [
+				{
+					"description": "",
+					"enabled": true,
+					"key": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"headers": "Content-Type: application/json\n",
+			"helperAttributes": {},
+			"id": "f1f295db-39e4-79c0-be7a-29cdd3cbfac2",
+			"method": "POST",
+			"name": "PhraseTranslation copy",
+			"pathVariableData": [],
+			"pathVariables": {},
+			"preRequestScript": null,
+			"queryParams": [],
+			"tests": null,
+			"url": "{{EHOST}}:{{EPORT}}/mm/enums/59d4d6461d41c80af6ca1241/literals",
+			"responses": [],
+			"collectionId": "5098f366-4374-9e76-154b-e850c8d4632d",
+			"rawModeData": "{\n  \"name\":\"phrasetranslation\" ,\n  \n  \"title\":\"翻译短语\",\n\n  \"code\": 1,\n  \n  \"comboFormat\":\"fillin\"\n\n}"
+		}
+	]
+}

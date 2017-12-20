@@ -1,0 +1,27 @@
+
+
+$schema: 以Cerberus为主，JsonSchema为辅。
+
+definitions:
+
+  PropertySet:
+    name: PropertySet
+    title: 属性集合
+    type: dict
+    schema:
+      name:
+        type: string
+        required: true
+        unique: true
+      title:
+        type: string
+      description:
+        type: string
+
+      properties:
+        type: list
+        schema:
+          type: dict
+          schema:
+            $ref: 'https://rawstonedu.com/schema#/definitions/Property/schema'
+

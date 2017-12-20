@@ -1,0 +1,9 @@
+resources:
+  literals:
+    url: mm/enums/<regex("[\w]+"):enum>/literals #todo
+#    additional_lookup:
+#      url: regex("[\w]+")
+#      field: code
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Literals/schema'

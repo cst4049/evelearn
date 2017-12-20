@@ -1,0 +1,8 @@
+resources:
+  sysinit:
+    url: init
+    resource_methods: ["POST"]
+    datasource:
+      source: users
+    schema:
+       $ref: 'https://rawstonedu.com/schema#/definitions/Sysinit/schema'

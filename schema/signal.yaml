@@ -1,0 +1,10 @@
+
+##EP: signals 状态机所使用的信号的定义，类似Enum
+signal:
+  type: dict
+  schema: &Schema_Signal
+    name:
+      type: string
+
+
+

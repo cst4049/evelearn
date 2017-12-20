@@ -1,0 +1,1695 @@
+{
+	"info": {
+		"name": "TS2-PerPageUsage",
+		"_postman_id": "5098f366-4374-9e76-154b-e850c8d4632d",
+		"description": "按页面使用组织",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "资源库管理界面接口",
+			"description": "",
+			"item": [
+				{
+					"name": "枚举-R1-1：科目类型QuestionDisciplineKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"_id\"] = responseBody.has(\"_id\")",
+									"if (tests[\"_id\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    quesbankId = responseData._id;",
+									"    pm.globals.set(\"qbid\", quesbankId);",
+									"}",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/QuestionDisciplineKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"QuestionDisciplineKind"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "枚举-R1-2：英语题目复合形式 EnglishQuestionComboFormatKind",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"_id\"] = responseBody.has(\"_id\")",
+									"if (tests[\"_id\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    quesbankId = responseData._id;",
+									"    pm.globals.set(\"qbid\", quesbankId);",
+									"}",
+									"",
+									"",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"chinese\",\n  \"title\": \"语文题库\",\n  \"description\": \"存储语文的题库\"\n  \n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/mm/enums/EnglishQuestionComboFormatKind",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"mm",
+								"enums",
+								"EnglishQuestionComboFormatKind"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*：获取std-17版数学的册",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/?where={\"edition\": \"std-17\",\"discipline\":\"math\",\"koLyro\":\"volume\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"edition\": \"std-17\",\"discipline\":\"math\",\"koLyro\":\"volume\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*-2：获取某节点的sonern节点",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/<id>/sonern",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								"<id>",
+								"sonern"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "教材体节点-R*-1：获取std-17版教材体的所有BOTN",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/bot-nodes/?where={\"edition\": \"std-17\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"bot-nodes",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"edition\": \"std-17\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：批量获取英语某册下各复合形式的题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-summations/batch-tagged-checked-all/?scope={\"koDiscipline\":\"english\",\"volume\": \"高一\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-summations",
+								"batch-tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"koDiscipline\":\"english\",\"volume\": \"高一\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：批量获取数学一系列章节中题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-summations/batch-tagged-checked-all/?scope={\"koDiscipline\":\"math\"}&sonern-section-of={\"chapter\": \"第一章 牛顿力学\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-summations",
+								"batch-tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"koDiscipline\":\"math\"}",
+									"equals": true
+								},
+								{
+									"key": "sonern-section-of",
+									"value": "{\"chapter\": \"第一章 牛顿力学\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：获取数学某章节中题目的分布",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/core/question-summations/tagged-checked-all/?scope={\"discipline\":\"math\",\"section\": \"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"core",
+								"question-summations",
+								"tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"math\",\"section\": \"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目状态分布统计-R1-1：英语某册下完形填空复合形式的题目对于三条件的统计",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/core/question-summations/tagged-checked-all/?scope={\"discipline\":\"english\",\"volume\": \"高一\",\"comboFormat\":\"Cloze\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"core",
+								"question-summations",
+								"tagged-checked-all",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"english\",\"volume\": \"高一\",\"comboFormat\":\"Cloze\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目划分-R1-1：英语完形填空复合类型的题目在多维款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-multi-dimension/?scope={\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-multi-dimension",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"english\",\"volume\":\"高一\",\"comboFormat\":\"Cloze\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": [
+						{
+							"id": "bfb2d4a9-0ec6-4ce0-91fe-9598b4be31de",
+							"name": "题目划分-R1-1：英语完形填空复合类型的题目在多维款型上的划分",
+							"originalRequest": {
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": 0,
+							"body": "{\n  \"count\": 40,\n  \"partitions\":[\n    {\n      \"by\": \"dificulty\",\n      \"summations\": [\n      \t{\n      \t  \"criteria\":\"easy\",\n      \t  \"count\":5\n      \t},\n        {\n      \t  \"criteria\":\"hard\",\n      \t  \"count\":35\n      \t}\n      ] \n    }\t\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "题目划分-R1-1：数学某节的题目在多维款型上的划分",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/question-partitions/by-multi-dimension/?scope={\"discipline\":\"math\", \"section\":\"botn-id\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"question-partitions",
+								"by-multi-dimension",
+								""
+							],
+							"query": [
+								{
+									"key": "scope",
+									"value": "{\"discipline\":\"math\", \"section\":\"botn-id\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库英语完形填空下的题目(默认排除审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={“discipline”:\"english\",\"comboFormat\":\"完型填空\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{“discipline”:\"english\",\"comboFormat\":\"完型填空\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库英语完形填空下的题目(含审核通过)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"grandpa\":\"必修一\",\n  \"father\": \"第一章\",\n  \"botn\": \"第一节 光的反射\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={“discipline”:\"english\",\"section\":\"botn-id\",\"comboFormat\":\"完型填空\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{“discipline”:\"english\",\"section\":\"botn-id\",\"comboFormat\":\"完型填空\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(默认排除审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/?where={\"discipline\":\"math\",\"cat-section\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"cat-section\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(含审核通过)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"koDiscipline\":\"math\",\"botn\":\"第一章 牛顿力学\"}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"koDiscipline\":\"math\",\"botn\":\"第一章 牛顿力学\"}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-D1-1：删除core资源库里的最后一个题目",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"",
+									"",
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "883cb2d9-66d1-47f5-9d43-d828463a86a0",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "5e55f749-9b1b-462b-8896-0d4f4d08b365",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "资源库录题界面接口",
+			"description": "",
+			"item": [
+				{
+					"name": "属性集-C1-1：题目基本标签math",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"math\",\n  \"title\": \"数学题基本标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"responseFormat\",\n      \"type\": {\n      \t\"name\": \"QuestionResponseFormatKind\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"sourceKind\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceKind\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"sourceTime\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceTimeEnum\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"sourceArea\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceLocaEnum\",\n      \t\"literal\":[\n      \t]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目基本标签english-cloze",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\":\"english-cloze\",\n  \"title\": \"英语完形填空基本标签\",\n  \"description\": \"sourceKind在录题界面，是固定的，因为教材会决定这个值\",\n  \"properties\": [\n    {\n      \"name\": \"sourceKind\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceKind\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"sourceTime\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceTimeEnum\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"sourceArea\",\n      \"type\": {\n      \t\"name\": \"QuestionSourceLocaEnum\",\n      \t\"literal\":[\n      \t]\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-basic-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-basic-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个英语题目(单选题，语法)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"english\",\n  \"volume\": \"高一\",\n  \"comboFormat\": \"单项选择\",\n  \"objectiveOfCombo\": \"语法\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-2：core题库建数学选择题（含子题）",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"_items\"] = responseBody.has(\"_items\")",
+									"if (tests[\"_items\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    questionlist = responseData._items;",
+									"    dadid = questionlist[0]._id",
+									"    pm.globals.set(\"dadid\", dadid);",
+									"}",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"subCount\": 3,\n    \"sonOfAttr\": {\n      \"contOfKey\": [[\"a\",\"e\"],\"C\",\"B\"]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-2：core题库建数学填空题（含子题）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"sonOfAttr\": {\n      \"blankCount\": [1,3]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"{{lu_qbid}}",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-2：core题库建数学解答题（含子题）",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"koSource\":\"复习模拟\",\n    \"contOfQuery\":\"1+1=?\",\n    \"koDiscipline\": \"math\",\n    \"sonOfAttr\": {\n      \"contOfScantron\": [\"辅助作答信息\",\"辅助作答信息2\"]\n    }\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/questionbanks/{{lu_qbid}}/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"questionbanks",
+								"{{lu_qbid}}",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-C1-#：core题库中新建一个数学题目",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"koDiscipline\":\"math\",\n  \"volume\": \"必修一\",\n  \"chapter\": \"第一章 数列\",\n  \"botn\": \"第一节 等差数列\",\n  \"difficulty\": \"难\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R1-1：core题库最后一个英语顶层题目（即无父题）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"value": "",
+									"description": "",
+									"type": "file"
+								},
+								{
+									"key": "filename",
+									"value": "cake",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R1-1：core题库最后一个数学顶层题目（即无父题）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"",
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "19747daf-5720-4d7a-9253-aa17b31a6b7b",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "e3a7724f-477c-4cbd-a635-c6ee742b388d",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{last-id}}"
+									]
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "2799dd41-59bd-466a-be5e-8f918f7fa6af",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "附图-C1-0：给最后一题上传一个图片",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests[\"url\"] = responseBody.has(\"url\")",
+									"if (tests[\"url\"]){",
+									"    var responseData = JSON.parse(responseBody);",
+									"    url = responseData.url;",
+									"    pm.globals.set(\"pic_url\", url);",
+									"}"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"description": "",
+									"key": "image",
+									"type": "file",
+									"value": ""
+								},
+								{
+									"description": "",
+									"key": "filename",
+									"type": "text",
+									"value": "cake"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/pictures",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"pictures"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				},
+				{
+					"name": "图片实体-R1-0：获取题目的图片",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"pic_url\");",
+									"",
+									"",
+									"",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/pictures\", function (err, response) {",
+									"    ",
+									"    tests[\"url\"] = responseBody.has(\"url\")",
+									"    if (tests[\"url\"]){",
+									"        var responseData = JSON.parse(responseBody);",
+									"        url = responseData.url;",
+									"        pm.globals.set(\"pic_url\", url);",
+									"    }",
+									"",
+									"})",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"description": "",
+									"key": "image",
+									"type": "file",
+									"value": ""
+								},
+								{
+									"description": "",
+									"key": "filename",
+									"type": "text",
+									"value": "cake"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/{{pic_url}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"{{pic_url}}"
+							]
+						},
+						"description": "初始化信息:\n  主机信息和端口信息"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "资源库题目打标界面接口",
+			"description": "",
+			"item": [
+				{
+					"name": "题目-R1-1：取core资源库里特定题目（尾）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"",
+									"pm.globals.unset(\"last-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"last-id\", jsonData._items[count-1]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{last-id}}"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "d70b9ebf-6206-497e-afa3-82e3861f1da8",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "af199e67-3e81-4f2a-84d8-a6249d170a0d",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{last-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{last-id}}"
+									]
+								},
+								"description": ""
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "63823d1c-0c7f-4109-837a-2fc22e829c01",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "d792cde1-eeac-4496-8ab9-d3fa84130139",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "23f7c74a-4a71-42a7-972d-76fe25d568e2",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"botn\": \"第一章 牛顿力学\",\n  \"tag\": \"牛顿第一定律\",\n  \"statusOfCheck\": \"pass\"\n}"
+								},
+								"url": {
+									"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{first-id}}",
+									"host": [
+										"{{host}}"
+									],
+									"port": "{{port}}",
+									"path": [
+										"quesbanks",
+										"core",
+										"questions",
+										"{{first-id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						},
+						{
+							"id": "8e1b9ea3-74d4-47bd-8055-f9029ded1450",
+							"name": "题目-R1-1：查询core资源库里第一个题目（TODO）",
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"_postman_previewtype": "parsed",
+							"header": [],
+							"cookie": [],
+							"responseTime": "0",
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "属性集-C1-1：题目高级标签math",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"name\":\"math\",\n  \"title\": \"数学题高级标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"difficulty\",\n      \"type\": {\n      \t\"name\": \"QuestionDifficultyKind\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"botnCat\",\n      \"type\": {\n      \t\"name\": \"BOTN\",\n      \t\"description\":\"这个标签的查看编辑界面是复杂的自定义控件\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-advanced-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-advanced-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "属性集-C1-1：题目高级标签english-cloze",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n{\n  \"name\":\"english-cloze\",\n  \"title\": \"英语完型填空高级标签\",\n  \"description\": \"\",\n  \"properties\": [\n    {\n      \"name\": \"koMaterial\",\n      \"type\": {\n      \t\"name\": \"QuestionMaterialKind\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"materialLengthDeg\",\n      \"type\": {\n      \t\"name\": \"QuestionMaterialLengthDeg\",\n      \t\"literal\":[\n      \t]\n      }\n    },\n    {\n      \"name\": \"botnCat\",\n      \"type\": {\n      \t\"name\": \"BOTN\",\n      \t\"description\":\"这个标签的查看编辑界面是复杂的自定义控件\"\n      }\n    }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/question-advanced-tags/",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"question-advanced-tags",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "资源库题目审核",
+			"description": "",
+			"item": [
+				{
+					"name": "题目-T1-#：批量题目审核-通过(尾1，尾2）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"r1st-id\");",
+									"pm.globals.unset(\"r2nd-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"r1st-id\", jsonData._items[count-1]._id);",
+									"    pm.globals.set(\"r2nd-id\", jsonData._items[count-2]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{r1st-id}},{{r2nd-id}}/batch-pass",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{r1st-id}},{{r2nd-id}}",
+								"batch-pass"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-T1-#：批量题目审核-重置(尾1，尾2）",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"pm.globals.unset(\"first-id\");",
+									"pm.globals.unset(\"r1st-id\");",
+									"pm.globals.unset(\"r2nd-id\");",
+									"",
+									"pm.sendRequest(\"{{host}}:{{port}}/quesbanks/core/questions/\", function (err, response) {",
+									"    console.log(response.json());",
+									"    var jsonData = response.json();",
+									"    var count = jsonData._meta.total",
+									"    pm.globals.set(\"first-id\", jsonData._items[0]._id);",
+									"    pm.globals.set(\"r1st-id\", jsonData._items[count-1]._id);",
+									"    pm.globals.set(\"r2nd-id\", jsonData._items[count-2]._id);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "HTTP_X_HTTP_METHOD_OVERRIDE",
+								"value": "SPUR"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions/{{r1st-id}},{{r2nd-id}}/reset",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions",
+								"{{r1st-id}},{{r2nd-id}}",
+								"reset"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(打了标但未审的以及审核否决的)TODO",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$ne\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "题目-R*-#：core题库数学某节下的题目(审核通过的)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{host}}:{{port}}/quesbanks/core/questions?where={\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$eq\":\"pass\"}}",
+							"host": [
+								"{{host}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"quesbanks",
+								"core",
+								"questions"
+							],
+							"query": [
+								{
+									"key": "where",
+									"value": "{\"discipline\":\"math\",\"sectionCat\":\"botn-id\",\"statusOfCheck\":{\"$eq\":\"pass\"}}",
+									"equals": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "资源库题目移动",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "资源库重题检测",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "资源库统计",
+			"description": "",
+			"item": []
+		},
+		{
+			"name": "登录接口",
+			"description": "",
+			"item": []
+		}
+	]
+}

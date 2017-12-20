@@ -1,0 +1,16 @@
+
+name: LyriEnum
+title: 官僚树外层次枚举
+literal:
+- name: super
+  title: 超
+  code: 1
+- name: just
+  title: 恰
+  code: 2
+- name: sub
+  title: 亚
+  code: 3
+- name: infra
+  title: 次
+  code: 4

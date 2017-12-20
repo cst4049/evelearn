@@ -1,0 +1,9 @@
+resources:
+  exam:
+    datasource:
+      source: exams
+    cache_control: 'max-age=10,must-revalidate'
+    cache_expires: 10
+    type: dict
+    schema:
+      $ref: 'https://rawstonedu.com/schema#/definitions/Exams/schema'

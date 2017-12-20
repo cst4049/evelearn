@@ -1,0 +1,7 @@
+$schema: 采用UML的json表达来定义元模型数据。
+instances:
+  english-phraseTranslation:
+    name: english-phraseTranslation
+    title: 英语翻译短语高级标签
+    description: ''
+    properties: []
